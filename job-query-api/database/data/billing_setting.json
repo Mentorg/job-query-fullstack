@@ -1,0 +1,250 @@
+[
+  {
+    "id": 0,
+    "email": "innovize@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 0
+  },
+  {
+    "id": 1,
+    "email": "samsung@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 1
+  },
+  {
+    "id": 2,
+    "email": "tesla@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 2
+  },
+  {
+    "id": 3,
+    "email": "spotify@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 3
+  },
+  {
+    "id": 4,
+    "email": "ibm@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 4
+  },
+  {
+    "id": 5,
+    "email": "sap@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 5
+  },
+  {
+    "id": 6,
+    "email": "salesforce@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 6
+  },
+  {
+    "id": 7,
+    "email": "jpmorgan@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 7
+  },
+  {
+    "id": 8,
+    "email": "pfizer@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 8
+  },
+  {
+    "id": 9,
+    "email": "johnson&johnson@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 9
+  },
+  {
+    "id": 10,
+    "email": "sony@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 10
+  },
+  {
+    "id": 11,
+    "email": "americanexpress@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 11
+  },
+  {
+    "id": 12,
+    "email": "generalmotors@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 12
+  },
+  {
+    "id": 13,
+    "email": "cisco@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 13
+  },
+  {
+    "id": 14,
+    "email": "americanintgroup@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 14
+  },
+  {
+    "id": 15,
+    "email": "ford@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 15
+  },
+  {
+    "id": 16,
+    "email": "astrazeneca@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 16
+  },
+  {
+    "id": 17,
+    "email": "airbus@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 17
+  },
+  {
+    "id": 18,
+    "email": "qualcomm@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 18
+  },
+  {
+    "id": 19,
+    "email": "deutschebank@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 19
+  },
+  {
+    "id": 20,
+    "email": "nike@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 20
+  },
+  {
+    "id": 21,
+    "email": "dell@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 21
+  },
+  {
+    "id": 22,
+    "email": "vodafone@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 22
+  },
+  {
+    "id": 23,
+    "email": "volvo@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 23
+  },
+  {
+    "id": 24,
+    "email": "nvidia@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 24
+  },
+  {
+    "id": 25,
+    "email": "hp@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 25
+  },
+  {
+    "id": 26,
+    "email": "adobe@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 26
+  },
+  {
+    "id": 27,
+    "email": "nokia@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 27
+  },
+  {
+    "id": 28,
+    "email": "at&t@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 28
+  },
+  {
+    "id": 29,
+    "email": "intel@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 29
+  },
+  {
+    "id": 30,
+    "email": "boeing@example.com",
+    "is_autorenew": false,
+    "created_at": "01.01.2016",
+    "updated_at": "01.01.2016",
+    "company_id": 30
+  }
+]

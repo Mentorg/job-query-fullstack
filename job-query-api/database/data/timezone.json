@@ -1,0 +1,434 @@
+[
+  {
+    "id": 0,
+    "description": "America/Adak"
+  },
+  {
+    "id": 1,
+    "description": "America/Anchorage"
+  },
+  {
+    "id": 2,
+    "description": "America/Atikokan"
+  },
+  {
+    "id": 3,
+    "description": "America/Blanc-Sablon"
+  },
+  {
+    "id": 4,
+    "description": "America/Boise"
+  },
+  {
+    "id": 5,
+    "description": "America/Cambridge_Bay"
+  },
+  {
+    "id": 6,
+    "description": "America/Chicago"
+  },
+  {
+    "id": 7,
+    "description": "America/Creston"
+  },
+  {
+    "id": 8,
+    "description": "America/Dawson"
+  },
+  {
+    "id": 9,
+    "description": "America/Dawson_Creek"
+  },
+  {
+    "id": 10,
+    "description": "America/Denver"
+  },
+  {
+    "id": 11,
+    "description": "America/Detroit"
+  },
+  {
+    "id": 12,
+    "description": "America/Edmonton"
+  },
+  {
+    "id": 13,
+    "description": "America/Glace_Bay"
+  },
+  {
+    "id": 14,
+    "description": "America/Goose_Bay"
+  },
+  {
+    "id": 15,
+    "description": "America/Indiana/Indianapolis"
+  },
+  {
+    "id": 16,
+    "description": "America/Indiana/Knox"
+  },
+  {
+    "id": 17,
+    "description": "America/Indiana/Marengo"
+  },
+  {
+    "id": 18,
+    "description": "America/Indiana/Petersburg"
+  },
+  {
+    "id": 19,
+    "description": "America/Indiana/Tell_City"
+  },
+  {
+    "id": 20,
+    "description": "America/Indiana/Vevay"
+  },
+  {
+    "id": 21,
+    "description": "America/Indiana/Vincennes"
+  },
+  {
+    "id": 22,
+    "description": "America/Indiana/Winamac"
+  },
+  {
+    "id": 23,
+    "description": "America/Inuvik"
+  },
+  {
+    "id": 24,
+    "description": "America/Iqaluit"
+  },
+  {
+    "id": 25,
+    "description": "America/Juneau"
+  },
+  {
+    "id": 26,
+    "description": "America/Kentucky/Louisville"
+  },
+  {
+    "id": 27,
+    "description": "America/Kentucky/Monticello"
+  },
+  {
+    "id": 28,
+    "description": "America/Los_Angeles"
+  },
+  {
+    "id": 29,
+    "description": "America/Metlakatla"
+  },
+  {
+    "id": 30,
+    "description": "America/Menominee"
+  },
+  {
+    "id": 31,
+    "description": "America/Montreal"
+  },
+  {
+    "id": 32,
+    "description": "America/Nipigon"
+  },
+  {
+    "id": 33,
+    "description": "America/Nome"
+  },
+  {
+    "id": 34,
+    "description": "America/North_Dakota/Beulah"
+  },
+  {
+    "id": 35,
+    "description": "America/North_Dakota/Center"
+  },
+  {
+    "id": 36,
+    "description": "America/North_Dakota/New_Salem"
+  },
+  {
+    "id": 37,
+    "description": "America/Pangnirtung"
+  },
+  {
+    "id": 38,
+    "description": "America/Philadelphia"
+  },
+  {
+    "id": 39,
+    "description": "America/Port-au-Prince"
+  },
+  {
+    "id": 40,
+    "description": "America/Regina"
+  },
+  {
+    "id": 41,
+    "description": "America/Rainy_River"
+  },
+  {
+    "id": 42,
+    "description": "America/Rankin_Inlet"
+  },
+  {
+    "id": 43,
+    "description": "America/Resolute"
+  },
+  {
+    "id": 44,
+    "description": "America/Santa_Isabel"
+  },
+  {
+    "id": 45,
+    "description": "America/Thunder_Bay"
+  },
+  {
+    "id": 46,
+    "description": "America/Toronto"
+  },
+  {
+    "id": 47,
+    "description": "America/Vancouver"
+  },
+  {
+    "id": 48,
+    "description": "America/Whitehorse"
+  },
+  {
+    "id": 49,
+    "description": "America/Winnipeg"
+  },
+  {
+    "id": 50,
+    "description": "America/Yellowknife"
+  },
+  {
+    "id": 51,
+    "description": "Europe/Amsterdam"
+  },
+  {
+    "id": 52,
+    "description": "Europe/Andorra"
+  },
+  {
+    "id": 53,
+    "description": "Europe/Athens"
+  },
+  {
+    "id": 54,
+    "description": "Europe/Belgrade"
+  },
+  {
+    "id": 55,
+    "description": "Europe/Berlin"
+  },
+  {
+    "id": 56,
+    "description": "Europe/Bratislava"
+  },
+  {
+    "id": 57,
+    "description": "Europe/Brussels"
+  },
+  {
+    "id": 58,
+    "description": "Europe/Bucharest"
+  },
+  {
+    "id": 59,
+    "description": "Europe/Budapest"
+  },
+  {
+    "id": 60,
+    "description": "Europe/Busingen"
+  },
+  {
+    "id": 61,
+    "description": "Europe/Chisinau"
+  },
+  {
+    "id": 62,
+    "description": "Europe/Copenhagen"
+  },
+  {
+    "id": 63,
+    "description": "Europe/Dublin"
+  },
+  {
+    "id": 64,
+    "description": "Europe/Gibraltar"
+  },
+  {
+    "id": 65,
+    "description": "Europe/Guernsey"
+  },
+  {
+    "id": 66,
+    "description": "Europe/Helsinki"
+  },
+  {
+    "id": 67,
+    "description": "Europe/Isle_of_Man"
+  },
+  {
+    "id": 68,
+    "description": "Europe/Istanbul"
+  },
+  {
+    "id": 69,
+    "description": "Europe/Jersey"
+  },
+  {
+    "id": 70,
+    "description": "Europe/Kaliningrad"
+  },
+  {
+    "id": 71,
+    "description": "Europe/Kiev"
+  },
+  {
+    "id": 72,
+    "description": "Europe/Lisbon"
+  },
+  {
+    "id": 73,
+    "description": "Europe/Ljubljana"
+  },
+  {
+    "id": 74,
+    "description": "Europe/London"
+  },
+  {
+    "id": 75,
+    "description": "Europe/Luxembourg"
+  },
+  {
+    "id": 76,
+    "description": "Europe/Madrid"
+  },
+  {
+    "id": 77,
+    "description": "Europe/Malta"
+  },
+  {
+    "id": 78,
+    "description": "Europe/Mariehamn"
+  },
+  {
+    "id": 79,
+    "description": "Europe/Minsk"
+  },
+  {
+    "id": 80,
+    "description": "Europe/Monaco"
+  },
+  {
+    "id": 81,
+    "description": "Europe/Moscow"
+  },
+  {
+    "id": 82,
+    "description": "Europe/Oslo"
+  },
+  {
+    "id": 83,
+    "description": "Europe/Paris"
+  },
+  {
+    "id": 84,
+    "description": "Europe/Podgorica"
+  },
+  {
+    "id": 85,
+    "description": "Europe/Prague"
+  },
+  {
+    "id": 86,
+    "description": "Europe/Riga"
+  },
+  {
+    "id": 87,
+    "description": "Europe/Rome"
+  },
+  {
+    "id": 88,
+    "description": "Europe/Samara"
+  },
+  {
+    "id": 89,
+    "description": "Europe/San_Marino"
+  },
+  {
+    "id": 90,
+    "description": "Europe/Sarajevo"
+  },
+  {
+    "id": 91,
+    "description": "Europe/Simferopol"
+  },
+  {
+    "id": 92,
+    "description": "Europe/Skopje"
+  },
+  {
+    "id": 93,
+    "description": "Europe/Sofia"
+  },
+  {
+    "id": 94,
+    "description": "Europe/Stockholm"
+  },
+  {
+    "id": 95,
+    "description": "Europe/Tallinn"
+  },
+  {
+    "id": 96,
+    "description": "Europe/Tirane"
+  },
+  {
+    "id": 97,
+    "description": "Europe/Uzhgorod"
+  },
+  {
+    "id": 98,
+    "description": "Europe/Vaduz"
+  },
+  {
+    "id": 99,
+    "description": "Europe/Vatican"
+  },
+  {
+    "id": 100,
+    "description": "Europe/Vienna"
+  },
+  {
+    "id": 101,
+    "description": "Europe/Vilnius"
+  },
+  {
+    "id": 102,
+    "description": "Europe/Volgograd"
+  },
+  {
+    "id": 103,
+    "description": "Europe/Warsaw"
+  },
+  {
+    "id": 104,
+    "description": "Europe/Zagreb"
+  },
+  {
+    "id": 105,
+    "description": "Europe/Zaporozhye"
+  },
+  {
+    "id": 106,
+    "description": "Europe/Zurich"
+  },
+  {
+    "id": 107,
+    "description": "UTC"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": 0,
+    "country": "Germany",
+    "city": "Berlin",
+    "code": "DE"
+  },
+  {
+    "id": 1,
+    "country": "France",
+    "city": "Paris",
+    "code": "FR"
+  },
+  {
+    "id": 2,
+    "country": "United Kingdom",
+    "city": "London",
+    "code": "UK"
+  },
+  {
+    "id": 3,
+    "country": "Austria",
+    "city": "Vienna",
+    "code": "AT"
+  },
+  {
+    "id": 4,
+    "country": "Italy",
+    "city": "Rome",
+    "code": "IT"
+  },
+  {
+    "id": 5,
+    "country": "Spain",
+    "city": "Madrid",
+    "code": "ES"
+  },
+  {
+    "id": 6,
+    "country": "Portugal",
+    "city": "Lisbon",
+    "code": "PT"
+  },
+  {
+    "id": 7,
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "code": "NL"
+  },
+  {
+    "id": 8,
+    "country": "Sweden",
+    "city": "Stockholm",
+    "code": "SE"
+  },
+  {
+    "id": 9,
+    "country": "Norway",
+    "city": "Oslo",
+    "code": "NO"
+  },
+  {
+    "id": 10,
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "code": "DK"
+  },
+  {
+    "id": 11,
+    "country": "Finland",
+    "city": "Helsinki",
+    "code": "FI"
+  },
+  {
+    "id": 12,
+    "country": "Russia",
+    "city": "Moscow",
+    "code": "RU"
+  },
+  {
+    "id": 13,
+    "country": "Poland",
+    "city": "Warsaw",
+    "code": "PL"
+  },
+  {
+    "id": 14,
+    "country": "Greece",
+    "city": "Athens",
+    "code": "GR"
+  },
+  {
+    "id": 15,
+    "country": "Turkey",
+    "city": "Istanbul",
+    "code": "TR"
+  },
+  {
+    "id": 16,
+    "country": "Hungary",
+    "city": "Budapest",
+    "code": "HU"
+  },
+  {
+    "id": 17,
+    "country": "Czech Republic",
+    "city": "Prague",
+    "code": "CZ"
+  },
+  {
+    "id": 18,
+    "country": "Slovakia",
+    "city": "Bratislava",
+    "code": "SK"
+  },
+  {
+    "id": 19,
+    "country": "Bulgaria",
+    "city": "Sofia",
+    "code": "BG"
+  },
+  {
+    "id": 20,
+    "country": "Romania",
+    "city": "Bucharest",
+    "code": "RO"
+  },
+  {
+    "id": 21,
+    "country": "Lithuania",
+    "city": "Vilnius",
+    "code": "LT"
+  },
+  {
+    "id": 22,
+    "country": "Estonia",
+    "city": "Tallinn",
+    "code": "EE"
+  },
+  {
+    "id": 23,
+    "country": "Latvia",
+    "city": "Riga",
+    "code": "LV"
+  },
+  {
+    "id": 24,
+    "country": "Croatia",
+    "city": "Zagreb",
+    "code": "HR"
+  },
+  {
+    "id": 25,
+    "country": "Slovenia",
+    "city": "Ljubljana",
+    "code": "SI"
+  },
+  {
+    "id": 26,
+    "country": "Albania",
+    "city": "Tirana",
+    "code": "AL"
+  },
+  {
+    "id": 27,
+    "country": "Malta",
+    "city": "Valletta",
+    "code": "MT"
+  },
+  {
+    "id": 28,
+    "country": "Luxembourg",
+    "city": "Luxembourg",
+    "code": "LU"
+  },
+  {
+    "id": 29,
+    "country": "Iceland",
+    "city": "Reykjavik",
+    "code": "IS"
+  },
+  {
+    "id": 30,
+    "country": "Ukraine",
+    "city": "Kyiv",
+    "code": "UA"
+  },
+  {
+    "id": 31,
+    "country": "Belarus",
+    "city": "Minsk",
+    "code": "BY"
+  },
+  {
+    "id": 32,
+    "country": "Bosnia-Herzegovina",
+    "city": "Sarajevo",
+    "code": "BA"
+  }
+]

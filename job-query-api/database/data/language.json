@@ -1,0 +1,290 @@
+[
+  {
+    "id": 0,
+    "description": "English - Beginner A1"
+  },
+  {
+    "id": 1,
+    "description": "English - Elementary A2"
+  },
+  {
+    "id": 2,
+    "description": "English - Intermediate B1"
+  },
+  {
+    "id": 3,
+    "description": "English - Upper Intermediate B2"
+  },
+  {
+    "id": 4,
+    "description": "English - Advanced C1"
+  },
+  {
+    "id": 5,
+    "description": "English - Expert C2"
+  },
+  {
+    "id": 6,
+    "description": "French - Beginner A1"
+  },
+  {
+    "id": 7,
+    "description": "French - Elementary A2"
+  },
+  {
+    "id": 8,
+    "description": "French - Intermediate B1"
+  },
+  {
+    "id": 9,
+    "description": "French - Upper Intermediate B2"
+  },
+  {
+    "id": 10,
+    "description": "French - Advanced C1"
+  },
+  {
+    "id": 11,
+    "description": "French - Expert C2"
+  },
+  {
+    "id": 12,
+    "description": "Spanish - Beginner A1"
+  },
+  {
+    "id": 13,
+    "description": "Spanish - Elementary A2"
+  },
+  {
+    "id": 14,
+    "description": "Spanish - Intermediate B1"
+  },
+  {
+    "id": 15,
+    "description": "Spanish - Upper Intermediate B2"
+  },
+  {
+    "id": 16,
+    "description": "Spanish - Advanced C1"
+  },
+  {
+    "id": 17,
+    "description": "Spanish - Expert C2"
+  },
+  {
+    "id": 18,
+    "description": "German - Beginner A1"
+  },
+  {
+    "id": 19,
+    "description": "German - Elementary A2"
+  },
+  {
+    "id": 20,
+    "description": "German - Intermediate B1"
+  },
+  {
+    "id": 21,
+    "description": "German - Upper Intermediate B2"
+  },
+  {
+    "id": 22,
+    "description": "German - Advanced C1"
+  },
+  {
+    "id": 23,
+    "description": "German - Expert C2"
+  },
+  {
+    "id": 24,
+    "description": "Italian - Beginner A1"
+  },
+  {
+    "id": 25,
+    "description": "Italian - Elementary A2"
+  },
+  {
+    "id": 26,
+    "description": "Italian - Intermediate B1"
+  },
+  {
+    "id": 27,
+    "description": "Italian - Upper Intermediate B2"
+  },
+  {
+    "id": 28,
+    "description": "Italian - Advanced C1"
+  },
+  {
+    "id": 29,
+    "description": "Italian - Expert C2"
+  },
+  {
+    "id": 30,
+    "description": "Portuguese - Beginner A1"
+  },
+  {
+    "id": 31,
+    "description": "Portuguese - Elementary A2"
+  },
+  {
+    "id": 32,
+    "description": "Portuguese - Intermediate B1"
+  },
+  {
+    "id": 33,
+    "description": "Portuguese - Upper Intermediate B2"
+  },
+  {
+    "id": 34,
+    "description": "Portuguese - Advanced C1"
+  },
+  {
+    "id": 35,
+    "description": "Portuguese - Expert C2"
+  },
+  {
+    "id": 36,
+    "description": "Dutch - Beginner A1"
+  },
+  {
+    "id": 37,
+    "description": "Dutch - Elementary A2"
+  },
+  {
+    "id": 38,
+    "description": "Dutch - Intermediate B1"
+  },
+  {
+    "id": 39,
+    "description": "Dutch - Upper Intermediate B2"
+  },
+  {
+    "id": 40,
+    "description": "Dutch - Advanced C1"
+  },
+  {
+    "id": 41,
+    "description": "Dutch - Expert C2"
+  },
+  {
+    "id": 42,
+    "description": "Russian - Beginner A1"
+  },
+  {
+    "id": 43,
+    "description": "Russian - Elementary A2"
+  },
+  {
+    "id": 44,
+    "description": "Russian - Intermediate B1"
+  },
+  {
+    "id": 45,
+    "description": "Russian - Upper Intermediate B2"
+  },
+  {
+    "id": 46,
+    "description": "Russian - Advanced C1"
+  },
+  {
+    "id": 47,
+    "description": "Russian - Expert C2"
+  },
+  {
+    "id": 48,
+    "description": "Swedish - Beginner A1"
+  },
+  {
+    "id": 49,
+    "description": "Swedish - Elementary A2"
+  },
+  {
+    "id": 50,
+    "description": "Swedish - Intermediate B1"
+  },
+  {
+    "id": 51,
+    "description": "Swedish - Upper Intermediate B2"
+  },
+  {
+    "id": 52,
+    "description": "Swedish - Advanced C1"
+  },
+  {
+    "id": 53,
+    "description": "Swedish - Expert C2"
+  },
+  {
+    "id": 54,
+    "description": "Hungarian - Beginner A1"
+  },
+  {
+    "id": 55,
+    "description": "Hungarian - Elementary A2"
+  },
+  {
+    "id": 56,
+    "description": "Hungarian - Intermediate B1"
+  },
+  {
+    "id": 57,
+    "description": "Hungarian - Upper Intermediate B2"
+  },
+  {
+    "id": 58,
+    "description": "Hungarian - Advanced C1"
+  },
+  {
+    "id": 59,
+    "description": "Hungarian - Expert C2"
+  },
+  {
+    "id": 60,
+    "description": "Czech - Beginner A1"
+  },
+  {
+    "id": 61,
+    "description": "Czech - Elementary A2"
+  },
+  {
+    "id": 62,
+    "description": "Czech - Intermediate B1"
+  },
+  {
+    "id": 63,
+    "description": "Czech - Upper Intermediate B2"
+  },
+  {
+    "id": 64,
+    "description": "Czech - Advanced C1"
+  },
+  {
+    "id": 65,
+    "description": "Czech - Expert C2"
+  },
+  {
+    "id": 66,
+    "description": "Greek - Beginner A1"
+  },
+  {
+    "id": 67,
+    "description": "Greek - Elementary A2"
+  },
+  {
+    "id": 68,
+    "description": "Greek - Intermediate B1"
+  },
+  {
+    "id": 69,
+    "description": "Greek - Upper Intermediate B2"
+  },
+  {
+    "id": 70,
+    "description": "Greek - Advanced C1"
+  },
+  {
+    "id": 71,
+    "description": "Greek - Expert C2"
+  }
+]

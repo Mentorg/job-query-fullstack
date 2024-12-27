@@ -1,0 +1,312 @@
+[
+  {
+    "id": 0,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 0,
+    "subscription_id": 5
+  },
+  {
+    "id": 1,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 1,
+    "subscription_id": 5
+  },
+  {
+    "id": 2,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 2,
+    "subscription_id": 5
+  },
+  {
+    "id": 3,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 3,
+    "subscription_id": 5
+  },
+  {
+    "id": 4,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 4,
+    "subscription_id": 5
+  },
+  {
+    "id": 5,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 5,
+    "subscription_id": 5
+  },
+  {
+    "id": 6,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 6,
+    "subscription_id": 5
+  },
+  {
+    "id": 7,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 7,
+    "subscription_id": 5
+  },
+  {
+    "id": 8,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 8,
+    "subscription_id": 5
+  },
+  {
+    "id": 9,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 9,
+    "subscription_id": 5
+  },
+  {
+    "id": 10,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 10,
+    "subscription_id": 5
+  },
+  {
+    "id": 11,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 11,
+    "subscription_id": 5
+  },
+  {
+    "id": 12,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 12,
+    "subscription_id": 5
+  },
+  {
+    "id": 13,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 13,
+    "subscription_id": 5
+  },
+  {
+    "id": 14,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 14,
+    "subscription_id": 5
+  },
+  {
+    "id": 15,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 15,
+    "subscription_id": 5
+  },
+  {
+    "id": 16,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 16,
+    "subscription_id": 5
+  },
+  {
+    "id": 17,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 17,
+    "subscription_id": 5
+  },
+  {
+    "id": 18,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 18,
+    "subscription_id": 5
+  },
+  {
+    "id": 19,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 19,
+    "subscription_id": 5
+  },
+  {
+    "id": 20,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 20,
+    "subscription_id": 5
+  },
+  {
+    "id": 21,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 21,
+    "subscription_id": 5
+  },
+  {
+    "id": 22,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 22,
+    "subscription_id": 5
+  },
+  {
+    "id": 23,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 23,
+    "subscription_id": 5
+  },
+  {
+    "id": 24,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 24,
+    "subscription_id": 5
+  },
+  {
+    "id": 25,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 25,
+    "subscription_id": 5
+  },
+  {
+    "id": 26,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 26,
+    "subscription_id": 5
+  },
+  {
+    "id": 27,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 27,
+    "subscription_id": 5
+  },
+  {
+    "id": 28,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 28,
+    "subscription_id": 5
+  },
+  {
+    "id": 29,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 29,
+    "subscription_id": 5
+  },
+  {
+    "id": 30,
+    "start_date": "2023-01-01",
+    "end_date": "2024-01-01",
+    "status": "expired",
+    "created_at": "2023-01-01 00:00:00",
+    "updated_at": "2023-01-01 00:00:00",
+    "company_id": 30,
+    "subscription_id": 5
+  }
+]

@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+li {
+  list-style-type: none;
+}
+
+.authentication {
+  background-image: url("../public/logo-bg.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 100dvh;
+  background-size: auto;
+  padding: 2.5rem;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: minmax(10px, 0.5fr) minmax(150px, 1fr) minmax(
+      150px,
+      1fr
+    ) minmax(150px, 2fr) minmax(150px, 1fr) minmax(10px, 0.25fr);
+  /* width: 100%; */
+}
+
+.applications {
+  display: grid;
+  grid-template-columns: minmax(10px, 0.5fr) minmax(150px, 1fr) minmax(
+      150px,
+      1.25fr
+    ) minmax(150px, 1.75fr) minmax(150px, 1fr) minmax(150px, 0.75fr) minmax(
+      10px,
+      0.25fr
+    );
+  /* width: 100%; */
+}
+
+.companies {
+  display: grid;
+  grid-template-columns: minmax(10px, 0.5fr) minmax(150px, 1fr) minmax(
+      150px,
+      1.25fr
+    ) minmax(150px, 1.75fr) minmax(150px, 1fr) minmax(150px, 0.75fr) minmax(
+      10px,
+      0.25fr
+    );
+}
+
+.jobs {
+  display: grid;
+  grid-template-columns: minmax(10px, 0.5fr) minmax(150px, 1.67fr) minmax(
+      100px,
+      1fr
+    ) minmax(100px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(
+      125px,
+      0.75fr
+    ) minmax(10px, 0.25fr);
+}
+
+.billing {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.75fr 0.25fr;
+  grid-template-columns: minmax(10px, 0.5fr) minmax(150px, 1.67fr) minmax(
+      50px,
+      0.75fr
+    ) minmax(100px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(
+      150px,
+      1fr
+    ) minmax(100px, 0.75fr) minmax(10px, 0.25fr);
+}
+
+@media (orientation: landscape) {
+  .authentication\:min-h-\[40rem\] {
+    min-height: 40rem /* 640px */;
+  }
+}

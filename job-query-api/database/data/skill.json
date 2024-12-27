@@ -1,0 +1,250 @@
+[
+  {
+    "id": 0,
+    "description": "HTML"
+  },
+  {
+    "id": 1,
+    "description": "CSS"
+  },
+  {
+    "id": 2,
+    "description": "Javascript"
+  },
+  {
+    "id": 3,
+    "description": "GitHub"
+  },
+  {
+    "id": 4,
+    "description": "PHP"
+  },
+  {
+    "id": 5,
+    "description": "Node.Js"
+  },
+  {
+    "id": 6,
+    "description": "Git"
+  },
+  {
+    "id": 7,
+    "description": "Laravel"
+  },
+  {
+    "id": 8,
+    "description": "React"
+  },
+  {
+    "id": 9,
+    "description": "Python"
+  },
+  {
+    "id": 10,
+    "description": "Ruby"
+  },
+  {
+    "id": 11,
+    "description": "Java"
+  },
+  {
+    "id": 12,
+    "description": "C#"
+  },
+  {
+    "id": 13,
+    "description": "Go"
+  },
+  {
+    "id": 14,
+    "description": "SQL"
+  },
+  {
+    "id": 15,
+    "description": "Swift"
+  },
+  {
+    "id": 16,
+    "description": "TypeScript"
+  },
+  {
+    "id": 17,
+    "description": "Data Analysis"
+  },
+  {
+    "id": 18,
+    "description": "Machine Learning"
+  },
+  {
+    "id": 19,
+    "description": "R"
+  },
+  {
+    "id": 20,
+    "description": "Tableau"
+  },
+  {
+    "id": 21,
+    "description": "Excel"
+  },
+  {
+    "id": 22,
+    "description": "Power BI"
+  },
+  {
+    "id": 23,
+    "description": "UI/UX Design"
+  },
+  {
+    "id": 24,
+    "description": "Adobe Photoshop"
+  },
+  {
+    "id": 25,
+    "description": "Adobe Illustrator"
+  },
+  {
+    "id": 26,
+    "description": "Sketch"
+  },
+  {
+    "id": 27,
+    "description": "Figma"
+  },
+  {
+    "id": 28,
+    "description": "InVision"
+  },
+  {
+    "id": 29,
+    "description": "Agile Methodologies"
+  },
+  {
+    "id": 30,
+    "description": "Scrum"
+  },
+  {
+    "id": 31,
+    "description": "Kanban"
+  },
+  {
+    "id": 32,
+    "description": "Trello"
+  },
+  {
+    "id": 33,
+    "description": "Asana"
+  },
+  {
+    "id": 34,
+    "description": "Jira"
+  },
+  {
+    "id": 35,
+    "description": "SEO"
+  },
+  {
+    "id": 36,
+    "description": "Content Marketing"
+  },
+  {
+    "id": 37,
+    "description": "Social Media Marketing"
+  },
+  {
+    "id": 38,
+    "description": "Google Analytics"
+  },
+  {
+    "id": 39,
+    "description": "PPC Advertising"
+  },
+  {
+    "id": 40,
+    "description": "Email Marketing"
+  },
+  {
+    "id": 41,
+    "description": "Technical Writing"
+  },
+  {
+    "id": 42,
+    "description": "Copywriting"
+  },
+  {
+    "id": 43,
+    "description": "Blogging"
+  },
+  {
+    "id": 44,
+    "description": "Public Speaking"
+  },
+  {
+    "id": 45,
+    "description": "Editing & Proofreading"
+  },
+  {
+    "id": 46,
+    "description": "AWS"
+  },
+  {
+    "id": 47,
+    "description": "Azure"
+  },
+  {
+    "id": 48,
+    "description": "Docker"
+  },
+  {
+    "id": 49,
+    "description": "Kubernetes"
+  },
+  {
+    "id": 50,
+    "description": "Cybersecurity"
+  },
+  {
+    "id": 51,
+    "description": "Networking Protocols"
+  },
+  {
+    "id": 52,
+    "description": "Communication"
+  },
+  {
+    "id": 53,
+    "description": "Teamwork"
+  },
+  {
+    "id": 54,
+    "description": "Problem-Solving"
+  },
+  {
+    "id": 55,
+    "description": "Leadership"
+  },
+  {
+    "id": 56,
+    "description": "Time Management"
+  },
+  {
+    "id": 57,
+    "description": "Adaptability"
+  },
+  {
+    "id": 58,
+    "description": "Foreign Languages"
+  },
+  {
+    "id": 59,
+    "description": "Sales"
+  },
+  {
+    "id": 60,
+    "description": "Customer Service"
+  },
+  {
+    "id": 61,
+    "description": "Event Planning"
+  }
+]
