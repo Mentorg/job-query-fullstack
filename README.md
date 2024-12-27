@@ -57,12 +57,20 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    Copy the `.env.example` file to a new `.env` file:
 
    ```bash
-   cp .env.example .env
+   copy .env.example .env
    ```
 
    Edit the `.env` file if necessary (e.g., set up your database credentials).
 
-4. **Install Composer dependencies**:
+4. **Generate the application key**:
+
+   Run the following command to generate a new application key for Laravel:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Install Composer dependencies**:
 
    Run the following command to install the necessary PHP dependencies:
 
@@ -70,7 +78,7 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    composer install
    ```
 
-5. **Run Migrations**:
+6. **Run Migrations**:
 
    Run the following command to create the necessary tables in your database based on your migration files:
 
@@ -78,7 +86,7 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    php artisan migrate
    ```
 
-6. **Run Seeders**:
+7. **Run Seeders**:
 
    Run the following command to seed the database using the seeders defined in `DatabaseSeeder.php`:
 
@@ -92,7 +100,7 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    php artisan migrate --seed
    ```
 
-7. **Start the Laravel server**:
+8. **Start the Laravel server**:
 
    Run the following command to start the Laravel API server:
 
