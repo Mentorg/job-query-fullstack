@@ -21,16 +21,25 @@ function Applicant() {
   const { user } = useAuth();
   const { applicant, isPending, error } = useGetApplicant();
 
-  const avatarUrl =
-    user?.avatar !== null
-      ? `${import.meta.env.VITE_REACT_APP_API_URL}/avatars/${user?.avatar}`
-      : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  let avatar;
+
+  if (user?.avatar) {
+    if (user?.role === "admin") {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+    } else if (user?.avatar.includes("avatars")) {
+      avatar = `http://127.0.0.1:8000/storage/${user?.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user?.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  }
 
   return (
     <div className="flex w-full flex-col gap-y-10 px-6 py-4 md:px-10 lg:px-12 xl:px-14">
       <div className="mt-10 flex flex-col items-center justify-center">
         <img
-          src={avatarUrl}
+          src={avatar}
           alt="User's avatar"
           className="h-[5rem] w-[5rem] rounded-full"
         />
@@ -59,23 +68,18 @@ function Applicant() {
         <div className="flex flex-wrap justify-between gap-10 rounded-md bg-slate-100 px-5 py-6">
           <div className="flex flex-col">
             <p className="font-medium">Email Address</p>
-            <p className="text-sm">
-              {user?.email ? user?.email : "No email provided"}
-            </p>
+            <p className="text-sm">{user?.email}</p>
           </div>
           <div className="flex flex-col">
             <p className="font-medium">Phone Number</p>
             <p className="text-sm">
-              {user?.phone ? user?.phone : "No phone number provided"}
+              {user?.phone || "No phone number provided"}
             </p>
           </div>
           <div className="flex flex-col">
             <p className="font-medium">LinkedIn Profile</p>
             <p className="text-sm">
-              @
-              {user?.linkedinProfile
-                ? user?.linkedinProfile
-                : "No profile provided"}
+              @{user?.linkedinProfile || "No profile provided"}
             </p>
           </div>
           <div className="flex flex-col">
@@ -89,7 +93,7 @@ function Applicant() {
           <div className="flex flex-col">
             <p className="font-medium">Time Zone</p>
             <p className="text-sm">
-              {user?.timezone ? user?.timezone : "No time zone provided"}
+              {user?.timezone || "No time zone provided"}
             </p>
           </div>
         </div>

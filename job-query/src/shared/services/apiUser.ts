@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import axiosInstance from "./axiosConfig";
-import { CreateRecruiter, Recruiter, User } from "../types/user";
+import { Recruiter, User } from "../types/user";
 import { NotificationSettings } from "../types/notification_settings";
 import { CreateEducation, Education } from "../types/education";
 import { UpdateLanguages, UpdateSkills } from "../types/ability";
@@ -20,11 +20,16 @@ export const getUsers = async () => {
 };
 
 // create
-export const createRecruiter = async (userData: CreateRecruiter) => {
+export const createRecruiter = async (userData: FormData) => {
   try {
     const response = await axiosInstance.post(
       `/api/v1/register?recruiterRegistration=true`,
       userData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      },
     );
     return response.data;
   } catch (error) {

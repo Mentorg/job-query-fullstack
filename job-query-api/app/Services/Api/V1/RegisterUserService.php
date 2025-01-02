@@ -5,22 +5,35 @@ namespace App\Services\Api\V1;
 use App\Http\Resources\V1\UserResource;
 use App\Models\Applicant;
 use App\Models\Company;
+use App\Models\Location;
 use App\Models\Recruiter;
 use App\Models\User;
 
 class RegisterUserService
 {
-  public function create(array $fields)
+  public function create(array $fields, $request)
   {
+    if ($request->hasFile('avatar')) {
+      $fields['avatar'] = $request->file('avatar')->store('avatars', 'public');
+    }
+
+    $locationId = $fields['location'];
+    $location = Location::findOrFail($locationId);
+
     $user = User::create([
+      'avatar' => $fields['avatar'],
       'name' => $fields['name'],
       'email' => $fields['email'],
       'password' => bcrypt($fields['password']),
-      'role' => request()->has('recruiterRegistration') ? 'recruiter' : 'applicant',
+      'role' => $request->has('recruiterRegistration') ? 'recruiter' : 'applicant',
+      'phone' => $fields['phone'] ?? null,
+      'linkedin_profile' => $fields['linkedin_profile'] ?? null,
+      'timezone' => $fields['timezone'] ?? null,
+      'language' => $fields['language'] ?? null,
+      'location_id' => $location->id,
     ]);
 
-    $isRecruiter = request()->get('recruiterRegistration') === 'true';
-
+    $isRecruiter = $request->get('recruiterRegistration') === 'true';
     $role = $isRecruiter ? 'recruiter' : 'applicant';
     $user->assignRole($role);
 
@@ -30,7 +43,7 @@ class RegisterUserService
       $this->createApplicant($user);
     }
 
-    $token = $user->createToken(request()->name);
+    $token = $user->createToken($request->name);
 
     return [
       'user' => new UserResource($user),

@@ -9,19 +9,25 @@ type UserDetailsProps = {
 };
 
 function UserDetails({ resource }: UserDetailsProps) {
-  const avatarUrl = resource?.avatar
-    ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${resource?.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
-  const adminAvatarUrl = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+  let avatar;
+
+  if (resource.avatar) {
+    if (resource.role === "admin") {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+    } else if (resource.avatar.includes("avatars")) {
+      avatar = `http://127.0.0.1:8000/storage/${resource.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${resource.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  }
 
   return (
     <>
       <div className="flex flex-col items-center justify-between gap-x-10 lg:flex-row">
         <div className="flex w-full flex-row gap-4">
-          <img
-            src={resource?.role === "admin" ? adminAvatarUrl : avatarUrl}
-            alt="User's avatar"
-          />
+          <img src={avatar} alt="User's avatar" />
           <div className="flex flex-col gap-y-2 xs:flex-row md:mx-4">
             <div className="flex w-max flex-col">
               <div className="flex items-center">
@@ -60,7 +66,9 @@ function UserDetails({ resource }: UserDetailsProps) {
           </div>
           <div className="flex flex-col">
             <p className="font-medium">Phone</p>
-            <p className="text-slate-700">{resource.phone}</p>
+            <p className="text-slate-700">
+              {resource.phone || "No phone number provided"}
+            </p>
           </div>
           <div className="flex flex-col">
             <p className="font-medium">Location</p>
@@ -70,7 +78,9 @@ function UserDetails({ resource }: UserDetailsProps) {
           </div>
           <div className="flex flex-col">
             <p className="font-medium">Time zone</p>
-            <p className="text-slate-700">{resource.timezone}</p>
+            <p className="text-slate-700">
+              {resource.timezone || "No time zone provided"}
+            </p>
           </div>
         </div>
       </div>

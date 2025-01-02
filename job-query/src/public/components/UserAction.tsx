@@ -21,10 +21,19 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
   const { handleOpenAction } = useActionsService();
   const logout = useLogout();
 
-  const adminAvatarUrl = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
-  const avatarUrl = user?.avatar
-    ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  let avatar;
+
+  if (user?.avatar) {
+    if (user?.role === "admin") {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+    } else if (user?.avatar.includes("avatars")) {
+      avatar = `http://127.0.0.1:8000/storage/${user?.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user?.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  }
 
   const userRole = user?.role;
 
@@ -40,7 +49,7 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
       >
         {menu === "userMenu" && (
           <img
-            src={user?.role === "admin" ? adminAvatarUrl : avatarUrl}
+            src={avatar}
             alt="Logged in user avatar"
             className="h-full w-full rounded-full"
           />

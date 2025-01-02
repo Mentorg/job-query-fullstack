@@ -20,13 +20,19 @@ class RegisterUserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
+            'location' => 'required|exists:locations,id',
             'companies' => Rule::requiredIf($request->get('recruiterRegistration') === 'true'),
+            'phone' => 'nullable|string|max:20',
+            'linkedin_profile' => 'nullable|string|max:255',
+            'timezone' => 'nullable|string|max:255',
+            'language' => 'nullable|string|max:255',
         ]);
 
-        $createdUser = $this->registerUserService->create($validated);
+        $createdUser = $this->registerUserService->create($validated, $request);
 
         return $createdUser
             ? ResponseHelper::successResponse($createdUser, 'User created successfully.')

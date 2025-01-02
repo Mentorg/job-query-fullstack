@@ -1,30 +1,18 @@
 import axios, { AxiosError } from "axios";
+import axiosInstance from "./axiosConfig";
 
 type LoginProps = {
   email: string;
   password: string;
 };
 
-type SignupProps = {
-  name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-};
-
-export const signup = async (credentials: SignupProps) => {
+export const signup = async (credentials: FormData) => {
   try {
-    const response = await axios.post(
-      `${import.meta.env.VITE_REACT_APP_API_BASE_URL}/api/v1/register`,
-      credentials,
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
+    const response = await axiosInstance.post(`/api/v1/register`, credentials, {
+      headers: {
+        "Content-Type": "multipart/form-data",
       },
-    );
+    });
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {

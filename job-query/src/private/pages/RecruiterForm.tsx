@@ -7,18 +7,39 @@ import Loading from "../../shared/components/ui/Loading";
 import { useCreateRecruiter } from "../features/profiles/hooks/useCreateRecruiter";
 import { useGetCompanies } from "../features/profiles/hooks/useGetCompanies";
 import { Company } from "../../shared/types/company";
+import { useGetLocations } from "../hooks/useGetLocations";
+import { Location } from "../../shared/types/location";
 
 function RecruiterForm() {
-  const { form, errors, handleChange, handleSubmit, isSubmitted } =
-    useCreateRecruiter();
-  const { companies, isPending, error } = useGetCompanies();
+  const {
+    form,
+    errors,
+    handleChange,
+    handleFileChange,
+    handleSubmit,
+    isSubmitted,
+  } = useCreateRecruiter();
+  const {
+    companies,
+    isPending: isPendingCompanies,
+    error: companiesError,
+  } = useGetCompanies();
+  const {
+    locations,
+    isPending: isPendingLocations,
+    error: locationsError,
+  } = useGetLocations();
 
-  if (isPending) {
+  if (isPendingCompanies || isPendingLocations) {
     return <Loading />;
   }
 
-  if (error) {
-    return <div>Failed to fetch companies!</div>;
+  if (companiesError || locationsError) {
+    return (
+      <div>
+        Error fetching {companiesError ? "companies" : "locations"} data
+      </div>
+    );
   }
 
   return (
@@ -34,6 +55,15 @@ function RecruiterForm() {
           className="flex flex-col items-center gap-5 md:w-auto lg:w-auto"
         >
           <div className="flex flex-col gap-y-2">
+            <div className="mt-4 flex flex-col gap-y-2">
+              <Label htmlFor="avatar">Avatar</Label>
+              <input
+                type="file"
+                name="avatar"
+                accept="image/png, image/jpg, image/jpeg, image/svg+xml"
+                onChange={handleFileChange}
+              />
+            </div>
             <div className="mt-4 flex flex-col gap-y-2">
               <Label htmlFor="name">Full Name</Label>
               <TextField
@@ -77,6 +107,26 @@ function RecruiterForm() {
                 errors={errors}
                 hasError={isSubmitted && !!errors.password_confirmation}
               />
+            </div>
+            <div className="mt-4 flex flex-col gap-y-2">
+              <Label htmlFor="location">Location</Label>
+              <Select
+                name="location"
+                value={form.location}
+                onChange={handleChange}
+                errors={errors}
+                hasError={isSubmitted && !!errors.location}
+              >
+                {locations.length > 0 ? (
+                  locations.map((location: Location) => (
+                    <Option value={location.id} key={location.id}>
+                      {location.city}, {location.code}
+                    </Option>
+                  ))
+                ) : (
+                  <Option value="">No locations available</Option>
+                )}
+              </Select>
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
               <Label htmlFor="companies">Company</Label>

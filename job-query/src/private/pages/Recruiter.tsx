@@ -28,9 +28,19 @@ function Recruiter() {
     error: recruiterTeamError,
   } = useGetRecruiterTeam();
 
-  const avatarUrl = user?.avatar
-    ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user?.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar`;
+  let avatar;
+
+  if (user?.avatar) {
+    if (user?.role === "admin") {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+    } else if (user?.avatar.includes("avatars")) {
+      avatar = `http://127.0.0.1:8000/storage/${user?.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user?.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  }
 
   return (
     <div className="flex w-full flex-col gap-y-10 px-6 py-4 md:px-10 lg:px-12 xl:px-14">
@@ -45,7 +55,7 @@ function Recruiter() {
         <>
           <div className="mt-10 flex flex-col items-center justify-center">
             <img
-              src={avatarUrl}
+              src={avatar}
               alt="User's avatar"
               className="h-[5rem] w-[5rem] rounded-full"
             />
@@ -76,12 +86,18 @@ function Recruiter() {
               <div className="flex w-full flex-col gap-y-4">
                 <div className="flex w-full flex-col">
                   <h2 className="text-lg font-medium">Experience</h2>
-                  <p className="mt-4 leading-8">{recruiter?.expertise}</p>
+                  <p className="mt-4 leading-8">
+                    {recruiter?.expertise ||
+                      "No experience information provided"}
+                  </p>
                 </div>
                 <hr />
                 <div className="flex flex-col">
                   <h2 className="text-lg font-medium">About me</h2>
-                  <p className="mt-4 leading-8">{recruiter?.description}</p>
+                  <p className="mt-4 leading-8">
+                    {recruiter?.description ||
+                      "No description information provided"}
+                  </p>
                 </div>
               </div>
               <Modal>
@@ -104,7 +120,11 @@ function Recruiter() {
                 </div>
                 <div className="flex w-full items-center text-sm">
                   <FaPhoneAlt />
-                  <p className="ml-2">{user?.phone}</p>
+                  <p
+                    className={`${user?.phone ? "text-black" : "text-slate-400"} ml-2`}
+                  >
+                    {user?.phone || "No phone number provided"}
+                  </p>
                 </div>
                 <div className="flex w-full items-center text-sm">
                   <FaLocationDot />
@@ -114,7 +134,13 @@ function Recruiter() {
                 </div>
                 <div className="flex w-full items-center text-sm">
                   <FaLinkedin />
-                  <p className="ml-2">@{user?.linkedinProfile}</p>
+                  <p
+                    className={`${user?.linkedinProfile ? "text-black" : "text-slate-400"} ml-2`}
+                  >
+                    {user?.linkedinProfile
+                      ? `@${user?.linkedinProfile}`
+                      : "No LinkedIn link provided"}
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col gap-y-2">

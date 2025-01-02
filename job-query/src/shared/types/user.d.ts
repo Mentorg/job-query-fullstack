@@ -38,6 +38,8 @@ export type CreateRecruiter = {
   password: string;
   password_confirmation: string;
   companies: number;
+  avatar: string;
+  location: number;
 };
 
 export type CreateRecruiterErrors = {
@@ -47,6 +49,8 @@ export type CreateRecruiterErrors = {
   password: boolean | string | undefined;
   password_confirmation: boolean | string | undefined;
   companies: boolean | string | undefined;
+  avatar: boolean | string | undefined;
+  location: boolean | string | undefined;
 };
 
 export type Applicant = {
@@ -82,4 +86,30 @@ export type LocaleErrors = {
   language: string | boolean | undefined;
   timezone: string | boolean | undefined;
   currencyId: string | boolean | undefined;
+};
+
+export type SignupProps = {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+  avatar: string;
+  location: number;
+  phone?: string;
+  linkedin_profile?: string;
+  timezone?: string;
+  language?: string;
+};
+
+export type SignupErrors = {
+  name: boolean | string | undefined;
+  email: boolean | string | undefined;
+  password: boolean | string | undefined;
+  password_confirmation: boolean | string | undefined;
+  avatar: boolean | string | undefined;
+  location: boolean | string | undefined;
+  phone?: boolean | string | undefined;
+  linkedin_profile?: boolean | string | undefined;
+  timezone?: boolean | string | undefined;
+  language?: boolean | string | undefined;
 };

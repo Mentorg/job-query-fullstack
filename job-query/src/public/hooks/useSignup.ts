@@ -4,42 +4,44 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { signup, login } from "../../shared/services/apiAuth";
 import { useAuth } from "../../shared/context/AuthContext";
-import { registrationValidation as validation } from "../data/validation/signupValidation";
-
-type SignupProps = {
-  name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-};
-
-type FormError = {
-  name: boolean | string | undefined;
-  email: boolean | string | undefined;
-  password: boolean | string | undefined;
-  password_confirmation: boolean | string | undefined;
-};
+import { signupValidation as validation } from "../data/validation/signupValidation";
+import { SignupErrors, SignupProps } from "../../shared/types/user";
 
 export function useSignup() {
-  const [signupForm, setSignupForm] = useState<SignupProps>({
+  const [form, setForm] = useState<SignupProps>({
     name: "",
     email: "",
     password: "",
     password_confirmation: "",
+    avatar: "",
+    location: 0,
+    phone: "",
+    linkedin_profile: "",
+    timezone: "Canada/Atikokan",
+    language: "English",
   });
-  const [errors, setErrors] = useState<FormError>({
+
+  const [errors, setErrors] = useState<SignupErrors>({
     name: undefined,
     email: undefined,
     password: undefined,
     password_confirmation: undefined,
+    avatar: undefined,
+    location: undefined,
+    phone: undefined,
+    linkedin_profile: undefined,
+    timezone: undefined,
+    language: undefined,
   });
+
+  const [file, setFile] = useState<File | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
   const mutation = useMutation({
-    mutationFn: (credentials: SignupProps) => signup(credentials),
+    mutationFn: (formData: FormData) => signup(formData),
     onSuccess: async (data) => {
       if (!data || !data.data || !data.data.user || !data.data.token) {
         toast.error("Signup successful, but user data is missing.");
@@ -48,91 +50,106 @@ export function useSignup() {
 
       const { email, password } = {
         email: data.data.user.email,
-        password: signupForm.password,
+        password: form.password,
       };
 
-      try {
-        const loginData = await login({ email, password });
+      const loginData = await login({ email, password });
+      navigate("/");
 
-        console.log("Login Data:", loginData);
-        navigate("/");
-
-        if (!loginData || !loginData.user || !loginData.token) {
-          throw new Error("Login failed: Missing user or token in response.");
-        }
-
-        setUser(loginData.user);
-        localStorage.setItem("authToken", loginData.token);
-        localStorage.setItem("userId", loginData.user.id);
-        toast.success("Registration successful! Welcome aboard.");
-        console.log("Navigating to home...");
-      } catch (error) {
-        throw new Error("Unexpected error:");
+      if (!loginData || !loginData.user || !loginData.token) {
+        throw new Error("Login failed: Missing user or token in response.");
       }
-    },
 
+      setUser(loginData.user);
+      localStorage.setItem("authToken", loginData.token);
+      localStorage.setItem("userId", loginData.user.id);
+    },
     onError: (error) => {
-      toast.error(
-        "Oops! There was an issue with your registration. Please try again. " +
-          error.message,
-      );
+      throw new Error(`Error during signup mutation: ${error.message}`);
     },
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
-    const error = validation(name, value, signupForm);
+    const error = validation(name, value, form);
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
     }));
-    setSignupForm((prevData) => ({
+    setForm((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0] || null;
+    setFile(selectedFile);
+  };
+
   const validateForm = (): boolean => {
-    const newErrors: FormError = {
-      name: validation("name", signupForm.name),
-      email: validation("email", signupForm.email),
-      password: validation("password", signupForm.password),
+    const newErrors: SignupErrors = {
+      name: validation("name", form.name),
+      email: validation("email", form.email),
+      password: validation("password", form.password),
       password_confirmation: validation(
         "password_confirmation",
-        signupForm.password_confirmation,
-        signupForm,
+        form.password_confirmation,
+        form,
       ),
+      avatar: form.avatar ? validation("avatar", form.avatar) : "",
+      location: validation("location", form.location.toString()),
+      phone: validation("phone", form.phone || ""),
+      linkedin_profile: validation(
+        "linkedin_profile",
+        form.linkedin_profile || "",
+      ),
+      timezone: validation("timezone", form.timezone || ""),
+      language: validation("language", form.language || ""),
     };
 
     setErrors(newErrors);
+
     return !Object.values(newErrors).some((error) => error !== "");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
 
-    if (!validateForm()) {
-      console.log("Form validation failed:", errors);
-      return;
-    }
+    if (!validateForm()) return;
 
     const errorFields = Object.keys(errors).filter(
-      (field) => errors[field as keyof FormError],
+      (field) => errors[field as keyof SignupErrors],
     );
 
-    if (errorFields.length > 0) {
-      console.log("Error fields:", errorFields);
-      return;
+    if (errorFields.length > 0) return;
+
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("password", form.password);
+    formData.append("password_confirmation", form.password_confirmation);
+    formData.append("location", form.location.toString());
+    formData.append("phone", form.phone || "");
+    formData.append("linkedin_profile", form.linkedin_profile || "");
+    formData.append("timezone", form.timezone || "");
+    formData.append("language", form.language || "");
+
+    if (file) {
+      formData.append("avatar", file);
     }
 
-    mutation.mutate(signupForm);
+    mutation.mutate(formData);
   };
 
   return {
     errors,
-    signupForm,
+    form,
     handleChange,
+    handleFileChange,
     handleSubmit,
     isSubmitted,
   };
