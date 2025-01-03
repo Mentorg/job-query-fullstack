@@ -24,16 +24,24 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
     error: companyRecruitersError,
   } = useGetCompanyRecruiters(resource.id);
 
-  const avatarUrl = resource?.avatar
-    ? `http://127.0.0.1:8000/storage/${resource.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  let avatar;
+
+  if (resource.avatar) {
+    if (resource.avatar.includes("logos")) {
+      avatar = `http://127.0.0.1:8000/storage/${resource.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${resource.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  }
 
   return (
     <>
       <div className="flex flex-col items-center justify-between gap-x-10 lg:flex-row">
         <div className="flex w-full flex-col items-center gap-4">
           <img
-            src={avatarUrl}
+            src={avatar}
             alt={`${resource.name}'s avatar`}
             className="w-[4rem] rounded-full"
           />
@@ -123,8 +131,10 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
                   <img
                     src={
                       record.avatar
-                        ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${record.avatar}`
-                        : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar`
+                        ? record.avatar.includes("avatars")
+                          ? `http://127.0.0.1:8000/storage/${record.avatar}`
+                          : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${record.avatar}`
+                        : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`
                     }
                     alt="Recruiter's avatar"
                     className="w-fit"
@@ -159,11 +169,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
                 >
                   <div className="flex flex-row items-center gap-4">
                     <img
-                      src={
-                        record.company.avatar
-                          ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${record.company.avatar}`
-                          : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo`
-                      }
+                      src={avatar}
                       alt={`${record.company.name}'s logo`}
                       className="h-20 w-20"
                     />
@@ -193,7 +199,9 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
                 </div>
               ))
             ) : (
-              <p>No job advertisements available</p>
+              <div className="flex w-full justify-center">
+                <p>No job advertisements available</p>
+              </div>
             )}
           </div>
         </div>

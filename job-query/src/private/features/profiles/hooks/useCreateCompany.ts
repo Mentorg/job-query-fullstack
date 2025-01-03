@@ -97,8 +97,8 @@ export function useCreateCompany() {
       locations: validation("locations", form.locations),
       phone: validation("phone", form.phone),
       website: validation("website", form.website),
-      slug: validation("slug", form.website),
-      avatar: validation("avatar", form.website),
+      slug: validation("slug", form.slug),
+      avatar: validation("avatar", form.avatar),
     };
 
     setErrors(newErrors);
@@ -120,8 +120,6 @@ export function useCreateCompany() {
     );
     if (errorFields.length > 0) return;
 
-    console.log("Form data before submission:", form);
-
     const formData = new FormData();
     formData.append("name", form.name);
     formData.append("email", form.email);
@@ -139,12 +137,6 @@ export function useCreateCompany() {
     if (file) {
       formData.append("avatar", file);
     }
-
-    // Log FormData content
-    for (const [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
-
     mutation.mutate(formData);
   };
 

@@ -25,7 +25,7 @@ class StoreCompanyRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|string',
-            'description' => 'required|string|min:10|max:1000',
+            'description' => 'required|string|min:10|max:2500',
             'address' => 'required|string|min:5|max:30',
             'facebook' => 'required|string|min:3|max:20',
             'linkedin' => 'required|string|min:3|max:20',
