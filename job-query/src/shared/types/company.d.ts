@@ -44,6 +44,7 @@ export type UpdateCompany = {
   twitter: string;
   website: string;
   slug: string;
+  avatar: string;
   locations: Location[] | number[];
 };
 
@@ -56,6 +57,7 @@ type CompanyErrors = {
   phone: boolean | string;
   website: boolean | string;
   slug: boolean | string;
+  avatar: boolean | string;
   facebook: boolean | string;
   linkedin: boolean | string;
   twitter: boolean | string;

@@ -61,7 +61,7 @@ class CompanyController extends Controller implements HasMiddleware
     {
         $this->authorize('update', $company);
 
-        $updatedCompany = $this->companyService->update($company, $request->validated());
+        $updatedCompany = $this->companyService->update($company, $request->validated(), $request->file('avatar'));
 
         return $updatedCompany
             ? ResponseHelper::successResponse($updatedCompany, 'Company updated successfully.')

@@ -10,7 +10,7 @@ interface CompanyServiceInterface
 
   public function getById($company);
 
-  public function update($company, array $fields);
+  public function update($company, array $fields, $avatar);
 
   public function delete($company);
 

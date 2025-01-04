@@ -2,13 +2,13 @@ import Label from "../../../../../shared/components/form/Label";
 import TextField from "../../../../../shared/components/form/TextField";
 import TextArea from "../../../../../shared/components/form/TextArea";
 import Button from "../../../../../shared/components/ui/Button";
-import { useUpdateCompany } from "../../hooks/useUpdateCompany";
-import { Company } from "../../../../../shared/types/company";
-import { useGetLocations } from "../../../../hooks/useGetLocations";
 import Select from "../../../../../shared/components/form/Select";
-import { Location } from "../../../../../shared/types/location";
 import Option from "../../../../../shared/components/form/Option";
 import Loading from "../../../../../shared/components/ui/Loading";
+import { useUpdateCompany } from "../../hooks/useUpdateCompany";
+import { useGetLocations } from "../../../../hooks/useGetLocations";
+import { Company } from "../../../../../shared/types/company";
+import { Location } from "../../../../../shared/types/location";
 
 type UpdateCompanyProps = {
   profile: Company;
@@ -16,8 +16,14 @@ type UpdateCompanyProps = {
 };
 
 function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
-  const { form, errors, handleChange, handleSubmit, isSubmitted } =
-    useUpdateCompany(profile);
+  const {
+    form,
+    errors,
+    handleChange,
+    handleFileChange,
+    handleSubmit,
+    isSubmitted,
+  } = useUpdateCompany(profile);
   const { locations, isPending, error } = useGetLocations();
 
   if (isPending) return <Loading />;
@@ -44,7 +50,34 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
           </Button>
         </div>
         <div className="mt-5 flex flex-col gap-10 md:w-auto lg:w-fit">
-          <div className="flex flex-col 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
+          <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
+            <div className="w-max">
+              <h2 className="font-medium">Company Logo</h2>
+            </div>
+            <div className="mt-4 flex w-full flex-col gap-4">
+              <img
+                src={
+                  profile.avatar
+                    ? profile.avatar.includes("logos")
+                      ? `http://127.0.0.1:8000/storage/${form.avatar}`
+                      : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${profile.avatar}`
+                    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`
+                }
+                alt="Company's logo"
+                className="w-[4rem] rounded-full"
+              />
+              <div className="flex flex-col">
+                <input
+                  type="file"
+                  name="avatar"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  className="w-full cursor-pointer rounded border bg-white text-sm font-semibold text-gray-400 file:mr-4 file:cursor-pointer file:border-0 file:bg-gray-100 file:px-4 file:py-3 file:text-gray-500 file:hover:bg-gray-200"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
               <h2 className="font-medium">Company Name</h2>
             </div>
@@ -74,7 +107,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
+          <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
               <h2 className="font-medium">Company Overview</h2>
             </div>
@@ -90,7 +123,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
+          <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
               <h2 className="font-medium">Contact</h2>
             </div>

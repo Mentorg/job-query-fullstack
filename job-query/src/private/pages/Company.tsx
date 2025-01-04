@@ -10,18 +10,26 @@ import { FaLocationDot } from "react-icons/fa6";
 import { LuPenLine } from "react-icons/lu";
 import Modal from "../context/Modal";
 import Menus from "../context/Menus";
-import Loading from "../../shared/components/ui/Loading";
 import UpdateCompany from "../features/profiles/components/company/UpdateCompany";
+import Loading from "../../shared/components/ui/Loading";
+import Fallback from "../../shared/components/ui/Fallback";
 import { useGetRecruiterCompany } from "../features/profiles/hooks/useGetRecruiterCompany";
 import { Location } from "../../shared/types/location";
-import Fallback from "../../shared/components/ui/Fallback";
 
 function Company() {
   const { recruiterCompany, isPending, error } = useGetRecruiterCompany();
 
-  const avatarUrl = recruiterCompany?.avatar
-    ? `${import.meta.env.VITE_REACT_APP_API_URL}/logos/${recruiterCompany.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  let avatar;
+
+  if (recruiterCompany?.avatar) {
+    if (recruiterCompany?.avatar.includes("logos")) {
+      avatar = `http://127.0.0.1:8000/storage/${recruiterCompany?.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${recruiterCompany?.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  }
 
   return (
     <div className="flex w-full flex-col gap-y-10 px-6 py-4 md:px-10 lg:px-12 xl:px-14">
@@ -37,7 +45,7 @@ function Company() {
           <div className="flex justify-between">
             <div className="mt-10 flex flex-col">
               <img
-                src={avatarUrl}
+                src={avatar}
                 alt={`${recruiterCompany?.name}'s logo`}
                 className="h-[5rem] w-[5rem] rounded-full"
               />

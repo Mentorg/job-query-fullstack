@@ -2,16 +2,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FaClock, FaHourglassEnd, FaLocationDot } from "react-icons/fa6";
 import { FaLaptop } from "react-icons/fa";
 import { HiMiniUserGroup } from "react-icons/hi2";
-import { Job } from "../../shared/types/job";
-import { useAuth } from "../../shared/context/AuthContext";
-import { formatDeadline } from "../../shared/utils/dateFormat";
 import Chip from "../../shared/components/ui/Chip";
 import Button from "../../shared/components/ui/Button";
 import Fallback from "../../shared/components/ui/Fallback";
 import Loading from "../../shared/components/ui/Loading";
+import { useAuth } from "../../shared/context/AuthContext";
 import { useCreateApplication } from "../hooks/useCreateApplication";
-import { Location } from "../../shared/types/location";
 import { useGetApplicantJobs } from "../../private/features/jobs/hooks/useGetApplicantJobs";
+import { formatDeadline } from "../../shared/utils/dateFormat";
+import { Job } from "../../shared/types/job";
+import { Location } from "../../shared/types/location";
 
 type JobProps = {
   job: Job;
@@ -25,10 +25,17 @@ function JobAdvertisement({ job }: JobProps) {
     user?.id ?? null,
   );
 
-  const avatarUrl =
-    job.company.avatar !== null
-      ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${job.company.avatar}`
-      : `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  let avatar;
+
+  if (job.company.avatar) {
+    if (job.company.avatar.includes("logos")) {
+      avatar = `http://127.0.0.1:8000/storage/${job.company.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${job.company.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/default-logo.svg`;
+  }
 
   return (
     <article
@@ -44,7 +51,7 @@ function JobAdvertisement({ job }: JobProps) {
           className="flex basis-2/6 flex-col place-items-center justify-center"
         >
           <img
-            src={avatarUrl}
+            src={avatar}
             alt={`${job.company.name}'s logo`}
             loading="lazy"
             className="h-16 w-16 rounded-full sm:h-24 sm:w-24 lg:h-28 lg:w-28"

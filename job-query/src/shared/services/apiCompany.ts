@@ -1,6 +1,5 @@
 import { AxiosError } from "axios";
 import axiosInstance from "./axiosConfig";
-import { UpdateCompany } from "../types/company";
 import { UpdateSubscription } from "../types/subscription";
 import { Billing } from "../types/billing";
 import { PaymentMethod } from "../types/payment_method";
@@ -40,12 +39,17 @@ export const createCompany = async (companyData: FormData) => {
 // update
 export const updateCompany = async (
   companyId: number,
-  companyData: Partial<UpdateCompany>,
+  companyData: FormData,
 ) => {
   try {
-    const response = await axiosInstance.put(
+    const response = await axiosInstance.post(
       `/api/v1/company/${Number(companyId)}`,
       companyData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      },
     );
     return response.data;
   } catch (error) {

@@ -13,6 +13,7 @@ use App\Models\Company;
 use App\Models\CompanySubscription;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CompanyService implements CompanyServiceInterface
 {
@@ -32,7 +33,7 @@ class CompanyService implements CompanyServiceInterface
       'linkedin' => $validated['linkedin'],
       'twitter' => $validated['twitter'],
       'website' => $validated['website'],
-      'avatar' => $validated['avatar'] ?? null,
+      'avatar' => $validated['avatar'],
       'slug' => $validated['slug'],
       'phone' => $validated['phone'],
     ];
@@ -85,11 +86,25 @@ class CompanyService implements CompanyServiceInterface
     return new CompanyResource($companyRecord);
   }
 
-  public function update($company, array $validated)
+  public function update($company, array $validated, $avatar = null)
   {
     DB::beginTransaction();
 
     try {
+      if ($avatar) {
+        if ($company->avatar && Storage::exists('public/' . $company->avatar)) {
+          Storage::delete('public/' . $company->avatar);
+        }
+
+        $file_name = time() . '.' . $avatar->extension();
+        $validated['avatar'] = 'logos/' . $file_name;
+        $avatar->storeAs('public/logos', $file_name);
+      } else {
+        if (empty($validated['avatar']) && $company->avatar) {
+          $validated['avatar'] = $company->avatar;
+        }
+      }
+
       $company->update($this->handleCompanyAttributes($validated));
 
       if (isset($validated['locations'])) {

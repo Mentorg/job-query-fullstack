@@ -50,7 +50,7 @@ Route::prefix('v1')->group(function () {
     Route::put('/company/{company}/locations', 'updateLocation');
     Route::post('/companies', 'store');
     Route::get('/company/{company}', 'show');
-    Route::put('/company/{company}', 'update')->middleware('auth:sanctum');
+    Route::post('/company/{company}', 'update')->middleware('auth:sanctum');
     Route::delete('/companies/{company}', 'destroy')->middleware('auth:sanctum');
     Route::get('/company/{company}/jobs', 'getCompanyJobs')->middleware('auth:sanctum');
     Route::get('/company/{company}/recruiters', 'getCompanyRecruiters')->middleware('auth:sanctum');

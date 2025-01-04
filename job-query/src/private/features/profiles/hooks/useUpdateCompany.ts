@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { updateCompany } from "../../../../shared/services/apiCompany";
 import { companyValidation as validation } from "../validation/companyValidation";
@@ -20,54 +19,59 @@ export function useUpdateCompany(company: UpdateCompany) {
     website: company.website,
     slug: company.slug,
     locations: company.locations
-      ? company.locations.every((loc) => typeof loc === "object" && "id" in loc)
-        ? company.locations.map((location) => location.id)
-        : []
+      ? company.locations.map((location) =>
+          typeof location === "object" && "id" in location
+            ? location.id
+            : location,
+        )
       : [],
+    avatar: company.avatar,
   });
 
   const [errors, setErrors] = useState<CompanyErrors>({
     name: "",
     email: "",
-    phone: "",
     description: "",
     address: "",
     facebook: "",
     linkedin: "",
     twitter: "",
+    locations: "",
+    phone: "",
     website: "",
     slug: "",
-    locations: "",
+    avatar: "",
   });
 
+  const [file, setFile] = useState<File | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: (form: UpdateCompany) => updateCompany(company.id, form),
+    mutationFn: (formData: FormData) => updateCompany(company.id, formData),
     onSuccess: () => {
-      console.log("Mutation succeeded");
       queryClient.invalidateQueries();
-      toast.success("Company data updated successfully.");
+      toast.success("Company updated successfully.");
     },
     onError: (error) => {
-      console.log("Mutation failed", error);
-      toast.error("Failed to update company data! Error: " + error.message);
+      toast.error("Failed to update company! Error: " + error.message);
     },
   });
 
   const handleChange = (
     e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
   ) => {
-    const { name, value } = e.target as HTMLInputElement;
+    const { name, value } = e.target;
+
     const error = validation(name, value);
     setErrors({ ...errors, [name]: error });
+
     let newValue;
     if (name === "locations") {
-      newValue = value.split(",").map((id) => Number(id));
-      console.log("Updated locations:", newValue);
+      newValue = Array.isArray(value) ? value.map(Number) : [Number(value)];
     } else {
       newValue = value;
     }
@@ -78,54 +82,73 @@ export function useUpdateCompany(company: UpdateCompany) {
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0] || null;
+    setFile(selectedFile);
+  };
+
   const validateForm = () => {
     const newErrors = {
       name: validation("name", form.name),
       email: validation("email", form.email),
-      phone: validation("phone", form.phone),
       description: validation("description", form.description),
       address: validation("address", form.address),
       facebook: validation("facebook", form.facebook),
       linkedin: validation("linkedin", form.linkedin),
       twitter: validation("twitter", form.twitter),
+      locations: validation("locations", form.locations),
+      phone: validation("phone", form.phone),
       website: validation("website", form.website),
       slug: validation("slug", form.slug),
-      locations: Array.isArray(form.locations)
-        ? validation("locations", form.locations.join(","))
-        : validation("locations", form.locations),
+      avatar: validation("avatar", form.avatar),
     };
 
-    setErrors(newErrors as CompanyErrors);
-
-    const isValid = Object.values(newErrors).every((error) => error === "");
-    return isValid;
+    setErrors(newErrors);
+    return Object.values(newErrors).every((error) => error === "");
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>,
+  ) => {
     e.preventDefault();
     setIsSubmitted(true);
 
-    if (!validateForm()) {
-      return;
+    if (!validateForm()) return;
+
+    const errorFields = Object.keys(errors).filter(
+      (field) => errors[field as keyof typeof errors],
+    );
+
+    if (errorFields.length > 0) return;
+
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("description", form.description);
+    formData.append("address", form.address);
+    formData.append("facebook", form.facebook);
+    formData.append("linkedin", form.linkedin);
+    formData.append("twitter", form.twitter);
+    formData.append("website", form.website);
+    formData.append("slug", form.slug);
+    formData.append("phone", form.phone);
+
+    form.locations.forEach((location) => {
+      formData.append("locations[]", location.toString());
+    });
+
+    if (file) {
+      formData.append("avatar", file);
     }
 
-    try {
-      await mutation.mutateAsync(form);
-      console.log("Submission successful!", form);
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        throw new Error(
-          error.response?.data.message || "Updating company failed!",
-        );
-      }
-      throw new Error("An unexpected error occurred!");
-    }
+    mutation.mutate(formData);
   };
 
   return {
     form,
     errors,
     handleChange,
+    handleFileChange,
     handleSubmit,
     isSubmitted,
   };
