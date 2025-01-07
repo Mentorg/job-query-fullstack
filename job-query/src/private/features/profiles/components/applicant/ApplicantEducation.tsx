@@ -6,7 +6,6 @@ import ConfirmDelete from "../../../../components/ConfirmDelete";
 import EditEducation from "./EditEducation";
 import { useDeleteEducation } from "../../hooks/useDeleteEducation";
 import { Education } from "../../../../../shared/types/education";
-import { formatDate } from "../../../../../shared/utils/dateFormat";
 
 type ApplicantEducationProps = {
   resource: Education;
@@ -36,7 +35,7 @@ function ApplicantEducation({ resource }: ApplicantEducationProps) {
         <div className="order-1 row-start-3 flex flex-col items-center self-baseline sm:order-2 sm:row-start-2 lg:col-start-3 lg:row-start-1 lg:place-self-center xl:col-start-3 xl:col-end-3">
           <p className="text-xs font-medium text-slate-400">Date</p>
           <p className="font-medium">
-            {formatDate(resource.dateStart)} - {formatDate(resource.dateEnd)}
+            {resource.dateStart} - {resource.dateEnd}
           </p>
         </div>
         <div className="order-2 row-start-3 flex flex-col items-center self-baseline sm:order-1 sm:row-start-2 lg:place-self-center xl:order-2 xl:col-start-4 xl:col-end-4 xl:row-start-1">

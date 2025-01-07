@@ -5,7 +5,7 @@ export const experienceValidation = (name: string, value: string) => {
   if (name === "title" && (!value || !/^[a-zA-Z\s]{2,}$/.test(value))) {
     return "Please enter a valid position title (minimum 2 characters)";
   }
-  if (name === "locationId" && (!value || value === "0")) {
+  if (name === "locationId" && !value) {
     return "Please select a location";
   }
   if (

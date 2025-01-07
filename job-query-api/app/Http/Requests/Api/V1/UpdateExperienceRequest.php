@@ -24,8 +24,8 @@ class UpdateExperienceRequest extends FormRequest
         return [
             'company' => 'required|string',
             'title' => 'required|string',
-            'dateStart' => 'required|string',
-            'dateEnd' => 'required|string',
+            'dateStart' => 'required|date_format:d.m.Y',
+            'dateEnd' => 'required|date_format:d.m.Y',
             'locationId' => 'required|exists:locations,id'
         ];
     }

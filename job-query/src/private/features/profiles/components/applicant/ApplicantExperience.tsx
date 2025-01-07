@@ -6,7 +6,6 @@ import Modal from "../../../../context/Modal";
 import Menus from "../../../../context/Menus";
 import ConfirmDelete from "../../../../components/ConfirmDelete";
 import EditExperience from "./EditExperience";
-import { formatDate } from "../../../../../shared/utils/dateFormat";
 import { useDeleteExperience } from "../../hooks/useDeleteEdxperience";
 import { Experience } from "../../../../../shared/types/experience";
 
@@ -38,7 +37,7 @@ function ApplicantExperience({ resource }: ApplicantExperienceProps) {
         <div className="flex flex-col text-center sm:text-right xl:text-left">
           <p className="text-sm font-medium text-slate-400">Date</p>
           <p className="text-base font-medium md:text-lg">
-            {formatDate(resource.dateStart)} - {formatDate(resource.dateEnd)}
+            {resource.dateStart} - {resource.dateEnd}
           </p>
         </div>
         <div className="flex sm:col-start-2 xl:col-start-4 xl:justify-center">
