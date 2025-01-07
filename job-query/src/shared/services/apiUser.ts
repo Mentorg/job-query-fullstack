@@ -40,11 +40,16 @@ export const createRecruiter = async (userData: FormData) => {
 };
 
 // update user data
-export const updateUser = async (userId: number, userData: Partial<User>) => {
+export const updateUser = async (userId: number, userData: FormData) => {
   try {
-    const response = await axiosInstance.put(
+    const response = await axiosInstance.post(
       `/api/v1/profile/${userId}`,
       userData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      },
     );
     return response.data;
   } catch (error) {

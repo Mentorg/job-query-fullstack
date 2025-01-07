@@ -27,7 +27,7 @@ Route::prefix('v1')->group(function () {
     Route::put('/password', [UserController::class, 'updatePassword']);
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/user', [UserController::class, 'show']);
-    Route::put('/profile/{user}', [UserController::class, 'update']);
+    Route::post('/profile/{user}', [UserController::class, 'update']);
     Route::delete('/users/{user}', [UserController::class, 'destroy']);
     Route::put('/user/locale', [UserController::class, 'updateLocaleSetting']);
     Route::get('/user/currency', [UserController::class, 'getCurrency']);

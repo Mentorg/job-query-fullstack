@@ -75,7 +75,7 @@ export type PasswordUpdateFieldsErrors = {
 };
 
 type UserErrors = {
-  avatar: string | boolean;
+  avatar: string | boolean | undefined;
   name: string | boolean | undefined;
   phone: string | boolean | undefined;
   linkedinProfile: string | boolean | undefined;

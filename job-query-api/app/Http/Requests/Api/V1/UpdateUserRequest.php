@@ -22,6 +22,7 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string',
             'phone' => 'required|string',
             'linkedinProfile' => 'required|string|min:4',

@@ -6,12 +6,12 @@ export const userValidation = (name: string, value: string) => {
     return "Please enter a valid phone number.";
   }
   if (
-    name === "linkedin_profile" &&
+    name === "linkedinProfile" &&
     (!value || !/^[a-zA-Z\s]{4,}$/.test(value))
   ) {
     return "Please enter a link to LinkedIn profile with a minimum of 4 characters";
   }
-  if (name === "location_id" && !value) {
+  if (name === "locationId" && !value) {
     return `Please select an option.`;
   }
 };

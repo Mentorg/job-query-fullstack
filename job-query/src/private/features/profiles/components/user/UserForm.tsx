@@ -14,8 +14,14 @@ type RecruiterFormProps = {
 };
 
 function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
-  const { form, errors, handleChange, handleSubmit, isSubmitted } =
-    useUpdateUser(profile);
+  const {
+    form,
+    errors,
+    handleChange,
+    handleFileChange,
+    handleSubmit,
+    isSubmitted,
+  } = useUpdateUser(profile);
   const { locations, isPending, error } = useGetLocations();
 
   if (isPending) return <Loading />;
@@ -38,6 +44,30 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-5 md:w-auto lg:w-auto">
+      <div className="mt-4 flex w-full flex-col gap-4">
+        <div className="flex w-full justify-center">
+          <img
+            src={
+              profile?.avatar
+                ? profile?.avatar.includes("avatars")
+                  ? `http://127.0.0.1:8000/storage/${form.avatar}`
+                  : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${profile?.avatar}`
+                : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-logo.svg`
+            }
+            alt="User's avatar"
+            className="w-[5rem] rounded-full"
+          />
+        </div>
+        <div className="flex flex-col">
+          <input
+            type="file"
+            name="avatar"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="w-full cursor-pointer rounded border bg-white text-sm font-semibold text-gray-400 file:mr-4 file:cursor-pointer file:border-0 file:bg-gray-100 file:px-4 file:py-3 file:text-gray-500 file:hover:bg-gray-200"
+          />
+        </div>
+      </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="flex w-full flex-col gap-y-2">
           <Label htmlFor="name">Full Name</Label>

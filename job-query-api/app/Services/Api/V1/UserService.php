@@ -7,7 +7,9 @@ use App\Http\Resources\V1\UserResource;
 use App\Interfaces\UserServiceInterface;
 use App\Models\User;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserService implements UserServiceInterface
 {
@@ -33,16 +35,38 @@ class UserService implements UserServiceInterface
     return new UserResource($user);
   }
 
-  public function update($user, array $validated)
+  public function update($user, array $validated, $avatar = null)
   {
-    $user->update([
-      'name' => $validated['name'],
-      'phone' => $validated['phone'],
-      'linkedin_profile' => $validated['linkedinProfile'],
-      'location_id' => $validated['locationId'],
-    ]);
+    DB::beginTransaction();
 
-    return new UserResource($user);
+    try {
+      if ($avatar) {
+        if ($user->avatar && Storage::exists('public/avatars' . $user->avatar)) {
+          Storage::delete('public/avatars' . $user->avatar);
+        }
+
+        $file_name = time() . '.' . $avatar->extension();
+        $validated['avatar'] = 'avatars/' . $file_name;
+        $avatar->storeAs('avatars', $file_name);
+      } else {
+        if (empty($validated['avatar']) && $user->avatar) {
+          $validated['avatar'] = $user->avatar;
+        }
+      }
+      $user->update([
+        'avatar' => $validated['avatar'],
+        'name' => $validated['name'],
+        'phone' => $validated['phone'],
+        'linkedin_profile' => $validated['linkedinProfile'],
+        'location_id' => $validated['locationId'],
+      ]);
+
+      DB::commit();
+      return new UserResource($user);
+    } catch (Exception $e) {
+      DB::rollBack();
+      throw new Exception("An error occurred while updating the user: " . $e->getMessage());
+    }
   }
 
   public function delete($user)

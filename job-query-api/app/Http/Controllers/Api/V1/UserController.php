@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        $updatedUser = $this->userService->update($user, $request->validated());
+        $updatedUser = $this->userService->update($user, $request->validated(), $request->file('avatar'));
 
         return $updatedUser
             ? ResponseHelper::successResponse($updatedUser, 'User updated successfully.')
