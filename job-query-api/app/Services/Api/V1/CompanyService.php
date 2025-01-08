@@ -98,7 +98,7 @@ class CompanyService implements CompanyServiceInterface
 
         $file_name = time() . '.' . $avatar->extension();
         $validated['avatar'] = 'logos/' . $file_name;
-        $avatar->storeAs('public/logos', $file_name);
+        $avatar->storeAs('logos', $file_name);
       } else {
         if (empty($validated['avatar']) && $company->avatar) {
           $validated['avatar'] = $company->avatar;
