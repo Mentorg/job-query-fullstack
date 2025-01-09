@@ -9,21 +9,26 @@ export type AuthContextType = {
   setUser: (userData: User | null) => void;
   login: (credentials: { email: string; password: string }) => void;
   logout: () => void;
+  isLoading: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
-  const login = async (credentials: { email: string; password: string }) => {
+  const login = async (
+    credentials: { email: string; password: string },
+    redirectTo?: string,
+  ) => {
     try {
       const response = await apiLogin(credentials);
       setUser(response.user);
       localStorage.setItem("authToken", response.token);
       localStorage.setItem("userId", response.user.id);
-      navigate("/");
+      navigate(redirectTo || "/", { replace: true });
     } catch (error) {
       if (error instanceof AxiosError) {
         throw new Error(error.response?.data);
@@ -66,14 +71,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setUser(null);
           navigate("/login");
         }
+      } else {
+        setUser(null);
       }
+      setIsLoading(false);
     };
 
     fetchUser();
   }, [navigate]);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login, logout }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -7,6 +7,8 @@ import { SignUp } from "./public/pages/SignUp.tsx";
 import { AuthProvider } from "./shared/context/AuthContext.tsx";
 import Loading from "./shared/components/ui/Loading.tsx";
 import ErrorBoundary from "./shared/components/ui/ErrorBoundary.tsx";
+import { ProtectedRoute } from "./public/components/ProtectedRoute.tsx";
+import NotAuthorized from "./public/pages/NotAuthorized.tsx";
 
 // Public Routes
 const HomeLayout = lazy(() => import("./public/layouts/HomeLayout.tsx"));
@@ -90,8 +92,16 @@ function App() {
                 <Route path="contact" element={<Contact />} />
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
+                <Route path="unauthorized" element={<NotAuthorized />} />
               </Route>
-              <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute allowedRoles={["recruiter"]}>
+                    <DashboardLayout />
+                  </ProtectedRoute>
+                }
+              >
                 <Route path="overview" element={<Overview />} />
                 <Route path="analytics" element={<Analytics />} />
                 <Route path="company" element={<Company />} />
@@ -116,7 +126,14 @@ function App() {
                   <Route path="support-terms" element={<SupportTerms />} />
                 </Route>
               </Route>
-              <Route path="/admin" element={<AdminDashboard />}>
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute allowedRoles={["admin"]}>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              >
                 <Route path="users" element={<Users />} />
                 <Route path="messages" element={<Messages />} />
                 <Route path="companies" element={<Companies />} />
@@ -124,7 +141,14 @@ function App() {
                 <Route path="newRecruiter" element={<RecruiterForm />} />
                 <Route path="newCompany" element={<CompanyForm />} />
               </Route>
-              <Route path="/user" element={<DashboardLayout />}>
+              <Route
+                path="/user"
+                element={
+                  <ProtectedRoute allowedRoles={["applicant"]}>
+                    <DashboardLayout />
+                  </ProtectedRoute>
+                }
+              >
                 <Route path="profile" element={<Applicant />} />
                 <Route path="messages" element={<Messages />} />
                 <Route path="messages/newMessage" element={<MessageForm />} />

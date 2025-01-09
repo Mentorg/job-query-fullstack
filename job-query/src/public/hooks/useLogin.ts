@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useAuth } from "../../shared/context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { login } from "../../shared/services/apiAuth";
 import { loginValidation as validation } from "../data/validation/loginValidation";
 
@@ -25,6 +25,7 @@ export function useLogin() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { setUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation(); // Get current location (to retrieve `state`)
 
   const mutation = useMutation({
     mutationFn: (credentials: { email: string; password: string }) =>
@@ -33,7 +34,10 @@ export function useLogin() {
       setUser(data);
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userId", data.id);
-      navigate("/");
+
+      // Redirect the user to the page they were trying to visit before login
+      const redirectTo = location.state?.from?.pathname || "/";
+      navigate(redirectTo, { replace: true });
     },
     onError: (error: Error) => {
       throw new Error("Login failed! Error: " + error.message);
