@@ -331,7 +331,7 @@ export const deleteApplicantExperience = async (
 export const updateApplicantSkills = async (skills: UpdateSkills) => {
   try {
     const response = await axiosInstance.put(
-      `api/applicant/update/skills`,
+      `/api/v1/applicant/update/skills`,
       skills,
     );
     return response.data;
