@@ -1,25 +1,13 @@
 import { useMemo } from "react";
 import { useGetJobs } from "./useGetJobs";
-
-type Location = {
-  city: string;
-  country: string;
-  code: string;
-  id: number;
-};
-
-type Recruiter = {
-  company: Company;
-};
-
-type Company = {
-  name: string;
-};
+import { Company } from "../../shared/types/company";
+import { Location } from "../../shared/types/location";
 
 type Job = {
   title: string;
-  location: Location[];
-  recruiter: Recruiter;
+  locations: Location[];
+  recruiter: { company: Company };
+  company: { name: string };
 };
 
 export function useSearchResultsService(searchTitle: string) {
@@ -29,10 +17,9 @@ export function useSearchResultsService(searchTitle: string) {
       return [];
     }
     const filteredJobs = jobs.filter((job: Job) => {
-      const { title, location } = job;
-
-      const city = location.map((record) => record.city).toString();
-      const company = job.recruiter.company.name;
+      const { title, locations } = job;
+      const city = locations.map((record: Location) => record.city).toString();
+      const company = job.company.name;
 
       const normalizedPositionTitle = title.toLowerCase();
       const normalizedLocation = city.toLowerCase();
