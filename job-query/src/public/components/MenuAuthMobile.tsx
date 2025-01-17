@@ -1,4 +1,6 @@
 import {
+  FaBuilding,
+  FaCity,
   FaCog,
   FaHome,
   FaNewspaper,
@@ -10,13 +12,14 @@ import {
   FaUser,
   FaUserLock,
   FaUserShield,
+  FaUserTie,
   FaUsers,
 } from "react-icons/fa";
-import { useAuth } from "../../shared/context/AuthContext";
-import { useLogout } from "../hooks/useLogout";
+import { HiMiniBell, HiMiniEnvelope, HiMiniTag } from "react-icons/hi2";
 import MenuLink from "../../shared/components/ui/MenuLink";
 import Button from "../../shared/components/ui/Button";
-import { HiMiniBell, HiMiniEnvelope, HiMiniTag } from "react-icons/hi2";
+import { useAuth } from "../../shared/context/AuthContext";
+import { useLogout } from "../hooks/useLogout";
 
 function MenuAuthMobile() {
   const { user } = useAuth();
@@ -134,24 +137,24 @@ function MenuAuthMobile() {
             <span className="ml-2">Home</span>
           </MenuLink>
           <MenuLink to="/admin/users">
-            <FaUser className="h-5 w-5" />
+            <FaUsers className="h-5 w-5" />
             <span className="ml-2">Users</span>
           </MenuLink>
           <MenuLink to="/admin/companies">
-            <FaUser className="h-5 w-5" />
+            <FaCity className="h-5 w-5" />
             <span className="ml-2">Companies</span>
           </MenuLink>
           <MenuLink to="/admin/jobs">
-            <FaUser className="h-5 w-5" />
+            <FaNewspaper className="h-5 w-5" />
             <span className="ml-2">Jobs</span>
           </MenuLink>
           <hr />
           <MenuLink to="/admin/newRecruiter">
-            <FaUser className="h-5 w-5" />
+            <FaUserTie className="h-5 w-5" />
             <span className="ml-2">Create Recruiter</span>
           </MenuLink>
           <MenuLink to="/admin/newCompany">
-            <FaUser className="h-5 w-5" />
+            <FaBuilding className="h-5 w-5" />
             <span className="ml-2">Create Company</span>
           </MenuLink>
         </>
