@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../../shared/components/ui/Button";
 import TextField from "../../../../shared/components/form/TextField";
 import Label from "../../../../shared/components/form/Label";
@@ -12,6 +13,7 @@ type CreatePaymentMethodProps = {
 function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useCreatePaymentMethod();
+  const { t } = useTranslation();
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
   return (
     <form onSubmit={submit}>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="cardType">Card Type</Label>
+        <Label htmlFor="cardType">{t("label.cardType")}</Label>
         <Select
           name="cardType"
           value={form.cardType}
@@ -40,7 +42,7 @@ function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
         </Select>
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="cardNumber">Card Number</Label>
+        <Label htmlFor="cardNumber">{t("label.cardNumber")}</Label>
         <TextField
           name="cardNumber"
           type="text"
@@ -52,8 +54,10 @@ function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
         <Label htmlFor="expirationDate">
-          Expiration Date{" "}
-          <span className="text-xs font-semibold">(M/Y, e.g.: 05/26)</span>
+          {t("label.expirationDate")}{" "}
+          <span className="text-xs font-semibold">
+            ({t("label.expirationDateFormat")})
+          </span>
         </Label>
         <TextField
           name="expirationDate"
@@ -65,7 +69,7 @@ function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
         />
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="cvv">CVV</Label>
+        <Label htmlFor="cvv">{t("label.cvv")}</Label>
         <TextField
           name="cvv"
           type="text"
@@ -83,10 +87,10 @@ function CreatePaymentMethod({ onCloseModal }: CreatePaymentMethodProps) {
           onChange={handleChange}
           checked={form.isActive === true}
         />
-        <Label htmlFor="isActive">Set this card as default</Label>
+        <Label htmlFor="isActive">{t("label.setDefaultCard")}</Label>
       </div>
       <Button className="mt-4 rounded-md bg-primary px-6 py-2 text-sm text-white transition-all hover:bg-opacity-75">
-        Submit
+        {t("button.submit")}
       </Button>
     </form>
   );

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaLocationDot } from "react-icons/fa6";
 import { LuPenLine } from "react-icons/lu";
 import { BiTrash } from "react-icons/bi";
@@ -15,6 +16,7 @@ type ApplicantExperienceProps = {
 
 function ApplicantExperience({ resource }: ApplicantExperienceProps) {
   const { handleDelete } = useDeleteExperience(resource);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -35,7 +37,7 @@ function ApplicantExperience({ resource }: ApplicantExperienceProps) {
           </p>
         </div>
         <div className="flex flex-col text-center sm:text-right xl:text-left">
-          <p className="text-sm font-medium text-slate-400">Date</p>
+          <p className="text-sm font-medium text-slate-400">{t("user.date")}</p>
           <p className="text-base font-medium md:text-lg">
             {resource.dateStart} - {resource.dateEnd}
           </p>
@@ -52,7 +54,7 @@ function ApplicantExperience({ resource }: ApplicantExperienceProps) {
           <Modal>
             <Modal.Open opens="edit">
               <Menus.Button type="edit">
-                Edit
+                {t("button.edit")}
                 <span className="ml-2">
                   <LuPenLine />
                 </span>
@@ -60,7 +62,7 @@ function ApplicantExperience({ resource }: ApplicantExperienceProps) {
             </Modal.Open>
             <Modal.Open opens="delete">
               <Menus.Button type="delete">
-                Delete
+                {t("button.delete")}
                 <span className="ml-2">
                   <BiTrash />
                 </span>

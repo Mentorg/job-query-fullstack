@@ -1,65 +1,62 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../components/Logo";
-import { useState } from "react";
+import Select from "../../shared/components/form/Select";
+import Option from "../../shared/components/form/Option";
+import { useAuth } from "../../shared/context/AuthContext";
+import { useUpdateLocaleSettings } from "../../private/features/settings/hooks/useUpdateLocaleSettings";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
-  const [language, setLanguage] = useState<string>("english");
+  const { user } = useAuth();
+  const { form, errors, handleLanguageChange, isSubmitted } =
+    useUpdateLocaleSettings(user);
+  const { t } = useTranslation();
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
-    setLanguage(e.target.value);
+  const languageMap: Record<string, string> = {
+    "en-US": "English",
+    de: "Deutsch",
+    fr: "Français",
+  };
 
   return (
     <footer className="bg-primary px-2 py-10">
       <div className="container mx-auto flex flex-col place-items-center gap-y-10 lg:gap-y-20">
         <Logo mode="light" />
-        <div className="grid grid-cols-1 justify-items-center gap-x-20 gap-y-5 sm:grid-cols-4 lg:space-y-0">
-          <NavLink to="/" className="whitespace-nowrap font-medium text-white">
-            Browse Jobs
-          </NavLink>
+        <div className="flex flex-col justify-items-center gap-x-20 gap-y-5 sm:flex-row lg:space-y-0">
           <NavLink
             to="/privacyPolicy"
             className="whitespace-nowrap font-medium text-white"
           >
-            Privacy Policy
-          </NavLink>
-          <NavLink
-            to="/login"
-            className="whitespace-nowrap font-medium text-white"
-          >
-            Login
+            {t("navigation.privacyPolicy")}
           </NavLink>
           <NavLink
             to="/contact"
             className="whitespace-nowrap font-medium text-white"
           >
-            Contact
+            {t("navigation.contact")}
           </NavLink>
         </div>
         <div className="grid w-fit grid-cols-1 flex-row items-end justify-center space-y-6 md:w-full md:grid-cols-3 md:justify-between md:space-y-0">
-          <div className="flex flex-col gap-y-2">
-            <label className="text-white">Language:</label>
-            <select
+          <div className="flex w-max flex-col gap-y-2">
+            <Select
               name="language"
-              value={language}
-              onChange={handleChange}
-              className={`rounded-md border-2 px-5 py-2`}
+              value={form.language}
+              onChange={(e) => handleLanguageChange(e.target.value)}
+              errors={errors}
+              hasError={isSubmitted && !!errors.language}
             >
-              <option value="english" key="english">
-                English
-              </option>
-              <option value="german" key="german">
-                German
-              </option>
-              <option value="french" key="french">
-                French
-              </option>
-            </select>
+              {["en-US", "de", "fr"].map((languageCode) => (
+                <Option value={languageCode} key={languageCode}>
+                  {languageMap[languageCode]}
+                </Option>
+              ))}
+            </Select>
           </div>
           <h2 className="text-center font-medium text-white ">
             jobQuery@contact.com
           </h2>
           <p className="text-center font-medium text-white ">
-            2024 JobQuery. All rights reserved.
+            2024 JobQuery. {t("system.copyright")}
           </p>
         </div>
       </div>

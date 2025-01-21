@@ -1,8 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
-import { User } from "../types/user";
+import i18n from "i18next";
 import { useNavigate } from "react-router-dom";
 import { login as apiLogin, logout as apiLogout } from "../services/apiAuth";
+import { User } from "../types/user";
 
 export type AuthContextType = {
   user: User | null;
@@ -29,6 +30,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem("authToken", response.token);
       localStorage.setItem("userId", response.user.id);
       navigate(redirectTo || "/", { replace: true });
+      setLanguage(response.user.language);
     } catch (error) {
       if (error instanceof AxiosError) {
         throw new Error(error.response?.data);
@@ -50,6 +52,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const setLanguage = (language: string) => {
+    i18n
+      .changeLanguage(language)
+      .then(() => i18n.reloadResources())
+      .catch((error) => {
+        throw new Error(`Error setting language: ${error}`);
+      });
+  };
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("language") || "en-US";
+    if (user && user.language) {
+      setLanguage(user.language);
+    } else {
+      setLanguage(storedLanguage);
+    }
+  }, [user]);
+
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem("authToken");
@@ -65,6 +85,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             },
           );
           setUser(response.data);
+          setLanguage(response.data.language);
         } catch (error) {
           localStorage.removeItem("authToken");
           localStorage.removeItem("userId");

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import BasicInformation from "./BasicInformation";
 import JobDescription from "./JobDescription";
@@ -26,6 +27,9 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
     handleSubmit,
   } = useUpdateJob(job);
   const [step, setStep] = useState(1);
+  const { t } = useTranslation();
+
+  const resourceTitle = job.title;
 
   function submit(
     e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>,
@@ -82,7 +86,11 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
   return (
     <form onSubmit={submit}>
       <h2 className="border-b-2 border-slate-300 py-4 text-2xl font-medium">
-        Edit: {job.title}
+        <Trans
+          i18nKey="modal.update.title"
+          values={{ resourceTitle }}
+          components={{ span: <span className="font-semibold" /> }}
+        />
       </h2>
       <div className="mt-2 flex items-stretch gap-2">
         <Button
@@ -92,7 +100,7 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
           }}
           className={`${step === 1 ? "bg-green-400 text-white" : "bg-slate-200"} w-full rounded-md px-3 py-1 transition-all hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white`}
         >
-          Basic Information
+          {t("job.basicInformation")}
         </Button>
         <Button
           onClick={(e) => {
@@ -101,7 +109,7 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
           }}
           className={`${step === 2 ? "bg-green-400 text-white" : "bg-slate-200"} w-full rounded-md px-3 py-1 transition-all hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white`}
         >
-          Job Description
+          {t("job.jobDescription")}
         </Button>
         <Button
           onClick={(e) => {
@@ -110,7 +118,7 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
           }}
           className={`${step === 3 ? "bg-green-400 text-white" : "bg-slate-200"} w-full rounded-md px-3 py-1 transition-all hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white`}
         >
-          Competencies
+          {t("job.competencies")}
         </Button>
       </div>
       {renderForm()}
@@ -124,7 +132,7 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
               <span className="mr-2">
                 <MdOutlineArrowBackIos className="h-[15px] w-[15px]" />
               </span>
-              Previous
+              {t("button.previous")}
             </Button>
           )}
         </div>
@@ -133,15 +141,15 @@ function JobEdit({ job, onCloseModal }: JobEditProps) {
             onClick={submit}
             className="rounded-md border border-primary bg-primary px-8 py-2 text-xs text-white transition-all hover:bg-primary/75 md:text-base"
           >
-            Submit
+            {t("button.submit")}
           </Button>
 
-          {step !== 4 && (
+          {step !== 3 && (
             <Button
               onClick={nextStep}
               className="rounded-md border border-green-400 bg-green-400 px-8 py-2 text-xs text-white transition-all hover:bg-green-400/75 md:text-base"
             >
-              Next
+              {t("button.next")}
             </Button>
           )}
         </div>

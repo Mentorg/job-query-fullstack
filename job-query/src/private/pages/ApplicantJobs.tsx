@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import EmploymentContainer from "../components/EmploymentContainer";
 import ViewOptions from "../components/ViewOptions";
 import JobsGrid from "../features/jobs/components/ui/JobsGrid";
@@ -15,10 +16,11 @@ function ApplicantJobs() {
   const { applicantJobs, isPending, error } = useGetApplicantJobs(
     user?.id ?? null,
   );
+  const { t } = useTranslation();
 
   return (
     <div className="flex w-full flex-col gap-y-10 px-6 py-4 md:px-10 lg:px-12 xl:px-14">
-      <EmploymentContainer title="Applied">
+      <EmploymentContainer title={t("pageTitle.myJobs")}>
         {gridView && (
           <select
             value={sort}
@@ -40,7 +42,7 @@ function ApplicantJobs() {
         ) : error ? (
           <Fallback
             errorType="fetch"
-            message={error.message || "Failed to load data"}
+            message={error.message || t("system.serverError")}
           />
         ) : (
           <JobsGrid jobs={applicantJobs} sort={sort} />
@@ -52,7 +54,7 @@ function ApplicantJobs() {
           ) : error ? (
             <Fallback
               errorType="fetch"
-              message={error.message || "Failed to load data"}
+              message={error.message || t("system.serverError")}
             />
           ) : (
             <JobsTable jobs={applicantJobs} />

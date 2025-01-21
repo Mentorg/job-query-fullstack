@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   HiBuildingLibrary,
   HiMiniArrowTrendingUp,
@@ -15,15 +16,16 @@ import { FaCircleDot } from "react-icons/fa6";
 import MenuLink from "../../shared/components/ui/MenuLink";
 import Loading from "../../shared/components/ui/Loading";
 import Fallback from "../../shared/components/ui/Fallback";
-import { Job } from "../../shared/types/job";
 import { useGetRecruiterJobs } from "../hooks/useGetRecruiterJobs";
 import { useAuth } from "../../shared/context/AuthContext";
+import { Job } from "../../shared/types/job";
 
 function RecruiterSidebar() {
   const { user } = useAuth();
   const { recruiterJobs, isPending, error } = useGetRecruiterJobs(
     user?.id ?? -1,
   );
+  const { t } = useTranslation();
 
   return (
     <aside className="hidden w-[300px] min-w-[250px] lg:flex">
@@ -34,14 +36,14 @@ function RecruiterSidebar() {
         <div>
           <div className="py-2">
             <h4 className="mb-2 text-[0.65rem] font-bold uppercase text-slate-500">
-              Menu
+              {t("navigation.menu")}
             </h4>
             <ul>
               <li>
                 <MenuLink to="overview">
                   <HiMiniHome className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    Overview
+                    {t("navigation.overview")}
                   </p>
                 </MenuLink>
               </li>
@@ -49,7 +51,7 @@ function RecruiterSidebar() {
                 <MenuLink to="analytics">
                   <HiMiniArrowTrendingUp className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    Analytics
+                    {t("navigation.analytics")}
                   </p>
                 </MenuLink>
               </li>
@@ -57,7 +59,7 @@ function RecruiterSidebar() {
                 <MenuLink to="company">
                   <HiBuildingLibrary className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    Company Profile
+                    {t("navigation.companyProfile")}
                   </p>
                 </MenuLink>
               </li>
@@ -65,7 +67,7 @@ function RecruiterSidebar() {
                 <MenuLink to="user">
                   <HiMiniUser className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    My Profile
+                    {t("navigation.userProfile")}
                   </p>
                 </MenuLink>
               </li>
@@ -73,9 +75,11 @@ function RecruiterSidebar() {
                 <div className="group flex w-full items-center rounded-md px-2 py-1 text-sm text-slate-500 lg:py-0">
                   <HiMiniEnvelope className="h-10 w-5" />
                   <div className="flex w-full justify-between">
-                    <p className="ml-2 text-sm font-medium">Messages</p>
+                    <p className="ml-2 text-sm font-medium">
+                      {t("navigation.messages")}
+                    </p>
                     <span className="h-fit rounded-md bg-primary p-[.25rem] text-[.5rem] leading-normal text-white">
-                      soon
+                      {t("system.soon")}
                     </span>
                   </div>
                 </div>
@@ -84,9 +88,11 @@ function RecruiterSidebar() {
                 <div className="group flex w-full items-center rounded-md px-2 py-1 text-sm text-slate-500 lg:py-0">
                   <HiMiniBell className="h-10 w-5" />
                   <div className="flex w-full justify-between">
-                    <p className="ml-2 text-sm font-medium">Notifications</p>
+                    <p className="ml-2 text-sm font-medium">
+                      {t("navigation.notifications")}
+                    </p>
                     <span className="h-fit rounded-md bg-primary p-[.25rem] text-[.5rem] leading-normal text-white">
-                      soon
+                      {t("system.soon")}
                     </span>
                   </div>
                 </div>
@@ -95,7 +101,7 @@ function RecruiterSidebar() {
                 <MenuLink to="jobs">
                   <HiComputerDesktop className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    Jobs
+                    {t("navigation.jobs")}
                   </p>
                 </MenuLink>
               </li>
@@ -103,7 +109,7 @@ function RecruiterSidebar() {
                 <MenuLink to="applications">
                   <HiMiniUserGroup className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    Applications
+                    {t("navigation.applications")}
                   </p>
                 </MenuLink>
               </li>
@@ -111,15 +117,16 @@ function RecruiterSidebar() {
                 <MenuLink to="newJob">
                   <HiMiniPlus className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
                   <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-                    New Job
+                    {t("navigation.newJob")}
                   </p>
                 </MenuLink>
               </li>
             </ul>
           </div>
+          <hr className="my-2 h-px border-0 bg-gray-200 dark:bg-gray-200" />
           <div className="py-2">
             <h4 className="mb-2 text-[0.65rem] font-bold uppercase text-slate-500">
-              Your recent vacancies
+              {t("navigation.recentVacancies")}
             </h4>
             <ul>
               {isPending ? (
@@ -127,7 +134,7 @@ function RecruiterSidebar() {
               ) : error ? (
                 <Fallback
                   errorType="fetch"
-                  message={error.message || "Failed to load data"}
+                  message={error.message || t("system.serverError")}
                 />
               ) : (
                 recruiterJobs.slice(0, 5).map((job: Job) => (
@@ -150,16 +157,18 @@ function RecruiterSidebar() {
           <div className="group flex w-full items-center rounded-md px-2 py-1 text-sm text-slate-500 lg:py-0">
             <HiMiniTag className="h-10 w-5" />
             <div className="flex w-full justify-between">
-              <p className="ml-2 text-sm font-medium">Pricing Plans</p>
+              <p className="ml-2 text-sm font-medium">
+                {t("navigation.pricingPlans")}
+              </p>
               <span className="h-fit rounded-md bg-primary p-[.25rem] text-[.5rem] leading-normal text-white">
-                soon
+                {t("system.soon")}
               </span>
             </div>
           </div>
           <MenuLink to="settings/account">
             <HiMiniCog6Tooth className="h-10 w-5 hover:fill-slate-500 focus:fill-slate-500 active:fill-slate-500 group-hover:fill-white group-focus:fill-white group-active:fill-white" />
             <p className="ml-2 text-sm font-medium group-hover:text-white group-focus:text-white group-active:text-white">
-              Settings
+              {t("navigation.settings")}
             </p>
           </MenuLink>
         </div>

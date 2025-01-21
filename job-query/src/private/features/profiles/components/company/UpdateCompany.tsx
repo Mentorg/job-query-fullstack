@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import TextField from "../../../../../shared/components/form/TextField";
 import TextArea from "../../../../../shared/components/form/TextArea";
@@ -25,10 +26,11 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
     isSubmitted,
   } = useUpdateCompany(profile);
   const { locations, isPending, error } = useGetLocations();
+  const { t } = useTranslation();
 
   if (isPending) return <Loading />;
 
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>{t("system.serverError")}</div>;
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,18 +43,20 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
   return (
     <div className="flex w-full flex-col gap-y-10">
       <div className="pt-4">
-        <h1 className="text-2xl font-medium lg:text-3xl">Company Profile</h1>
+        <h1 className="text-2xl font-medium lg:text-3xl">
+          {t("company.updateCompany")}
+        </h1>
       </div>
       <form onSubmit={submit} className="relative">
         <div className="flex justify-end">
           <Button className="rounded-md bg-primary px-6 py-2 text-white hover:bg-opacity-80">
-            Submit
+            {t("button.submit")}
           </Button>
         </div>
         <div className="mt-5 flex flex-col gap-10 md:w-auto lg:w-fit">
           <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
-              <h2 className="font-medium">Company Logo</h2>
+              <h2 className="font-medium">{t("company.logo")}</h2>
             </div>
             <div className="mt-4 flex w-full flex-col gap-4">
               <img
@@ -79,7 +83,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
           </div>
           <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
-              <h2 className="font-medium">Company Name</h2>
+              <h2 className="font-medium">{t("company.name")}</h2>
             </div>
             <div className="mt-4 flex w-full flex-col">
               <div className="flex flex-col">
@@ -109,7 +113,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
           </div>
           <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
-              <h2 className="font-medium">Company Overview</h2>
+              <h2 className="font-medium">{t("company.overview")}</h2>
             </div>
             <div className="mt-4 flex w-full flex-col">
               <div className="flex w-full flex-col">
@@ -125,11 +129,11 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
           </div>
           <div className="flex flex-col gap-x-4 2xl:grid 2xl:grid-cols-[1fr_4fr] 2xl:grid-rows-1">
             <div className="w-max">
-              <h2 className="font-medium">Contact</h2>
+              <h2 className="font-medium">{t("company.contact")}</h2>
             </div>
             <div className="flex flex-col">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("label.email")}</Label>
                 <TextField
                   name="email"
                   type="text"
@@ -179,7 +183,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
                 />
               </div>
               <div className="mt-2 flex flex-col">
-                <Label htmlFor="website">Website</Label>
+                <Label htmlFor="website">{t("label.website")}</Label>
                 <div className="mt-4 flex flex-col rounded-md border-2 border-slate-300 sm:flex-row">
                   <p className="border-r-2 border-r-slate-300 bg-slate-100 px-6 py-2 text-slate-400">
                     https://
@@ -195,7 +199,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
                 </div>
               </div>
               <div className="mt-2 flex flex-col">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone">{t("label.phone")}</Label>
                 <TextField
                   name="phone"
                   type="text"
@@ -206,7 +210,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
                 />
               </div>
               <div className="mt-2 flex flex-col">
-                <Label htmlFor="address">Address</Label>
+                <Label htmlFor="address">{t("label.address")}</Label>
                 <TextField
                   name="address"
                   type="text"
@@ -217,7 +221,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
                 />
               </div>
               <div className="mt-2 flex flex-col">
-                <Label htmlFor="locations">Location(s)</Label>
+                <Label htmlFor="locations">{t("label.location")}</Label>
                 <Select
                   name="locations"
                   value={form?.locations}
@@ -232,7 +236,7 @@ function UpdateCompany({ profile, onCloseModal }: UpdateCompanyProps) {
                       </Option>
                     ))
                   ) : (
-                    <Option value="">No locations available</Option>
+                    <Option value="">{t("system.locationError")}</Option>
                   )}
                 </Select>
               </div>

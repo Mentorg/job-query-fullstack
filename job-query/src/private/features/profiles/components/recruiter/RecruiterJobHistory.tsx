@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { IoIosLink } from "react-icons/io";
 import Loading from "../../../../../shared/components/ui/Loading";
 import Fallback from "../../../../../shared/components/ui/Fallback";
@@ -12,6 +13,7 @@ type RecruiterJobHistoryProps = {
 
 function RecruiterJobHistory({ resource }: RecruiterJobHistoryProps) {
   const { recruiterJobs, isPending, error } = useGetRecruiterJobs(resource.id);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -20,9 +22,9 @@ function RecruiterJobHistory({ resource }: RecruiterJobHistoryProps) {
       ) : error ? (
         <Fallback
           errorType="fetch"
-          message={error.message || "Failed to load data"}
+          message={error.message || t("system.serverError")}
         />
-      ) : (
+      ) : recruiterJobs.length > 0 ? (
         recruiterJobs.map((record: Job) => (
           <div
             key={record.id}
@@ -47,7 +49,9 @@ function RecruiterJobHistory({ resource }: RecruiterJobHistoryProps) {
             </div>
             <div className="flex flex-row items-center justify-center gap-4">
               <div className="flex flex-col">
-                <h3 className="text-xs font-medium text-slate-500">Posted</h3>
+                <h3 className="text-xs font-medium text-slate-500">
+                  {t("user.posted")}
+                </h3>
                 <p className="text-sm font-medium">
                   {formatDate(record.createdAt)}
                 </p>
@@ -61,6 +65,8 @@ function RecruiterJobHistory({ resource }: RecruiterJobHistoryProps) {
             </div>
           </div>
         ))
+      ) : (
+        <h2>{t("job.noJobs")}</h2>
       )}
     </>
   );

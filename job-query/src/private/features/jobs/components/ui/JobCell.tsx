@@ -1,20 +1,22 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { HiEye, HiMiniUserGroup, HiPencil, HiTrash } from "react-icons/hi2";
 import { LuClipboardList, LuClipboardX } from "react-icons/lu";
 import { FaLocationDot } from "react-icons/fa6";
 import Modal from "../../../../context/Modal";
 import Menus from "../../../../context/Menus";
-import ConfirmDelete from "../../../../components/ConfirmDelete";
+import JobDetails from "./JobDetails";
 import JobEdit from "../form/JobEdit";
+import ConfirmDelete from "../../../../components/ConfirmDelete";
 import StatusChip from "../../../../components/StatusChip";
 import Chip from "../../../../../shared/components/ui/Chip";
+import { useAuth } from "../../../../../shared/context/AuthContext";
+import { useDeleteJob } from "../../hooks/useDeleteJob";
+import { useUpdateJobStatus } from "../../hooks/useUpdateJobStatus";
 import {
   formatDate,
   formatDeadline,
 } from "../../../../../shared/utils/dateFormat";
-import { useAuth } from "../../../../../shared/context/AuthContext";
-import { useDeleteJob } from "../../hooks/useDeleteJob";
-import { useUpdateJobStatus } from "../../hooks/useUpdateJobStatus";
 import { Job, UpdateJob } from "../../../../../shared/types/job";
 import { Location } from "../../../../../shared/types/location";
 
@@ -27,6 +29,7 @@ function JobCell({ job }: JobProps) {
   const navigate = useNavigate();
   const { updateStatus } = useUpdateJobStatus(job);
   const { handleDelete } = useDeleteJob(job.id);
+  const { t } = useTranslation();
 
   const companyUrl = job.company.avatar
     ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${job.company.avatar}`
@@ -50,13 +53,13 @@ function JobCell({ job }: JobProps) {
         </div>
         <div>
           <p className="flex flex-row items-baseline text-sm">
-            Posted:
+            {t("job.posted")}:
             <span className="ml-2 font-medium text-slate-500">
               {formatDate(job.createdAt)}
             </span>
           </p>
           <p className="flex flex-row items-baseline text-sm">
-            Deadline:
+            {t("job.deadline")}:
             <span className="ml-2 font-medium text-red-500">
               {formatDeadline(job.deadline)}
             </span>
@@ -69,7 +72,7 @@ function JobCell({ job }: JobProps) {
               icon={<FaLocationDot className="text-white" />}
               className="flex h-fit items-center rounded-3xl bg-blue-500 px-3 py-1"
             >
-              Multiple locations
+              {t("job.multipleLocations")}
             </Chip>
           ) : (
             job.locations.map((record: Location | number) => {
@@ -90,7 +93,7 @@ function JobCell({ job }: JobProps) {
                     key={record}
                     className="flex h-fit items-center rounded-3xl bg-blue-500 px-3 py-1"
                   >
-                    Location {record}
+                    {t("job.location")} {record}
                   </Chip>
                 );
               }
@@ -107,17 +110,26 @@ function JobCell({ job }: JobProps) {
           <Menus.Menu>
             <Menus.Toggle id={job.id.toString()} />
             <Menus.List id={job.id.toString()}>
-              <Menus.Button
-                type="option"
-                onClick={() =>
-                  navigate(
-                    `${user?.role === "recruiter" ? "/dashboard" : "/user"}/jobs/${job.id}`,
-                  )
-                }
-              >
-                <HiEye />
-                <span>View Job</span>
-              </Menus.Button>
+              {user?.role === "recruiter" || user?.role === "applicant" ? (
+                <Menus.Button
+                  type="option"
+                  onClick={() =>
+                    navigate(
+                      `${user?.role === "recruiter" ? "/dashboard" : "/user"}/jobs/${job.id}`,
+                    )
+                  }
+                >
+                  <HiEye />
+                  <span>{t("contextAction.viewJob")}</span>
+                </Menus.Button>
+              ) : (
+                <Modal.Open opens="view">
+                  <Menus.Button type="option">
+                    <HiEye />
+                    <span>{t("contextAction.viewJob")}</span>
+                  </Menus.Button>
+                </Modal.Open>
+              )}
               {user?.role === "recruiter" && (
                 <>
                   {job.status !== "filled" && job.status !== "open" && (
@@ -126,7 +138,7 @@ function JobCell({ job }: JobProps) {
                       onClick={() => updateStatus("open")}
                     >
                       <LuClipboardList />
-                      <span>Mark as Open</span>
+                      <span>{t("contextAction.statusOpen")}</span>
                     </Menus.Button>
                   )}
                   {job.status !== "filled" && (
@@ -135,24 +147,29 @@ function JobCell({ job }: JobProps) {
                       onClick={() => updateStatus("filled")}
                     >
                       <LuClipboardX />
-                      <span>Mark as Filled</span>
+                      <span>{t("contextAction.statusFilled")}</span>
                     </Menus.Button>
                   )}
                   <Modal.Open opens="edit">
                     <Menus.Button type="option">
                       <HiPencil />
-                      <span>Edit</span>
-                    </Menus.Button>
-                  </Modal.Open>
-                  <Modal.Open opens="delete">
-                    <Menus.Button type="option">
-                      <HiTrash />
-                      <span>Delete</span>
+                      <span>{t("contextAction.edit")}</span>
                     </Menus.Button>
                   </Modal.Open>
                 </>
               )}
+              {user?.role !== "applicant" && (
+                <Modal.Open opens="delete">
+                  <Menus.Button type="option">
+                    <HiTrash />
+                    <span>{t("contextAction.delete")}</span>
+                  </Menus.Button>
+                </Modal.Open>
+              )}
             </Menus.List>
+            <Modal.Window name="view">
+              <JobDetails resource={job} />
+            </Modal.Window>
             <Modal.Window name="edit">
               <JobEdit job={job as UpdateJob} onCloseModal={close} />
             </Modal.Window>

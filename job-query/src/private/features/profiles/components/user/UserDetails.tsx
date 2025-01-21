@@ -1,14 +1,17 @@
+import { useTranslation } from "react-i18next";
 import StatusChip from "../../../../components/StatusChip";
 import ApplicantJobHistory from "../applicant/ApplicantJobHistory";
 import RecruiterJobHistory from "../recruiter/RecruiterJobHistory";
-import { User } from "../../../../../shared/types/user";
 import { formatDate } from "../../../../../shared/utils/dateFormat";
+import { User } from "../../../../../shared/types/user";
 
 type UserDetailsProps = {
   resource: User;
 };
 
 function UserDetails({ resource }: UserDetailsProps) {
+  const { t } = useTranslation();
+
   let avatar;
 
   if (resource.avatar) {
@@ -43,43 +46,43 @@ function UserDetails({ resource }: UserDetailsProps) {
           </div>
         </div>
         <div>
-          <h6 className="font-semibold">Created</h6>
+          <h6 className="font-semibold">{t("user.created")}</h6>
           <p className="text-sm font-semibold text-slate-500">
             {formatDate(resource.createdAt)}
           </p>
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">Personal Details</h2>
+        <h2 className="text-xl font-medium">{t("user.personalInfo")}</h2>
         <div className="my-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col">
-            <p className="font-medium">First Name</p>
+            <p className="font-medium">{t("user.firstName")}</p>
             <p className="text-slate-700">{resource.name.split(" ")[0]}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Last Name</p>
+            <p className="font-medium">{t("user.lastName")}</p>
             <p className="text-slate-700">{resource.name.split(" ")[1]}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Email</p>
+            <p className="font-medium">{t("user.email")}</p>
             <p className="text-slate-700">{resource.email}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Phone</p>
+            <p className="font-medium">{t("user.phone")}</p>
             <p className="text-slate-700">
               {resource.phone || "No phone number provided"}
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Location</p>
+            <p className="font-medium">{t("user.location")}</p>
             <p className="text-slate-700">
               {resource.location.city}, {resource.location.country}
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Time zone</p>
+            <p className="font-medium">{t("user.timezone")}</p>
             <p className="text-slate-700">
-              {resource.timezone || "No time zone provided"}
+              {resource.timezone || t("user.noTimezone")}
             </p>
           </div>
         </div>
@@ -87,7 +90,9 @@ function UserDetails({ resource }: UserDetailsProps) {
       {resource.role !== "admin" && (
         <div className="py-5">
           <h3 className="text-xl font-medium">
-            {resource.role === "recruiter" ? "Recruiter" : "Applicant"} Jobs
+            {resource.role === "recruiter"
+              ? t("user.recruiterJobs")
+              : t("user.applicantJobs")}
             {resource.role === "recruiter" ? (
               <RecruiterJobHistory resource={resource} />
             ) : (

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import TextArea from "../../../../../shared/components/form/TextArea";
 import {
@@ -17,15 +18,16 @@ type JobDescriptionProps = {
 };
 
 function JobDescription({ form, errors, handleChange }: JobDescriptionProps) {
+  const { t } = useTranslation();
   return (
     <>
       <h1 className="border-b-2 border-slate-300 py-4 text-2xl font-semibold xl:text-2xl">
-        Job Description
+        {t("job.jobDescription")}
       </h1>
       <div className="grid grid-cols-1 gap-4">
         <div className="my-8">
           <div className="flex flex-col gap-y-2">
-            <Label htmlFor="positionOverview">Job Brief</Label>
+            <Label htmlFor="positionOverview">{t("label.jobBrief")}</Label>
             <TextArea
               name="positionOverview"
               value={form.positionOverview}

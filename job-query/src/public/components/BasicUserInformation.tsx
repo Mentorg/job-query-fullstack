@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import TextField from "../../shared/components/form/TextField";
 import Button from "../../shared/components/ui/Button";
 import Label from "../../shared/components/form/Label";
@@ -17,17 +18,20 @@ function BasicUserInformation({
   handleSubmit: (e: React.FormEvent) => void;
   isSubmitted: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <form
       onSubmit={handleSubmit}
       className="m-auto flex w-[90dvw] flex-col rounded-md bg-white p-10 md:m-0 md:w-max"
     >
-      <h1 className="py-4 text-xl font-medium lg:py-10 lg:text-3xl">
-        Welcome to JobQuery <br />
-        Join Us Today: Register Now!
-      </h1>
+      <div className="py-4 lg:py-10">
+        <h1 className="text-xl font-medium lg:text-3xl">{t("auth.title")}</h1>
+        <p className="mt-2 text-lg font-medium text-slate-700 lg:text-2xl">
+          {t("auth.headlineSignup")}
+        </p>
+      </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="name">Full Name</Label>
+        <Label htmlFor="name">{t("label.name")}</Label>
         <TextField
           name="name"
           type="text"
@@ -38,7 +42,7 @@ function BasicUserInformation({
         />
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="email">Email Address</Label>
+        <Label htmlFor="email">{t("label.email")}</Label>
         <TextField
           name="email"
           type="email"
@@ -49,10 +53,9 @@ function BasicUserInformation({
         />
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">{t("label.password")}</Label>
         <p className="text-xs text-slate-500">
-          (Ensure the password is at least 8 characters and includes one
-          number.)
+          ({t("system.passwordInstruction")})
         </p>
         <TextField
           name="password"
@@ -64,7 +67,9 @@ function BasicUserInformation({
         />
       </div>
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="password_confirmation">Confirm Password </Label>
+        <Label htmlFor="password_confirmation">
+          {t("label.confirmPassword")}
+        </Label>
         <TextField
           name="password_confirmation"
           type="password"
@@ -75,12 +80,12 @@ function BasicUserInformation({
         />
       </div>
       <Button className="mt-4 rounded-md bg-primary px-4 py-2 text-white">
-        Continue
+        {t("button.continue")}
       </Button>
       <p className="mt-4">
-        Already have an account?{" "}
+        {t("auth.existingAccount")}{" "}
         <NavLink to="/login" className="font-medium text-primary">
-          Sign in now
+          {t("navigation.signInAuth")}
         </NavLink>
       </p>
     </form>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Navigation from "../components/Navigation";
 import Label from "../../shared/components/form/Label";
 import TextField from "../../shared/components/form/TextField";
@@ -27,6 +28,7 @@ function Contact() {
   const [errors, setErrors] = useState<ContactErrors>({
     ...contact,
   });
+  const { t } = useTranslation();
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -57,12 +59,10 @@ function Contact() {
       <Navigation />
       <div className="container mx-auto flex min-h-svh flex-col px-8 py-20 lg:p-16 xl:min-h-max xl:py-[6.75rem]">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-2xl font-medium md:text-3xl">Get in Touch</h1>
-          <p className="mt-5 text-base">
-            Have a question, comment, or concern? We're here to help! Fill out
-            the form below and we'll get back to you as soon as possible. Thank
-            you for using our job board app!
-          </p>
+          <h1 className="text-2xl font-medium md:text-3xl">
+            {t("pageTitle.contact")}
+          </h1>
+          <p className="mt-5 text-base">{t("contact.overview")}</p>
         </div>
         <form
           onSubmit={handleSubmit}
@@ -70,7 +70,7 @@ function Contact() {
         >
           <div className="flex flex-col gap-5 md:gap-10 lg:flex-row">
             <div className="flex w-full flex-col">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{t("label.name")}</Label>
               <TextField
                 name="name"
                 type="text"
@@ -81,7 +81,7 @@ function Contact() {
               />
             </div>
             <div className="flex w-full flex-col">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("label.email")}</Label>
               <TextField
                 name="email"
                 type="email"
@@ -93,7 +93,7 @@ function Contact() {
             </div>
           </div>
           <div className="mt-5 flex w-full flex-col md:mt-10">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">{t("label.message")}</Label>
             <TextArea
               name="message"
               value={contact.message}
@@ -104,7 +104,7 @@ function Contact() {
           </div>
           <div className="mt-10 flex w-full justify-center md:justify-start">
             <Button className="rounded-md bg-primary px-6 py-2 text-sm text-white transition-all hover:bg-primary/70 md:text-base">
-              Send Message
+              {t("button.message")}
             </Button>
           </div>
         </form>

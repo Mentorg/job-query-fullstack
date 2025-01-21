@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsFiletypePdf } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
 import Chip from "../../../../shared/components/ui/Chip";
 import StatusChip from "../../../components/StatusChip";
 import Button from "../../../../shared/components/ui/Button";
@@ -14,6 +15,7 @@ type ApplicationDetailsProps = {
 
 function ApplicationDetails({ application }: ApplicationDetailsProps) {
   const { updateStatus } = useUpdateApplicationStatus(application);
+  const { t } = useTranslation();
 
   const avatarUrl = application.applicant.user?.avatar
     ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${application.applicant.user?.avatar}`
@@ -40,7 +42,7 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
               </div>
               <div>
                 <p className="w-min whitespace-nowrap text-sm text-slate-500">
-                  Applied for{" "}
+                  {t("application.appliedFor")}
                 </p>
                 <span className="font-medium text-primary">
                   {application?.job.title}
@@ -56,10 +58,10 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
               onChange={(e) => updateStatus(e.target.value)}
               className={`rounded-md border-2 px-5 py-2`}
             >
-              {["interview", "on-hold", "shortlisted", "rejected"].map(
+              {["interview", "onHold", "shortlisted", "rejected"].map(
                 (item: string) => (
                   <option value={item} key={item}>
-                    {item}
+                    {t(`application.status.${item}`)}
                   </option>
                 ),
               )}
@@ -69,27 +71,35 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
             to="/dashboard/messages/newMessage"
             className="h-fit rounded-md border-2 border-blue-500 bg-blue-500 px-6 py-2 text-sm font-medium text-white"
           >
-            Contact
+            {t("button.contact")}
           </NavLink>
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">All Personal Information</h2>
+        <h2 className="text-xl font-medium">{t("application.personalInfo")}</h2>
         <div className="flex flex-col gap-x-8 gap-y-8 py-8 sm:grid sm:grid-cols-2 sm:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
           <div className="flex w-max flex-col">
-            <h3 className="whitespace-nowrap font-medium">Application Date</h3>
+            <h3 className="whitespace-nowrap font-medium">
+              {t("application.applicationDate")}
+            </h3>
             <p className="mt-2 text-sm">{formatDate(application.createdAt)}</p>
           </div>
           <div className="flex w-max flex-col">
-            <h3 className="whitespace-nowrap font-medium">Email Address</h3>
+            <h3 className="whitespace-nowrap font-medium">
+              {t("application.email")}
+            </h3>
             <p className="mt-2 text-sm">{application?.applicant.user.email}</p>
           </div>
           <div className="flex w-max flex-col">
-            <h3 className="whitespace-nowrap font-medium">Phone Number</h3>
+            <h3 className="whitespace-nowrap font-medium">
+              {t("application.phone")}
+            </h3>
             <p className="mt-2 text-sm">{application?.applicant.user.phone}</p>
           </div>
           <div className="flex w-max flex-col">
-            <h3 className="whitespace-nowrap font-medium">Location</h3>
+            <h3 className="whitespace-nowrap font-medium">
+              {t("application.location")}
+            </h3>
             <p className="mt-2 text-sm">
               {application.applicant.user.location.city},{" "}
               {application.applicant.user.location.country}
@@ -98,7 +108,7 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">Resume</h2>
+        <h2 className="text-xl font-medium">{t("application.resume")}</h2>
         <div className="flex w-full flex-col justify-between gap-y-4 py-8 sm:flex-row sm:items-center sm:gap-y-0">
           <div className="flex items-center">
             <BsFiletypePdf className="h-[1.5rem] w-[1.5rem] text-blue-500" />
@@ -111,13 +121,13 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
               // onClick={handleDownloadResume}
               className="rounded-md bg-primary px-6 py-2 text-white"
             >
-              Download
+              {t("button.download")}
             </Button>
           </div>
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">Experience</h2>
+        <h2 className="text-xl font-medium">{t("application.experience")}</h2>
         <div className="flex w-full flex-col gap-5 py-8">
           {application.applicant.experiences.map((experience) => (
             <div
@@ -151,7 +161,7 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">Education</h2>
+        <h2 className="text-xl font-medium">{t("application.education")}</h2>
         <div className="flex w-full flex-col gap-5 py-8">
           {application.applicant.educations.map((education) => (
             <div
@@ -165,18 +175,24 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
                 </p>
               </div>
               <div className="flex flex-col justify-center md:col-start-1 md:col-end-3 md:row-start-2 md:row-end-2 xl:col-start-6 xl:col-end-7 xl:row-start-1 xl:items-center">
-                <p className="text-xs font-semibold text-slate-400">Date</p>
+                <p className="text-xs font-semibold text-slate-400">
+                  {t("application.date")}
+                </p>
                 <h3 className="mt-2 font-medium">
                   {formatDate(education?.dateStart)} -{" "}
                   {formatDate(education?.dateEnd)}
                 </h3>
               </div>
               <div className="flex flex-col justify-center md:col-start-3 md:col-end-3 md:row-start-2 md:row-end-2 xl:col-start-7 xl:col-end-8 xl:row-start-1 xl:items-center">
-                <p className="text-xs font-semibold text-slate-400">GPA</p>
+                <p className="text-xs font-semibold text-slate-400">
+                  {t("application.gpa")}
+                </p>
                 <h3 className="mt-2 font-medium">{education?.gpa}</h3>
               </div>
               <div className="col-start-1 col-end-3 flex flex-col justify-center md:col-start-4 md:col-end-9 md:row-start-2 md:row-end-2 xl:col-start-8 xl:col-end-11 xl:row-start-1 xl:items-center">
-                <p className="text-xs font-semibold text-slate-400">Honors</p>
+                <p className="text-xs font-semibold text-slate-400">
+                  {t("application.honors")}
+                </p>
                 <h3 className="mt-2 font-medium">{education?.honors}</h3>
               </div>
             </div>
@@ -185,7 +201,7 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
       </div>
       <div className="flex flex-col justify-around gap-4 py-5 md:flex-row">
         <div className="flex w-full flex-col gap-5 py-8">
-          <h2 className="text-xl font-medium">Skills</h2>
+          <h2 className="text-xl font-medium">{t("application.skills")}</h2>
           <div className="flex flex-wrap gap-2">
             {application?.applicant.skills.map((record) => (
               <p
@@ -198,7 +214,7 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
           </div>
         </div>
         <div className="flex w-full flex-col gap-5 py-8">
-          <h2 className="text-xl font-medium">Languages</h2>
+          <h2 className="text-xl font-medium">{t("application.languages")}</h2>
           <div className="flex flex-wrap gap-2">
             {application?.applicant.languages.map((record) => (
               <p
@@ -212,12 +228,12 @@ function ApplicationDetails({ application }: ApplicationDetailsProps) {
         </div>
       </div>
       <div className="py-5">
-        <h2 className="text-xl font-medium">Note</h2>
+        <h2 className="text-xl font-medium">{t("application.note")}</h2>
         <div className="flex w-full flex-col gap-5 py-8">
           {application.note ? (
             <p>{application.note}</p>
           ) : (
-            <p>No notes about the applicant</p>
+            <p>{t("application.noNotes")}</p>
           )}
         </div>
       </div>

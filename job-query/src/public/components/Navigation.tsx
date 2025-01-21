@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import Logo from "./Logo";
@@ -10,6 +11,7 @@ import { useNavigationToggle } from "../hooks/useNavigationToggle";
 
 function Navigation() {
   const { user, toggleMenu, setToggleMenu, navRef } = useNavigationToggle();
+  const { t } = useTranslation();
 
   return (
     <div className="fixed z-10 flex w-full flex-row items-center justify-between border border-b-slate-200 bg-white p-3 text-slate-500">
@@ -33,7 +35,7 @@ function Navigation() {
           <NavActions />
         ) : (
           <NavLink to="/login" className="text-base font-medium">
-            Log In
+            {t("navigation.login")}
           </NavLink>
         )}
       </div>

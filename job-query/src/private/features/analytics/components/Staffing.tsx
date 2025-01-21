@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   BarChart,
   Bar,
@@ -16,6 +17,7 @@ type StaffingProps<T extends Period[]> = {
 };
 
 function Staffing<T extends Period[]>({ data }: StaffingProps<T>) {
+  const { t } = useTranslation();
   return (
     <ResponsiveContainer width="100%" height={400}>
       <BarChart
@@ -38,11 +40,13 @@ function Staffing<T extends Period[]>({ data }: StaffingProps<T>) {
           dataKey="filled"
           fill="#8884d8"
           activeBar={<Rectangle fill="pink" stroke="blue" />}
+          name={t("analytics.filled")}
         />
         <Bar
           dataKey="active"
           fill="#82ca9d"
           activeBar={<Rectangle fill="gold" stroke="purple" />}
+          name={t("analytics.active")}
         />
       </BarChart>
     </ResponsiveContainer>

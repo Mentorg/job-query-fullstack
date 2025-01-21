@@ -1,12 +1,13 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../shared/components/form/Label";
 import Select from "../../../../shared/components/form/Select";
 import Option from "../../../../shared/components/form/Option";
 import Button from "../../../../shared/components/ui/Button";
 import Loading from "../../../../shared/components/ui/Loading";
-import { User } from "../../../../shared/types/user";
-import { Currency } from "../../../../shared/types/currency";
 import { useUpdateLocaleSettings } from "../hooks/useUpdateLocaleSettings";
 import { useCurrencies } from "../hooks/useCurrencies";
+import { User } from "../../../../shared/types/user";
+import { Currency } from "../../../../shared/types/currency";
 
 type UpdateCurrencyProps = {
   resource: Partial<User> | null;
@@ -17,14 +18,13 @@ function UpdateCurrency({ resource, onCloseModal }: UpdateCurrencyProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdateLocaleSettings(resource);
   const { currencies, isPending, error } = useCurrencies();
+  const { t } = useTranslation();
 
   if (isPending) {
     return <Loading />;
   }
 
-  if (error) {
-    return <div>Error fetching currencies data!</div>;
-  }
+  if (error) return <div>{t("system.serverError")}</div>;
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ function UpdateCurrency({ resource, onCloseModal }: UpdateCurrencyProps) {
   return (
     <form onSubmit={submit}>
       <div className="flex w-full flex-col gap-y-2">
-        <Label htmlFor="currencyId">Currency</Label>
+        <Label htmlFor="currencyId">{t("label.currency")}</Label>
         <Select
           name="currencyId"
           value={form.currencyId}
@@ -53,7 +53,7 @@ function UpdateCurrency({ resource, onCloseModal }: UpdateCurrencyProps) {
         </Select>
       </div>
       <Button className="mt-4 rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/70">
-        Submit
+        {t("button.submit")}
       </Button>
     </form>
   );

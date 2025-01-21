@@ -1,25 +1,27 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function useFilters() {
   const [gridView, setGridView] = useState<boolean>(true);
   const [sort, setSort] = useState<string>("date-asc");
+  const { t } = useTranslation();
 
   const applicationFilter = {
-    "date-desc": "Date: Desc",
-    "date-asc": "Date: Asc",
-    "status-interview": "Status: Interview",
-    "status-on-hold": "Status: On Hold",
-    "status-shortlisted": "Status: Shortlisted",
-    "status-rejected": "Status: Rejected",
+    "date-desc": t("filter.dateDesc"),
+    "date-asc": t("filter.dateAsc"),
+    "status-interview": t("filter.statusInterview"),
+    "status-on-hold": t("filter.statusOnHold"),
+    "status-shortlisted": t("filter.statusShortlisted"),
+    "status-rejected": t("filter.statusRejected"),
   };
 
   const jobFilter = {
-    "date-desc": "Date: Desc",
-    "date-asc": "Date: Asc",
-    "title-asc": "Title: Asc",
-    "title-desc": "Title: Desc",
-    "status-filled": "Status: Filled",
-    "status-open": "Status: Open",
+    "date-desc": t("filter.dateDesc"),
+    "date-asc": t("filter.dateAsc"),
+    "title-asc": t("filter.titleAsc"),
+    "title-desc": t("filter.titleDesc"),
+    "status-filled": t("filter.statusFilled"),
+    "status-open": t("filter.statusOpen"),
   };
 
   function handleOrder(e: React.ChangeEvent<HTMLSelectElement>) {

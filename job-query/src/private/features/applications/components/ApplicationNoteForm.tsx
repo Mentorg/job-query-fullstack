@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../shared/components/form/Label";
 import TextArea from "../../../../shared/components/form/TextArea";
 import Button from "../../../../shared/components/ui/Button";
@@ -15,6 +16,7 @@ function ApplicationNoteForm({
 }: ApplicationNoteFormProps) {
   const { form, errors, handleChange, handleSubmit } =
     useUpdateApplicationNote(application);
+  const { t } = useTranslation();
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
     handleSubmit(e);
@@ -27,7 +29,7 @@ function ApplicationNoteForm({
       className="sm:w-[10 0dvw] w-full md:w-full sm:landscape:w-full"
     >
       <div className="my-8 flex flex-col">
-        <Label htmlFor="note">Update note</Label>
+        <Label htmlFor="note">{t("label.description")}</Label>
         <TextArea
           name="note"
           value={form.note}
@@ -38,7 +40,7 @@ function ApplicationNoteForm({
       </div>
       <div>
         <Button className="mt-4 rounded-md bg-primary px-6 py-2 text-sm text-white">
-          Update Note
+          {t("button.updateNote")}
         </Button>
       </div>
     </form>

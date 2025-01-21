@@ -1,13 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { HiEye, HiPencil, HiTrash } from "react-icons/hi2";
 import Menus from "../../../../context/Menus";
 import Modal from "../../../../context/Modal";
 import Table from "../../../../context/Table";
 import ConfirmDelete from "../../../../components/ConfirmDelete";
 import UpdateCompany from "./UpdateCompany";
+import CompanyDetails from "./CompanyDetails";
 import { useDeleteCompany } from "../../hooks/useDeleteCompany";
 import { formatDate } from "../../../../../shared/utils/dateFormat";
 import { Company } from "../../../../../shared/types/company";
-import CompanyDetails from "./CompanyDetails";
 
 type CompanyRowProps = {
   company: Company;
@@ -15,6 +16,7 @@ type CompanyRowProps = {
 
 function CompanyRow({ company }: CompanyRowProps) {
   const { handleDelete } = useDeleteCompany(company.id);
+  const { t } = useTranslation();
 
   return (
     <Table.Row key={company?.id}>
@@ -55,19 +57,19 @@ function CompanyRow({ company }: CompanyRowProps) {
             <Modal.Open opens="view">
               <Menus.Button type="option">
                 <HiEye />
-                <span>View Company</span>
+                <span>{t("contextAction.viewCompany")}</span>
               </Menus.Button>
             </Modal.Open>
             <Modal.Open opens="edit">
               <Menus.Button type="option">
                 <HiPencil />
-                <span>Edit</span>
+                <span>{t("contextAction.edit")}</span>
               </Menus.Button>
             </Modal.Open>
             <Modal.Open opens="delete">
               <Menus.Button type="option">
                 <HiTrash />
-                <span>Delete</span>
+                <span>{t("contextAction.delete")}</span>
               </Menus.Button>
             </Modal.Open>
           </Menus.List>

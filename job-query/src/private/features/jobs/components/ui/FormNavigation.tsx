@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import Button from "../../../../../shared/components/ui/Button";
 import { JobErrors } from "../../../../../shared/types/job";
@@ -9,6 +10,8 @@ type FormNavigationProps = {
 };
 
 function FormNavigation({ step, setStep, onSubmit }: FormNavigationProps) {
+  const { t } = useTranslation();
+
   const errors: JobErrors = {
     title: false,
     isFulltime: false,
@@ -28,10 +31,10 @@ function FormNavigation({ step, setStep, onSubmit }: FormNavigationProps) {
 
   let buttonContent = "";
 
-  if (step === 1) buttonContent = "Continue";
-  if (step === 2) buttonContent = "Next";
-  if (step === 3) buttonContent = "Next";
-  if (step === 4) buttonContent = "Publish Now";
+  if (step === 1) buttonContent = "continue";
+  if (step === 2) buttonContent = "next";
+  if (step === 3) buttonContent = "next";
+  if (step === 4) buttonContent = "publish";
 
   const nextStep = () => step < 4 && setStep(step + 1);
   const previousStep = () => step > 1 && setStep(step - 1);
@@ -47,13 +50,13 @@ function FormNavigation({ step, setStep, onSubmit }: FormNavigationProps) {
             <span className="mr-2">
               <MdOutlineArrowBackIos className="h-[15px] w-[15px]" />
             </span>
-            Previous
+            {t("button.previous")}
           </Button>
         )}
       </div>
       <div className="flex items-center gap-x-5">
         <p className="text-xs text-slate-400 sm:text-base">
-          {step} out of 4 Steps
+          {t("job.jobFormStep", { count: step })}
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <Button
@@ -63,7 +66,7 @@ function FormNavigation({ step, setStep, onSubmit }: FormNavigationProps) {
             )}
             className="rounded-md border border-primary bg-primary px-8 py-2 text-xs text-white md:text-base"
           >
-            {buttonContent}
+            {t(`button.${buttonContent}`)}
           </Button>
         </div>
       </div>

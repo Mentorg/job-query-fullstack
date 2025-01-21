@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { LuPenLine } from "react-icons/lu";
 import Modal from "../../../../context/Modal";
 import Menus from "../../../../context/Menus";
@@ -20,6 +21,7 @@ import { Ability } from "../../../../../shared/types/ability";
 function Applicant() {
   const { user } = useAuth();
   const { applicant, isPending, error } = useGetApplicant();
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -50,7 +52,7 @@ function Applicant() {
               <Menus.Button>
                 <span className="flex items-center gap-x-2 text-xs font-medium text-green-600">
                   <LuPenLine />
-                  Edit Profile
+                  {t("button.edit")}
                 </span>
               </Menus.Button>
             </Modal.Open>
@@ -64,37 +66,33 @@ function Applicant() {
         <ApplicantMetrics />
       </div>
       <div>
-        <h2 className="py-4 text-xl font-medium">Personal Details</h2>
+        <h2 className="py-4 text-xl font-medium">{t("user.personalInfo")}</h2>
         <div className="flex flex-wrap justify-between gap-10 rounded-md bg-slate-100 px-5 py-6">
           <div className="flex flex-col">
-            <p className="font-medium">Email Address</p>
+            <p className="font-medium">{t("user.email")}</p>
             <p className="text-sm">{user?.email}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Phone Number</p>
+            <p className="font-medium">{t("user.phone")}</p>
+            <p className="text-sm">{user?.phone || t("user.noPhone")}</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="font-medium">{t("user.linkedin")}</p>
             <p className="text-sm">
-              {user?.phone || "No phone number provided"}
+              @{user?.linkedinProfile || t("user.noLinkedin")}
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">LinkedIn Profile</p>
-            <p className="text-sm">
-              @{user?.linkedinProfile || "No profile provided"}
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <p className="font-medium">Country</p>
+            <p className="font-medium">{t("user.country")}</p>
             <p className="text-sm">{user?.location?.country}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">City</p>
+            <p className="font-medium">{t("user.city")}</p>
             <p className="text-sm">{user?.location?.city}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Time Zone</p>
-            <p className="text-sm">
-              {user?.timezone || "No time zone provided"}
-            </p>
+            <p className="font-medium">{t("user.timezone")}</p>
+            <p className="text-sm">{user?.timezone || t("user.noTimezone")}</p>
           </div>
         </div>
       </div>
@@ -103,17 +101,19 @@ function Applicant() {
       ) : error ? (
         <Fallback
           errorType="fetch"
-          message={error.message || "Failed to load data"}
+          message={error.message || t("system.serverError")}
         />
       ) : (
         <>
           <div>
             <div className="flex items-center justify-between">
-              <h2 className="py-4 text-xl font-medium">Experience</h2>
+              <h2 className="py-4 text-xl font-medium">
+                {t("user.experience")}
+              </h2>
               <Modal>
                 <Modal.Open opens="add">
                   <Menus.Button type="add">
-                    Add
+                    {t("button.add")}
                     <LuPenLine />
                   </Menus.Button>
                 </Modal.Open>
@@ -130,16 +130,18 @@ function Applicant() {
                 />
               ))
             ) : (
-              <p>No experience data available</p>
+              <p>{t("user.noExperience")}</p>
             )}
           </div>
           <div>
             <div className="flex items-center justify-between">
-              <h2 className="py-4 text-xl font-medium">Education</h2>
+              <h2 className="py-4 text-xl font-medium">
+                {t("user.education")}
+              </h2>
               <Modal>
                 <Modal.Open opens="add">
                   <Menus.Button type="add">
-                    Add
+                    {t("button.add")}
                     <LuPenLine />
                   </Menus.Button>
                 </Modal.Open>
@@ -153,12 +155,12 @@ function Applicant() {
                 <ApplicantEducation resource={education} key={education.id} />
               ))
             ) : (
-              <p>No education data available</p>
+              <p>{t("user..noEducation")}</p>
             )}
           </div>
           <div className="flex flex-col justify-around gap-4 py-5 md:flex-row">
             <div className="flex w-full flex-col gap-5 py-8">
-              <h2 className="text-xl font-medium">Skills</h2>
+              <h2 className="text-xl font-medium">{t("user.skills")}</h2>
               <div className="flex flex-wrap items-center gap-2">
                 {applicant.skills?.length > 0 ? (
                   applicant.skills.map((skill: Ability) => (
@@ -170,11 +172,11 @@ function Applicant() {
                     </div>
                   ))
                 ) : (
-                  <p>No skills provided</p>
+                  <p>{t("user.noSkills")}</p>
                 )}
                 <Modal>
                   <Modal.Open opens="add">
-                    <Menus.Button type="add">Update</Menus.Button>
+                    <Menus.Button type="add">{t("button.update")}</Menus.Button>
                   </Modal.Open>
                   <Modal.Window name="add">
                     <AddSkill
@@ -186,7 +188,7 @@ function Applicant() {
               </div>
             </div>
             <div className="flex w-full flex-col gap-5 py-8">
-              <h2 className="text-xl font-medium">Languages</h2>
+              <h2 className="text-xl font-medium">{t("user.languages")}</h2>
               <div className="flex flex-wrap items-center gap-2">
                 {applicant.languages?.length > 0 ? (
                   applicant.languages.map((language: Ability) => (
@@ -198,11 +200,11 @@ function Applicant() {
                     </div>
                   ))
                 ) : (
-                  <p>No languages provided</p>
+                  <p>{t("user.noLanguages")}</p>
                 )}
                 <Modal>
                   <Modal.Open opens="add">
-                    <Menus.Button type="add">Update</Menus.Button>
+                    <Menus.Button type="add">{t("button.update")}</Menus.Button>
                   </Modal.Open>
                   <Modal.Window name="add">
                     <AddLanguage

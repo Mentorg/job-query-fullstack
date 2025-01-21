@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { IoIosLink } from "react-icons/io";
 import {
   FaEnvelope,
@@ -18,6 +19,7 @@ import { Location } from "../../shared/types/location";
 
 function Company() {
   const { recruiterCompany, isPending, error } = useGetRecruiterCompany();
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -38,7 +40,7 @@ function Company() {
       ) : error ? (
         <Fallback
           errorType="fetch"
-          message={error.message || "Failed to load data"}
+          message={error.message || t("system.serverError")}
         />
       ) : (
         <div className="flex w-full flex-col 2xl:w-[80%] 2xl:min-w-[75%]">
@@ -58,7 +60,7 @@ function Company() {
                 <Modal.Open opens="edit">
                   <Menus.Button type="edit">
                     <LuPenLine />
-                    <span>Edit</span>
+                    <span>{t("button.edit")}</span>
                   </Menus.Button>
                 </Modal.Open>
                 <Modal.Window name="edit">
@@ -91,14 +93,14 @@ function Company() {
             </div>
           </div>
           <div className="mt-10 flex flex-col">
-            <h2 className="text-lg font-medium">Company Overview</h2>
+            <h2 className="text-lg font-medium">{t("company.overview")}</h2>
             <p className="mt-2.5 text-sm">{recruiterCompany?.description}</p>
           </div>
           <div className="flex flex-col sm:flex-row sm:gap-36">
             <div className="mt-10 flex flex-col gap-3">
               <div className="flex w-full items-baseline justify-between">
                 <h2 className="mb-2.5 text-lg font-medium">
-                  Company Locations
+                  {t("company.locations")}
                 </h2>
               </div>
               {recruiterCompany?.locations.length > 0 ? (
@@ -112,13 +114,13 @@ function Company() {
                 ))
               ) : (
                 <>
-                  <h1>No location data available</h1>
+                  <h1>{t("system.locationError")}</h1>
                 </>
               )}
             </div>
             <div className="mt-10 flex flex-col gap-3">
               <h2 className="mb-2.5 text-lg font-medium">
-                Company Social Media
+                {t("company.socialMedia")}
               </h2>
               <div className="flex items-center">
                 <FaTwitter className="text-blue-500" />

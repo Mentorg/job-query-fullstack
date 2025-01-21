@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Cell, Label, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 const data = [
@@ -6,6 +7,8 @@ const data = [
 ];
 
 function ProfileCompletionMetric() {
+  const { t } = useTranslation();
+
   return (
     <div className="grid w-full grid-cols-1 grid-rows-[2fr_1fr] items-center gap-4 rounded-md bg-slate-100 p-6 2xl:grid-cols-[1fr_2fr] 2xl:grid-rows-1 2xl:p-10">
       <ResponsiveContainer width="100%" height={100}>
@@ -43,8 +46,8 @@ function ProfileCompletionMetric() {
         </PieChart>
       </ResponsiveContainer>
       <div className="">
-        <h2 className="text-center text-2xl font-semibold xl:text-left">
-          Profile Completed
+        <h2 className="text-center text-xl font-semibold xl:text-left">
+          {t("user.profileCompletion")}
         </h2>
       </div>
     </div>

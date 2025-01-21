@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import Option from "../../../../../shared/components/form/Option";
 import Select from "../../../../../shared/components/form/Select";
@@ -15,10 +16,11 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useCreateExperience();
   const { locations, isPending, error } = useGetLocations();
+  const { t } = useTranslation();
 
   if (isPending) return <Loading />;
 
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>{t("system.serverError")}</div>;
 
   const sortedLocations = [...locations].sort((a, b) => {
     if (a.city < b.city) return -1;
@@ -38,7 +40,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
     <form onSubmit={submit} className="flex flex-col gap-5 md:w-auto lg:w-auto">
       <div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="company">Company Name</Label>
+          <Label htmlFor="company">{t("label.companyName")}</Label>
           <TextField
             name="company"
             type="text"
@@ -51,7 +53,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="title">Position Title</Label>
+          <Label htmlFor="title">{t("label.jobTitle")}</Label>
           <TextField
             name="title"
             type="text"
@@ -62,7 +64,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
           />
         </div>
         <div className="flex w-full flex-col gap-y-2">
-          <Label htmlFor="locationId">Location</Label>
+          <Label htmlFor="locationId">{t("label.location")}</Label>
           <Select
             name="locationId"
             value={form.locationId}
@@ -80,7 +82,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="dateStart">From (D.M.Y)</Label>
+          <Label htmlFor="dateStart">{t("label.dateStart")}</Label>
           <TextField
             name="dateStart"
             type="text"
@@ -91,7 +93,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
           />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="dateEnd">To (D.M.Y)</Label>
+          <Label htmlFor="dateEnd">{t("label.dateEnd")}</Label>
           <TextField
             name="dateEnd"
             type="text"
@@ -103,7 +105,7 @@ function AddExperience({ onCloseModal }: AddExperienceProps) {
         </div>
       </div>
       <Button className="mt-4 w-fit rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/75">
-        Submit
+        {t("button.submit")}
       </Button>
     </form>
   );

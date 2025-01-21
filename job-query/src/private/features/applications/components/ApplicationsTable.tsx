@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { PiArrowsDownUp } from "react-icons/pi";
 import Menus from "../../../context/Menus";
 import ApplicationRow from "./ApplicationRow";
@@ -9,6 +10,8 @@ type ApplicationsTableProps = {
 };
 
 function ApplicationsTable({ applications }: ApplicationsTableProps) {
+  const { t } = useTranslation();
+
   return (
     <Menus>
       <Table tableType="applications">
@@ -18,23 +21,23 @@ function ApplicationsTable({ applications }: ApplicationsTableProps) {
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Name
+            {t("table.name")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Email
+            {t("table.email")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Position
+            {t("table.position")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Date
+            {t("table.date")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Status
+            {t("table.status")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <div>&nbsp;</div>

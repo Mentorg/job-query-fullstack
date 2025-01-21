@@ -1,27 +1,30 @@
+import { useTranslation } from "react-i18next";
 import Metric from "../../../../components/Metric";
 import ProfileCompletionMetric from "./ProfileCompletionMetric";
 
 function ApplicantMetrics() {
+  const { t } = useTranslation();
+
   return (
     <>
       <ProfileCompletionMetric />
       <Metric
-        title="Applications Sent"
+        title={t("user.applicationsSent")}
         currentValue="4"
         previousValue="8"
-        time="month"
+        time="Month"
       />
       <Metric
-        title="Applications Success Rate"
+        title={t("user.applicationSuccessRate")}
         currentValue="10"
         previousValue="20"
-        time="month"
+        time="Month"
       />
       <Metric
-        title="Number of Interviews"
+        title={t("user.interviewsNumber")}
         currentValue="2"
         previousValue="3"
-        time="month"
+        time="Month"
       />
     </>
   );

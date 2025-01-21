@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 export default function MenuUnauthDesktop() {
+  const { t } = useTranslation();
+
   return (
     <>
       <NavLink
@@ -13,7 +16,7 @@ export default function MenuUnauthDesktop() {
         replace
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Home
+        {t("navigation.home")}
       </NavLink>
       <NavLink
         to="/privacyPolicy"
@@ -24,7 +27,7 @@ export default function MenuUnauthDesktop() {
         }}
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Privacy Policy
+        {t("navigation.privacyPolicy")}
       </NavLink>
       <NavLink
         to="/contact"
@@ -35,7 +38,7 @@ export default function MenuUnauthDesktop() {
         }}
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Contact
+        {t("navigation.contact")}
       </NavLink>
     </>
   );

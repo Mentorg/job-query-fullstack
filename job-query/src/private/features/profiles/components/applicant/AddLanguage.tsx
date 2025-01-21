@@ -1,8 +1,9 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../../../shared/components/ui/Button";
 import Loading from "../../../../../shared/components/ui/Loading";
-import { Ability } from "../../../../../shared/types/ability";
 import { useGetLanguages } from "../../hooks/useGetLanguages";
 import { useUpdateLanguages } from "../../hooks/useUpdateLanguages";
+import { Ability } from "../../../../../shared/types/ability";
 
 type AddLanguageProps = {
   resource: Ability[];
@@ -13,13 +14,14 @@ function AddLanguage({ resource, onCloseModal }: AddLanguageProps) {
   const { languages, isPending, error } = useGetLanguages();
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdateLanguages(resource);
+  const { t } = useTranslation();
 
   if (isPending) {
     return <Loading />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>{t("system.serverError")}</div>;
   }
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -32,7 +34,7 @@ function AddLanguage({ resource, onCloseModal }: AddLanguageProps) {
 
   return (
     <form onSubmit={submit}>
-      <p className="font-semibold">Select your languages</p>
+      <p className="font-semibold">{t("modal.selectLanguages")}</p>
       <div className="mt-4 grid grid-cols-2 gap-y-2 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
         {languages.map((record: Ability) => (
           <div key={record.id} className="flex items-center">
@@ -54,7 +56,7 @@ function AddLanguage({ resource, onCloseModal }: AddLanguageProps) {
         ))}
       </div>
       <Button className="mt-4 w-fit rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/75">
-        Submit
+        {t("button.submit")}
       </Button>
     </form>
   );

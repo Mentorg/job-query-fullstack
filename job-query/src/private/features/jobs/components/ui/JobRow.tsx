@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { HiEye, HiPencil, HiTrash } from "react-icons/hi2";
 import { LuClipboardList, LuClipboardX } from "react-icons/lu";
 import Table from "../../../../context/Table";
@@ -7,12 +9,11 @@ import ConfirmDelete from "../../../../components/ConfirmDelete";
 import JobEdit from "../form/JobEdit";
 import StatusChip from "../../../../components/StatusChip";
 import JobDetails from "./JobDetails";
-import { Job, UpdateJob } from "../../../../../shared/types/job";
 import { useAuth } from "../../../../../shared/context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { formatDate } from "../../../../../shared/utils/dateFormat";
 import { useDeleteJob } from "../../hooks/useDeleteJob";
 import { useUpdateJobStatus } from "../../hooks/useUpdateJobStatus";
+import { formatDate } from "../../../../../shared/utils/dateFormat";
+import { Job, UpdateJob } from "../../../../../shared/types/job";
 import { Location } from "../../../../../shared/types/location";
 
 type JobProps = {
@@ -23,6 +24,7 @@ function JobRow({ job }: JobProps) {
   const { user } = useAuth();
   const { handleDelete } = useDeleteJob(job.id);
   const { updateStatus } = useUpdateJobStatus(job);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -40,7 +42,7 @@ function JobRow({ job }: JobProps) {
       </div>
       <div>
         <p className="w-[150px] overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-slate-600">
-          {job.isFulltime ? "Full Time" : "Part Time"}
+          {job.isFulltime ? t("job.fullTime") : t("job.partTime")}
         </p>
       </div>
       <div>
@@ -71,62 +73,62 @@ function JobRow({ job }: JobProps) {
         <Menus.Menu>
           <Menus.Toggle id={job.id.toString()} />
           <Menus.List id={job.id.toString()}>
-            <Modal.Open opens="view">
-              <Menus.Button type="option">
+            {user?.role === "recruiter" || user?.role === "applicant" ? (
+              <Menus.Button
+                type="option"
+                onClick={() =>
+                  navigate(
+                    `${user?.role === "recruiter" ? "/dashboard" : "/user"}/jobs/${job.id}`,
+                  )
+                }
+              >
                 <HiEye />
-                <span>View User</span>
+                <span>{t("contextAction.viewJob")}</span>
               </Menus.Button>
-            </Modal.Open>
-            {user?.role === "recruiter" ||
-              (user?.role === "applicant" && (
-                <Menus.Button
-                  type="option"
-                  onClick={() =>
-                    navigate(
-                      `${user?.recruiter ? "/dashboard" : "/user"}/jobs/${job.id}`,
-                    )
-                  }
-                >
+            ) : (
+              <Modal.Open opens="view">
+                <Menus.Button type="option">
                   <HiEye />
-                  <span>View Job</span>
+                  <span>{t("contextAction.viewJob")}</span>
                 </Menus.Button>
-              ))}
-            {user?.role === "recruiter" ||
-              (user?.role === "admin" && (
-                <>
-                  {user?.role !== "admin" && (
-                    <>
-                      <Menus.Button
-                        type="option"
-                        onClick={() => updateStatus("open")}
-                      >
-                        <LuClipboardList />
-                        <span>Mark as Open</span>
-                      </Menus.Button>
-                      <Menus.Button
-                        type="option"
-                        onClick={() => updateStatus("filled")}
-                      >
-                        <LuClipboardX />
-                        <span>Mark as Filled</span>
-                      </Menus.Button>
-
-                      <Modal.Open opens="edit">
-                        <Menus.Button type="option">
-                          <HiPencil />
-                          <span>Edit</span>
-                        </Menus.Button>
-                      </Modal.Open>
-                    </>
-                  )}
-                  <Modal.Open opens="delete">
-                    <Menus.Button type="option">
-                      <HiTrash />
-                      <span>Delete</span>
-                    </Menus.Button>
-                  </Modal.Open>
-                </>
-              ))}
+              </Modal.Open>
+            )}
+            {user?.role === "recruiter" && (
+              <>
+                {job.status !== "filled" && job.status !== "open" && (
+                  <Menus.Button
+                    type="option"
+                    onClick={() => updateStatus("open")}
+                  >
+                    <LuClipboardList />
+                    <span>{t("contextAction.statusOpen")}</span>
+                  </Menus.Button>
+                )}
+                {job.status !== "filled" && (
+                  <Menus.Button
+                    type="option"
+                    onClick={() => updateStatus("filled")}
+                  >
+                    <LuClipboardX />
+                    <span>{t("contextAction.statusFilled")}</span>
+                  </Menus.Button>
+                )}
+                <Modal.Open opens="edit">
+                  <Menus.Button type="option">
+                    <HiPencil />
+                    <span>{t("contextAction.edit")}</span>
+                  </Menus.Button>
+                </Modal.Open>
+              </>
+            )}
+            {user?.role !== "applicant" && (
+              <Modal.Open opens="delete">
+                <Menus.Button type="option">
+                  <HiTrash />
+                  <span>{t("contextAction.delete")}</span>
+                </Menus.Button>
+              </Modal.Open>
+            )}
           </Menus.List>
           <Modal.Window name="view">
             <JobDetails resource={job} />

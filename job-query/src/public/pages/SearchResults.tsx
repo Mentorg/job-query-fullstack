@@ -2,11 +2,13 @@ import { useLocation } from "react-router-dom";
 import Hero from "../layouts/Hero";
 import Job from "../components/JobAdvertisement";
 import { useSearchResultsService } from "../hooks/useSearchResultsService";
+import { Trans, useTranslation } from "react-i18next";
 
 function SearchResults() {
   const location = useLocation();
   const searchTitle = location.state;
   const { searchValue } = useSearchResultsService(searchTitle);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -22,17 +24,22 @@ function SearchResults() {
           ) : (
             <div className="flex h-full flex-col items-center">
               <h2 className="text-2xl">
-                The search <span className="font-semibold">{searchTitle}</span>{" "}
-                did not match any jobs.
+                <Trans
+                  i18nKey="searchPage.searchNoMatch"
+                  values={{ searchTitle }}
+                  components={{ span: <span className="font-semibold" /> }}
+                />
               </h2>
-              <p className="mt-8 font-semibold">Search suggestions</p>
+              <h3 className="mt-8 font-semibold">{t("searchPage.title")}</h3>
               <ul className="mt-4">
                 <li className="list-inside list-disc">
-                  Try more general keywords
+                  {t("searchPage.generalKeywordsSuggestion")}
                 </li>
-                <li className="list-inside list-disc">Check your spelling</li>
                 <li className="list-inside list-disc">
-                  Replace abbreviations with the entire word
+                  {t("searchPage.checkSpelling")}
+                </li>
+                <li className="list-inside list-disc">
+                  {t("searchPage.fullWordSuggestion")}
                 </li>
               </ul>
             </div>

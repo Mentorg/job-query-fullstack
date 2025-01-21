@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../shared/components/form/Label";
 import TextField from "../../shared/components/form/TextField";
 import Button from "../../shared/components/ui/Button";
@@ -10,6 +11,7 @@ type UpdatePasswordProps = {
 function UpdatePassword({ onCloseModal }: UpdatePasswordProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdatePassword();
+  const { t } = useTranslation();
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ function UpdatePassword({ onCloseModal }: UpdatePasswordProps) {
     <form onSubmit={submit} className="flex flex-col md:flex-row md:gap-x-10">
       <div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="current_password">Current Password</Label>
+          <Label htmlFor="current_password">{t("label.currentPassword")}</Label>
           <TextField
             name="current_password"
             type="password"
@@ -34,7 +36,7 @@ function UpdatePassword({ onCloseModal }: UpdatePasswordProps) {
           />
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="new_password">New Password</Label>
+          <Label htmlFor="new_password">{t("label.newPassword")}</Label>
           <TextField
             name="new_password"
             type="password"
@@ -46,7 +48,7 @@ function UpdatePassword({ onCloseModal }: UpdatePasswordProps) {
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
           <Label htmlFor="new_password_confirmation">
-            Confirm New Password
+            {t("label.confirmNewPassword")}
           </Label>
           <TextField
             name="new_password_confirmation"
@@ -58,21 +60,25 @@ function UpdatePassword({ onCloseModal }: UpdatePasswordProps) {
           />
         </div>
         <Button className="mt-4 rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/70">
-          Submit
+          {t("button.submit")}
         </Button>
       </div>
       <div className="mt-4">
-        <h2 className="text-lg font-medium">Instructions</h2>
+        <h2 className="text-lg font-medium">
+          {t("setting.account.instruction.title")}
+        </h2>
         <ul className="mt-2">
           <li className="list-inside list-disc text-sm">
-            At least one uppercase letter
+            {t("setting.account.instruction.upperCase")}
           </li>
           <li className="list-inside list-disc text-sm">
-            At least one lowercase letter
+            {t("setting.account.instruction.lowerCase")}
           </li>
-          <li className="list-inside list-disc text-sm">At least one digit</li>
           <li className="list-inside list-disc text-sm">
-            Minimum length of 8 characters
+            {t("setting.account.instruction.oneDigit")}
+          </li>
+          <li className="list-inside list-disc text-sm">
+            {t("setting.account.instruction.minLength")}
           </li>
         </ul>
       </div>

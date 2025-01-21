@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import Navigation from "../components/Navigation";
@@ -22,6 +23,7 @@ function SingleJob() {
     isPending: isPendingApplicantJobs,
     error: applicantJobsError,
   } = useGetApplicantJobs(user?.id ?? null);
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -32,7 +34,7 @@ function SingleJob() {
       ) : jobsError ? (
         <Fallback
           errorType="fetch"
-          message={jobsError.message || "Failed to load data"}
+          message={jobsError.message || t("system.serverError")}
         />
       ) : (
         <>
@@ -45,7 +47,9 @@ function SingleJob() {
                 <h4 className="text-lg text-slate-500 lg:text-xl">
                   {job.salaryFrom} - {job.salaryTo} /{" "}
                   <span className="text-base">
-                    {job.isSalaryMonthly ? "Monthly" : "Annual"}
+                    {job.isSalaryMonthly
+                      ? t("job.salaryMonthly")
+                      : t("job.salaryAnnual")}
                   </span>
                 </h4>
                 <ul className="my-2 flex flex-wrap justify-center divide-x divide-gray-400 text-xs font-medium tracking-widest text-slate-900 md:justify-start md:text-sm">
@@ -56,9 +60,13 @@ function SingleJob() {
                     </li>
                   ))}
                   <li className="px-2">
-                    {job.isFulltime ? "Full Time" : "Part Time"}
+                    {job.isFulltime ? t("job.fullTime") : t("job.partTime")}
                   </li>
-                  <li className="px-2">{job.workPreference}</li>
+                  <li className="px-2">
+                    {(job.workPreference === "On-site" && t("job.onSite")) ||
+                      (job.workPreference === "Remote" && t("job.remote")) ||
+                      (job.workPreference && t("job.hybrid"))}
+                  </li>
                 </ul>
               </div>
               <div className="order-last flex justify-center gap-x-2 sm:justify-end md:order-2">
@@ -78,7 +86,8 @@ function SingleJob() {
                         <Fallback
                           errorType="fetch"
                           message={
-                            applicantJobsError.message || "Failed to load data"
+                            applicantJobsError.message ||
+                            t("system.serverError")
                           }
                         />
                       ) : applicantJobs.find(
@@ -86,7 +95,7 @@ function SingleJob() {
                         ) ? (
                         <>
                           <Button className="rounded-md border-2 border-primary px-5 py-2 text-sm text-primary sm:px-8 sm:py-2">
-                            Applied
+                            {t("job.applied")}
                           </Button>
                         </>
                       ) : (
@@ -95,7 +104,7 @@ function SingleJob() {
                             onClick={handleApply}
                             className="rounded-md bg-primary px-5 py-2 text-sm text-white transition-all hover:bg-primary/70 sm:px-8 sm:py-2"
                           >
-                            Apply
+                            {t("button.apply")}
                           </Button>
                         </>
                       )}
@@ -107,32 +116,36 @@ function SingleJob() {
                       onClick={() => navigate(`/signup`)}
                       className="rounded-md bg-primary px-5 py-2 text-sm text-white transition-all hover:bg-primary/70 sm:px-8 sm:py-2"
                     >
-                      Apply
+                      {t("button.apply")}
                     </Button>
                   </>
                 )}
               </div>
               <div className="order-2 flex flex-wrap justify-center gap-x-4 gap-y-2 md:order-3 md:justify-start">
                 <p className="w-max rounded-md bg-primary/70 px-4 py-1 text-xs text-white md:text-sm">
-                  {job.seniority} Level
+                  {(job.seniority === "Intern" && t("job.intern")) ||
+                    (job.seniority === "Entry" && t("job.entry")) ||
+                    (job.seniority === "Junior" && t("job.junior")) ||
+                    (job.seniority === "Mid" && t("job.mid")) ||
+                    (job.seniority === "Senior" && t("job.senior"))}
                 </p>
                 <p className="w-max rounded-md bg-primary/70 px-4 py-1 text-xs text-white md:text-sm">
-                  {job.experience}{" "}
-                  {job.experience !== 0 && job.experience < 2
-                    ? "Year"
-                    : "Years"}{" "}
-                  of Experience
+                  {t("job.experience", { count: job.experience })}
                 </p>
                 <p className="w-max rounded-md bg-primary/70 px-4 py-1 text-xs text-white md:text-sm">
-                  {job.education} degree
+                  {(job.education === "High school diploma" &&
+                    t("job.highSchool")) ||
+                    (job.education === "Bachelor's" && t("job.bachelor")) ||
+                    (job.education === "Master's" && t("job.master")) ||
+                    (job.education === "Ph.D." && t("job.phd"))}
                 </p>
                 {job.hasVisaSponsorship ? (
                   <p className="w-max rounded-md bg-primary/70 px-4 py-1 text-xs text-white md:text-sm">
-                    Visa sponsorship
+                    {t("job.visa")}
                   </p>
                 ) : null}
                 <p className="w-max rounded-md bg-primary/70 px-4 py-1 text-xs text-white md:text-sm">
-                  Posted {formatDate(job.createdAt)}
+                  {t("job.posted")} {formatDate(job.createdAt)}
                 </p>
               </div>
               <div className="order-3 flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-end md:order-4">
@@ -142,7 +155,7 @@ function SingleJob() {
                 >
                   <FaFacebook className="text-white" />
                   <span className="ml-2 text-xs text-white sm:ml-10 md:text-sm">
-                    Share
+                    {t("job.share")}
                   </span>
                 </Link>
                 <Link
@@ -151,7 +164,7 @@ function SingleJob() {
                 >
                   <FaTwitter className="text-white" />
                   <span className="ml-2 text-xs text-white sm:ml-10 md:text-sm">
-                    Tweet
+                    {t("job.tweet")}
                   </span>
                 </Link>
                 <Link
@@ -160,7 +173,7 @@ function SingleJob() {
                 >
                   <FaLinkedin className="text-white" />
                   <span className="ml-2 text-xs text-white sm:ml-10 md:text-sm">
-                    Share
+                    {t("job.share")}
                   </span>
                 </Link>
               </div>
@@ -170,7 +183,7 @@ function SingleJob() {
             <div className="container mx-auto">
               <div className="flex flex-col lg:grid lg:grid-cols-12">
                 <div className="col-start-1 col-end-3">
-                  <h2 className="text-lg font-medium">Overview</h2>
+                  <h2 className="text-lg font-medium">{t("job.overview")}</h2>
                 </div>
                 <div className="col-start-3 col-end-12 mt-2 lg:m-0">
                   <p>{job.positionOverview}</p>
@@ -182,7 +195,9 @@ function SingleJob() {
             <div className="container mx-auto">
               <div className="flex flex-col lg:grid lg:grid-cols-12">
                 <div className="col-start-1 col-end-3">
-                  <h2 className="text-lg font-medium">Responsibilities</h2>
+                  <h2 className="text-lg font-medium">
+                    {t("job.responsibilities")}
+                  </h2>
                 </div>
                 <ul className="col-start-3 col-end-12 mt-2 lg:m-0">
                   {job.responsibilities.map((record: Competency) => (
@@ -198,7 +213,9 @@ function SingleJob() {
             <div className="container mx-auto">
               <div className="flex flex-col lg:grid lg:grid-cols-12">
                 <div className="col-start-1 col-end-3">
-                  <h2 className="text-lg font-medium">Qualifications</h2>
+                  <h2 className="text-lg font-medium">
+                    {t("job.qualifications")}
+                  </h2>
                 </div>
                 <ul className="col-start-3 col-end-12 mt-2 lg:m-0">
                   {job.qualifications.map((record: Competency) => (
@@ -214,7 +231,7 @@ function SingleJob() {
             <div className="container mx-auto">
               <div className="flex flex-col lg:grid lg:grid-cols-12">
                 <div className="col-start-1 col-end-3">
-                  <h2 className="text-lg font-medium">About the company</h2>
+                  <h2 className="text-lg font-medium">{t("job.company")}</h2>
                 </div>
                 <div className="col-start-3 col-end-12 mt-2 lg:m-0">
                   <p>{job.company.description}</p>

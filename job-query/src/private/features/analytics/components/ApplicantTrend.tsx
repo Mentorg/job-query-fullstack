@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   LineChart,
   Line,
@@ -15,6 +16,7 @@ type ApplicantTrendProps = {
 };
 
 function ApplicantTrend({ data }: ApplicantTrendProps) {
+  const { t } = useTranslation();
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart
@@ -38,8 +40,14 @@ function ApplicantTrend({ data }: ApplicantTrendProps) {
           dataKey="vacancies"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
+          name={t("analytics.vacancies")}
         />
-        <Line type="monotone" dataKey="applicants" stroke="#82ca9d" />
+        <Line
+          type="monotone"
+          dataKey="applicants"
+          stroke="#82ca9d"
+          name={t("analytics.applicants")}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

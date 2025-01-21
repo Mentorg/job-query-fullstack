@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import TextField from "../../../../../shared/components/form/TextField";
 import Button from "../../../../../shared/components/ui/Button";
@@ -12,6 +13,7 @@ type EditEducationProps = {
 function EditEducation({ education, onCloseModal }: EditEducationProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdateEducation(education);
+  const { t } = useTranslation();
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
   return (
     <form onSubmit={submit} className="flex flex-col gap-5 md:w-auto lg:w-auto">
       <div className="mt-4 flex flex-col gap-y-2">
-        <Label htmlFor="department">Department</Label>
+        <Label htmlFor="department">{t("label.department")}</Label>
         <TextField
           name="department"
           type="text"
@@ -36,7 +38,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="degree">Degree</Label>
+          <Label htmlFor="degree">{t("label.degree")}</Label>
           <TextField
             name="degree"
             type="text"
@@ -47,7 +49,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
           />
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="university">University</Label>
+          <Label htmlFor="university">{t("label.university")}</Label>
           <TextField
             name="university"
             type="text"
@@ -60,7 +62,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="honors">Honors</Label>
+          <Label htmlFor="honors">{t("label.honors")}</Label>
           <TextField
             name="honors"
             type="text"
@@ -71,7 +73,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
           />
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="gpa">GPA</Label>
+          <Label htmlFor="gpa">{t("label.gpa")}</Label>
           <TextField
             name="gpa"
             type="text"
@@ -84,7 +86,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="dateStart">From (D.M.Y)</Label>
+          <Label htmlFor="dateStart">{t("label.dateStart")}</Label>
           <TextField
             name="dateStart"
             type="text"
@@ -95,7 +97,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
           />
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="dateEnd">To (D.M.Y)</Label>
+          <Label htmlFor="dateEnd">{t("label.dateEnd")}</Label>
           <TextField
             name="dateEnd"
             type="text"
@@ -107,7 +109,7 @@ function EditEducation({ education, onCloseModal }: EditEducationProps) {
         </div>
       </div>
       <Button className="mt-4 w-fit rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/75">
-        Submit
+        {t("button.submit")}
       </Button>
     </form>
   );

@@ -4,10 +4,12 @@ import { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { updateLocaleSettings } from "../../../../shared/services/apiUser";
 import { LocaleErrors, User } from "../../../../shared/types/user";
+import i18n from "i18next";
+import { useEffect } from "react";
 
 export function useUpdateLocaleSettings(localeSetting: Partial<User> | null) {
   const [form, setForm] = useState({
-    language: localeSetting?.language ?? "",
+    language: localeSetting?.language ?? i18n.language,
     timezone: localeSetting?.timezone ?? "",
     currencyId: localeSetting?.currencyId ?? undefined,
   });
@@ -43,6 +45,21 @@ export function useUpdateLocaleSettings(localeSetting: Partial<User> | null) {
     }));
   };
 
+  const handleLanguageChange = async (newLanguage: string) => {
+    setForm((prevData) => ({
+      ...prevData,
+      language: newLanguage,
+    }));
+
+    try {
+      await mutation.mutateAsync({ language: newLanguage });
+
+      i18n.changeLanguage(newLanguage);
+    } catch (error) {
+      toast.error("Error updating language.");
+    }
+  };
+
   const validateForm = () => {
     const newErrors: LocaleErrors = {
       language: !form.language && "Please select an option",
@@ -76,5 +93,19 @@ export function useUpdateLocaleSettings(localeSetting: Partial<User> | null) {
     }
   };
 
-  return { form, errors, handleChange, handleSubmit, isSubmitted };
+  useEffect(() => {
+    setForm((prevData) => ({
+      ...prevData,
+      language: i18n.language,
+    }));
+  }, [i18n.language]);
+
+  return {
+    form,
+    errors,
+    handleChange,
+    handleSubmit,
+    isSubmitted,
+    handleLanguageChange,
+  };
 }

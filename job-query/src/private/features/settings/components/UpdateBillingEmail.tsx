@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../../shared/components/ui/Button";
 import Label from "../../../../shared/components/form/Label";
 import TextField from "../../../../shared/components/form/TextField";
@@ -15,6 +16,7 @@ function UpdateBillingEmail({
 }: UpdateBillingEmailProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdateBillingSettings(resource);
+  const { t } = useTranslation();
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ function UpdateBillingEmail({
     <div>
       <form onSubmit={submit}>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="email">Email Address</Label>
+          <Label htmlFor="email">{t("label.email")}</Label>
           <TextField
             name="email"
             type="text"
@@ -39,7 +41,7 @@ function UpdateBillingEmail({
           />
         </div>
         <Button className="mt-4 rounded-md bg-primary px-6 py-2 text-white hover:bg-primary/70">
-          Submit
+          {t("button.submit")}
         </Button>
       </form>
     </div>

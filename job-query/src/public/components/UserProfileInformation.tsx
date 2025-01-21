@@ -1,14 +1,15 @@
+import { useTranslation } from "react-i18next";
+import Logo from "./Logo";
 import Label from "../../shared/components/form/Label";
 import TextField from "../../shared/components/form/TextField";
 import Select from "../../shared/components/form/Select";
 import Option from "../../shared/components/form/Option";
 import Loading from "../../shared/components/ui/Loading";
+import Button from "../../shared/components/ui/Button";
 import { useGetLocations } from "../../private/hooks/useGetLocations";
 import { timezones } from "../../private/features/settings/data/timezones";
 import { Location } from "../../shared/types/location";
 import { SignupErrors, SignupProps } from "../../shared/types/user";
-import Button from "../../shared/components/ui/Button";
-import Logo from "./Logo";
 
 function UserProfileInformation({
   form,
@@ -28,13 +29,14 @@ function UserProfileInformation({
   isSubmitted: boolean;
 }) {
   const { locations, isPending, error } = useGetLocations();
+  const { t } = useTranslation();
 
   if (isPending) {
     return <Loading />;
   }
 
   if (error) {
-    return <div>Error fetching location data</div>;
+    return <div>{t("system.serverError")}</div>;
   }
 
   return (
@@ -45,10 +47,10 @@ function UserProfileInformation({
         </div>
         <div className="my-8 flex flex-col items-center">
           <h1 className="text-3xl font-medium text-slate-600">
-            Tell Us More About You
+            {t("auth.profileInfoTitle")}
           </h1>
           <p className="my-4 text-lg text-slate-500">
-            Let's personalize your profile with a few more details.
+            {t("auth.profileInfoSubTitle")}
           </p>
         </div>
         <form
@@ -56,7 +58,7 @@ function UserProfileInformation({
           className="m-auto flex w-[90dvw] flex-col gap-4 rounded-md bg-white p-10 md:m-0 md:w-max"
         >
           <div className="my-2 flex flex-col items-center gap-4">
-            <Label htmlFor="avatar">Avatar</Label>
+            <Label htmlFor="avatar">{t("label.avatar")}</Label>
             <input
               type="file"
               name="avatar"
@@ -67,7 +69,7 @@ function UserProfileInformation({
           </div>
           <div className="my-2 grid grid-cols-1 gap-4 xl:grid-cols-2">
             <div className="flex flex-col">
-              <Label htmlFor="phone">Phone</Label>
+              <Label htmlFor="phone">{t("label.phone")}</Label>
               <TextField
                 name="phone"
                 type="text"
@@ -78,7 +80,7 @@ function UserProfileInformation({
               />
             </div>
             <div className="flex flex-col">
-              <Label htmlFor="linkedin_profile">LinkedIn</Label>
+              <Label htmlFor="linkedin_profile">{t("label.linkedin")}</Label>
               <TextField
                 name="linkedin_profile"
                 type="text"
@@ -91,7 +93,7 @@ function UserProfileInformation({
           </div>
           <div className="my-2 grid grid-cols-1 gap-4 xl:grid-cols-2">
             <div className="flex flex-col">
-              <Label htmlFor="location">Location</Label>
+              <Label htmlFor="location">{t("label.location")}</Label>
               <Select
                 name="location"
                 value={form.location}
@@ -106,12 +108,12 @@ function UserProfileInformation({
                     </Option>
                   ))
                 ) : (
-                  <Option value="">No locations available</Option>
+                  <Option value="">{t("system.locationError")}</Option>
                 )}
               </Select>
             </div>
             <div className="flex flex-col">
-              <Label htmlFor="timezone">Time Zone</Label>
+              <Label htmlFor="timezone">{t("label.timezone")}</Label>
               <Select
                 name="timezone"
                 value={form.timezone}
@@ -129,7 +131,7 @@ function UserProfileInformation({
           </div>
           <div className="my-2 flex flex-col md:flex-row">
             <div className="flex w-full flex-col">
-              <Label htmlFor="language">Language</Label>
+              <Label htmlFor="language">{t("label.language")}</Label>
               <Select
                 name="language"
                 value={form.language}
@@ -146,7 +148,7 @@ function UserProfileInformation({
             </div>
           </div>
           <Button className="mt-4 rounded-md bg-primary px-4 py-2 text-white">
-            Submit
+            {t("button.submit")}
           </Button>
         </form>
       </div>

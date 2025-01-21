@@ -8,6 +8,7 @@ import {
   JobErrors,
   CreateJob,
 } from "../../../../../shared/types/job";
+import { useTranslation } from "react-i18next";
 
 type JobDescriptionProps = {
   form: CreateJob | UpdateJob;
@@ -38,6 +39,8 @@ function Competencies({
   handleResponsibilityChange,
   handleQualificationChange,
 }: JobDescriptionProps) {
+  const { t } = useTranslation();
+
   const responsibilities = isCreate
     ? form.responsibilities.map((responsibility) => ({
         description: responsibility,
@@ -53,12 +56,12 @@ function Competencies({
   return (
     <>
       <h1 className="border-b-2 border-slate-300 py-4 text-2xl font-semibold xl:text-2xl">
-        Job Responsibilities & Qualifications
+        {t("job.competencies")}
       </h1>
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         <div className="my-8">
           {responsibilities.map((responsibility, index) => {
-            const isCompetencyItem = isCompetency(responsibility); // Check if it's a Competency
+            const isCompetencyItem = isCompetency(responsibility);
             return (
               <div
                 key={isCompetencyItem ? responsibility.id : index}
@@ -66,7 +69,7 @@ function Competencies({
               >
                 <div className="my-4 flex w-full flex-col gap-y-1">
                   <Label htmlFor={`responsibility-${index}`}>
-                    Responsibility #{index + 1}
+                    {t("label.responsibility", { count: index + 1 })}
                   </Label>
                   <TextField
                     name={`responsibility[${index}]`}
@@ -74,15 +77,15 @@ function Competencies({
                     value={
                       isCreate
                         ? typeof responsibility === "string"
-                          ? responsibility // if it's a string, pass it directly
+                          ? responsibility
                           : responsibility.description
                             ? responsibility.description
-                            : "" // if it's not a string, extract description
+                            : ""
                         : typeof responsibility === "string"
-                          ? responsibility // if it's a string, pass it directly
+                          ? responsibility
                           : responsibility.description
                             ? responsibility.description
-                            : "" // if it's not a string, extract description
+                            : ""
                     }
                     onChange={(e) =>
                       handleResponsibilityChange(index, e.target.value)
@@ -110,12 +113,12 @@ function Competencies({
             onClick={(e) => addResponsibility(e)}
             className="rounded-md bg-slate-200 px-4 py-2 font-medium text-slate-500 transition-all hover:bg-slate-100"
           >
-            Add Responsibility
+            {t("button.responsibility")}
           </Button>
         </div>
         <div className="my-8">
           {qualifications.map((qualification, index) => {
-            const isCompetencyItem = isCompetency(qualification); // Check if it's a Competency
+            const isCompetencyItem = isCompetency(qualification);
             return (
               <div
                 key={isCompetencyItem ? qualification.id : index}
@@ -123,7 +126,7 @@ function Competencies({
               >
                 <div className="my-4 flex w-full flex-col gap-y-1">
                   <Label htmlFor={`qualification-${index}`}>
-                    Qualification #{index + 1}
+                    {t("label.qualification", { count: index + 1 })}
                   </Label>
                   <TextField
                     name={`qualification[${index}]`}
@@ -131,15 +134,15 @@ function Competencies({
                     value={
                       isCreate
                         ? typeof qualification === "string"
-                          ? qualification // if it's a string, pass it directly
+                          ? qualification
                           : qualification.description
                             ? qualification.description
-                            : "" // if it's not a string, extract description
+                            : ""
                         : typeof qualification === "string"
-                          ? qualification // if it's a string, pass it directly
+                          ? qualification
                           : qualification.description
                             ? qualification.description
-                            : "" // if it's not a string, extract description
+                            : ""
                     }
                     onChange={(e) =>
                       handleQualificationChange(index, e.target.value)
@@ -167,7 +170,7 @@ function Competencies({
             onClick={(e) => addQualification(e)}
             className="rounded-md bg-slate-200 px-4 py-2 font-medium text-slate-500 transition-all hover:bg-slate-100"
           >
-            Add Qualification
+            {t("button.qualification")}
           </Button>
         </div>
       </div>

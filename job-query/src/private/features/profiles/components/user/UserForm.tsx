@@ -1,12 +1,13 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import TextField from "../../../../../shared/components/form/TextField";
 import Select from "../../../../../shared/components/form/Select";
 import Option from "../../../../../shared/components/form/Option";
 import Button from "../../../../../shared/components/ui/Button";
 import Loading from "../../../../../shared/components/ui/Loading";
-import { User } from "../../../../../shared/types/user";
 import { useUpdateUser } from "../../hooks/useUpdateUser";
 import { useGetLocations } from "../../../../hooks/useGetLocations";
+import { User } from "../../../../../shared/types/user";
 
 type RecruiterFormProps = {
   profile: User | null;
@@ -23,10 +24,11 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
     isSubmitted,
   } = useUpdateUser(profile);
   const { locations, isPending, error } = useGetLocations();
+  const { t } = useTranslation();
 
   if (isPending) return <Loading />;
 
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>{t("system.serverError")}</div>;
 
   const sortedLocations = [...locations].sort((a, b) => {
     if (a.city < b.city) return -1;
@@ -70,7 +72,7 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="flex w-full flex-col gap-y-2">
-          <Label htmlFor="name">Full Name</Label>
+          <Label htmlFor="name">{t("label.name")}</Label>
           <TextField
             name="name"
             type="text"
@@ -81,7 +83,7 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
           />
         </div>
         <div className="flex w-full flex-col gap-y-2">
-          <Label htmlFor="country">Country</Label>
+          <Label htmlFor="locationId">{t("label.location")}</Label>
           <Select
             name="locationId"
             value={form?.locationId}
@@ -99,7 +101,7 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
       </div>
       <div className="flex flex-col gap-x-4 md:grid md:grid-cols-2">
         <div className="flex w-full flex-col gap-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
+          <Label htmlFor="phone">{t("label.phone")}</Label>
           <TextField
             name="phone"
             type="text"
@@ -110,7 +112,7 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
           />
         </div>
         <div className="flex w-full flex-col gap-y-2">
-          <Label htmlFor="linkedinProfile">LinkedIn Profile</Label>
+          <Label htmlFor="linkedinProfile">{t("label.linkedin")}</Label>
           <TextField
             name="linkedinProfile"
             type="text"
@@ -123,7 +125,7 @@ function UserForm({ profile, onCloseModal }: RecruiterFormProps) {
       </div>
       <div className="flex justify-center">
         <Button className="rounded-md bg-primary px-6 py-2 text-white">
-          Confirm
+          {t("button.confirm")}
         </Button>
       </div>
     </form>

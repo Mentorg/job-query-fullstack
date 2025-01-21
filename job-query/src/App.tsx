@@ -2,12 +2,13 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useTranslation } from "react-i18next";
 import { Login } from "./public/pages/Login.tsx";
 import { SignUp } from "./public/pages/SignUp.tsx";
 import { AuthProvider } from "./shared/context/AuthContext.tsx";
+import { ProtectedRoute } from "./public/components/ProtectedRoute.tsx";
 import Loading from "./shared/components/ui/Loading.tsx";
 import ErrorBoundary from "./shared/components/ui/ErrorBoundary.tsx";
-import { ProtectedRoute } from "./public/components/ProtectedRoute.tsx";
 import NotAuthorized from "./public/pages/NotAuthorized.tsx";
 
 // Public Routes
@@ -77,11 +78,12 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const { t } = useTranslation();
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <AuthProvider>
-        <ErrorBoundary fallbackMessage="An unexpected error occurred. Please try again later.">
+        <ErrorBoundary fallbackMessage={t("system.fallbackError")}>
           <Suspense fallback={<Loading fullPage={true} />}>
             <Routes>
               <Route path="/" element={<HomeLayout />}>

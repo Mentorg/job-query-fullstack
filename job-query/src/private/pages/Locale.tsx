@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { LuPenLine } from "react-icons/lu";
 import Modal from "../context/Modal";
 import Menus from "../context/Menus";
@@ -12,24 +13,36 @@ import { useGetUserCurrency } from "../features/settings/hooks/useGetUserCurrenc
 function Locale() {
   const { user } = useAuth();
   const { userCurrency, isPending, error } = useGetUserCurrency();
+  const { t } = useTranslation();
+
+  const languageMap: Record<string, string> = {
+    "en-US": "English",
+    de: "German",
+    fr: "French",
+  };
+
+  const languageName =
+    user?.language && languageMap[user.language]
+      ? languageMap[user.language]
+      : user?.language;
 
   return (
     <div className="mt-10 w-full xl:w-[75%]">
       <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
         <div className="flex flex-[1] flex-col">
-          <h3 className="font-medium">Language</h3>
+          <h3 className="font-medium">{t("setting.locale.language")}</h3>
           <p className="mt-2 text-sm lg:mt-6">
-            Set the preferred language for the app
+            {t("setting.locale.languageDescription")}
           </p>
         </div>
         <div className="flex flex-[1] justify-center">
-          <p>{user?.language}</p>
+          <p>{languageName}</p>
         </div>
         <div className="flex flex-[1] justify-end gap-4">
           <Modal>
             <Modal.Open opens="edit">
               <Menus.Button type="edit">
-                Edit
+                {t("button.edit")}
                 <span>
                   <LuPenLine />
                 </span>
@@ -43,9 +56,9 @@ function Locale() {
       </div>
       <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
         <div className="flex flex-[1] flex-col">
-          <h3 className="font-medium">Time zone</h3>
+          <h3 className="font-medium">{t("setting.locale.timezone")}</h3>
           <p className="mt-2 text-sm lg:mt-6">
-            Select the time zone that best matches your current location
+            {t("setting.locale.timezoneDescription")}
           </p>
         </div>
         <div className="flex flex-[1] justify-center">
@@ -55,7 +68,7 @@ function Locale() {
           <Modal>
             <Modal.Open opens="edit">
               <Menus.Button type="edit">
-                Edit
+                {t("button.edit")}
                 <span>
                   <LuPenLine />
                 </span>
@@ -69,9 +82,9 @@ function Locale() {
       </div>
       <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
         <div className="flex flex-[1] flex-col">
-          <h3 className="font-medium">Base currency</h3>
+          <h3 className="font-medium">{t("setting.locale.baseCurrency")}</h3>
           <p className="mt-2 text-sm lg:mt-6">
-            Select the base currency for job listings and salary information.
+            {t("setting.locale.baseCurrencyDescription")}
           </p>
         </div>
         <div className="flex flex-[1] justify-center">
@@ -80,7 +93,7 @@ function Locale() {
           ) : error ? (
             <Fallback
               errorType="fetch"
-              message={error.message || "Failed to load data"}
+              message={error.message || t("system.serverError")}
             />
           ) : (
             <p>
@@ -92,7 +105,7 @@ function Locale() {
           <Modal>
             <Modal.Open opens="edit">
               <Menus.Button type="edit">
-                Edit
+                {t("button.edit")}
                 <span>
                   <LuPenLine />
                 </span>

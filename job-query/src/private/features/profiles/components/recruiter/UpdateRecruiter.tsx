@@ -1,8 +1,9 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import TextArea from "../../../../../shared/components/form/TextArea";
 import Button from "../../../../../shared/components/ui/Button";
-import { Recruiter } from "../../../../../shared/types/user";
 import { useUpdateRecruiter } from "../../hooks/useUpdateRecruiter";
+import { Recruiter } from "../../../../../shared/types/user";
 
 type UpdateRecruiterProps = {
   recruiter: Recruiter;
@@ -12,6 +13,7 @@ type UpdateRecruiterProps = {
 function UpdateRecruiter({ recruiter, onCloseModal }: UpdateRecruiterProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
     useUpdateRecruiter(recruiter);
+  const { t } = useTranslation();
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ function UpdateRecruiter({ recruiter, onCloseModal }: UpdateRecruiterProps) {
   return (
     <form onSubmit={submit} className="flex flex-col gap-5 md:w-auto lg:w-auto">
       <div className="flex flex-col gap-y-2">
-        <Label htmlFor="expertise">Expertise</Label>
+        <Label htmlFor="expertise">{t("recruiter.expertise")}</Label>
         <TextArea
           name="expertise"
           value={form.expertise}
@@ -34,7 +36,7 @@ function UpdateRecruiter({ recruiter, onCloseModal }: UpdateRecruiterProps) {
         />
       </div>
       <div className="flex flex-col gap-y-2">
-        <Label htmlFor="description">About Me</Label>
+        <Label htmlFor="description">{t("recruiter.description")}</Label>
         <TextArea
           name="description"
           value={form.description}
@@ -45,7 +47,7 @@ function UpdateRecruiter({ recruiter, onCloseModal }: UpdateRecruiterProps) {
       </div>
       <div className="flex justify-center">
         <Button className="rounded-md bg-primary px-6 py-2 text-white">
-          Confirm
+          {t("button.confirm")}
         </Button>
       </div>
     </form>

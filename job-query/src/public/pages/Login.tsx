@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import AuthenticationContainer from "../components/AuthenticationContainer";
 import Label from "../../shared/components/form/Label";
 import TextField from "../../shared/components/form/TextField";
@@ -8,6 +9,7 @@ import { useLogin } from "../hooks/useLogin";
 export function Login() {
   const { errors, loginForm, handleChange, handleSubmit, isSubmitted } =
     useLogin();
+  const { t } = useTranslation();
 
   return (
     <AuthenticationContainer>
@@ -16,38 +18,48 @@ export function Login() {
         className="m-auto flex w-[90dvw] flex-col rounded-md bg-white p-10 md:w-max"
       >
         <div className="rounded-md bg-slate-100 px-8 py-2">
-          <h2 className="my-2 font-medium">Super admin credentials:</h2>
+          <h2 className="my-2 font-medium">{t("auth.adminCredentials")}:</h2>
           <p className="text-sm">
-            <span className="font-medium">Email:</span> robertbrown@jobquery.com
+            <span className="font-medium">{t("auth.email")}:</span>{" "}
+            robertbrown@jobquery.com
           </p>
           <p className="text-sm">
-            <span className="font-medium">Password:</span> robertbrown
-          </p>
-        </div>
-        <div className="rounded-md bg-slate-100 px-8 py-2">
-          <h2 className="my-2 font-medium">Recruiter credentials:</h2>
-          <p className="text-sm">
-            <span className="font-medium">Email:</span> janedoe@innovize.com
-          </p>
-          <p className="text-sm">
-            <span className="font-medium">Password:</span> janedoe
+            <span className="font-medium">{t("auth.password")}:</span>{" "}
+            robertbrown
           </p>
         </div>
         <div className="rounded-md bg-slate-100 px-8 py-2">
-          <h2 className="my-2 font-medium">Applicant credentials:</h2>
+          <h2 className="my-2 font-medium">
+            {t("auth.recruiterCredentials")}:
+          </h2>
           <p className="text-sm">
-            <span className="font-medium">Email:</span> johnsmith@applicant.com
+            <span className="font-medium">{t("auth.email")}:</span>{" "}
+            janedoe@innovize.com
           </p>
           <p className="text-sm">
-            <span className="font-medium">Password:</span> johnsmith
+            <span className="font-medium">{t("auth.password")}:</span> janedoe
           </p>
         </div>
-        <h1 className="py-4 text-xl font-medium lg:py-10 lg:text-3xl">
-          Welcome to JobQuery <br />
-          Sign into your account
-        </h1>
+        <div className="rounded-md bg-slate-100 px-8 py-2">
+          <h2 className="my-2 font-medium">
+            {t("auth.applicantCredentials")}:
+          </h2>
+          <p className="text-sm">
+            <span className="font-medium">{t("auth.email")}:</span>{" "}
+            johnsmith@applicant.com
+          </p>
+          <p className="text-sm">
+            <span className="font-medium">{t("auth.password")}:</span> johnsmith
+          </p>
+        </div>
+        <div className="py-4 lg:py-10">
+          <h1 className="text-xl font-medium lg:text-3xl">{t("auth.title")}</h1>
+          <p className="mt-2 text-lg font-medium text-slate-700 lg:text-2xl">
+            {t("auth.headlineLogin")}
+          </p>
+        </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="email">Email Address</Label>
+          <Label htmlFor="email">{t("label.email")}</Label>
           <TextField
             name="email"
             type="email"
@@ -58,7 +70,7 @@ export function Login() {
           />
         </div>
         <div className="mt-4 flex flex-col gap-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t("label.password")}</Label>
           <TextField
             name="password"
             type="password"
@@ -69,16 +81,16 @@ export function Login() {
           />
         </div>
         <Button className="mt-4 rounded-md bg-primary px-4 py-2 text-white">
-          Log In
+          {t("button.login")}
         </Button>
         <p className="mt-4 text-sm">
-          Don't have an account?{" "}
+          {t("auth.noAccount")}{" "}
           <NavLink to="/signup" className="font-medium text-blue-600">
-            Sign up now
+            {t("navigation.signUpAuth")}
           </NavLink>
         </p>
         <NavLink to="/" className="mt-2 text-sm text-blue-600">
-          Browse job ads without authentication
+          {t("navigation.browseJobs")}
         </NavLink>
       </form>
     </AuthenticationContainer>

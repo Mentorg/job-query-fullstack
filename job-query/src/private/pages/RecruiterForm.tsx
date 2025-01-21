@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../shared/components/form/Label";
 import TextField from "../../shared/components/form/TextField";
 import Button from "../../shared/components/ui/Button";
@@ -6,8 +7,8 @@ import Option from "../../shared/components/form/Option";
 import Loading from "../../shared/components/ui/Loading";
 import { useCreateRecruiter } from "../features/profiles/hooks/useCreateRecruiter";
 import { useGetCompanies } from "../features/profiles/hooks/useGetCompanies";
-import { Company } from "../../shared/types/company";
 import { useGetLocations } from "../hooks/useGetLocations";
+import { Company } from "../../shared/types/company";
 import { Location } from "../../shared/types/location";
 
 function RecruiterForm() {
@@ -29,24 +30,21 @@ function RecruiterForm() {
     isPending: isPendingLocations,
     error: locationsError,
   } = useGetLocations();
+  const { t } = useTranslation();
 
   if (isPendingCompanies || isPendingLocations) {
     return <Loading />;
   }
 
   if (companiesError || locationsError) {
-    return (
-      <div>
-        Error fetching {companiesError ? "companies" : "locations"} data
-      </div>
-    );
+    return <div>{t("system.serverError")}</div>;
   }
 
   return (
     <div className="flex w-full flex-col gap-y-10 px-6 py-4 md:px-10 lg:px-12 xl:px-14">
       <div className="flex flex-col items-start justify-between gap-y-4 sm:flex-row sm:items-center sm:gap-y-0">
         <h1 className="text-2xl font-semibold md:mt-4 2xl:text-2xl">
-          Create Recruiter
+          {t("pageTitle.createRecruiter")}
         </h1>
       </div>
       <div>
@@ -56,7 +54,7 @@ function RecruiterForm() {
         >
           <div className="flex flex-col gap-y-2">
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="avatar">Avatar</Label>
+              <Label htmlFor="avatar">{t("label.avatar")}</Label>
               <input
                 type="file"
                 name="avatar"
@@ -65,7 +63,7 @@ function RecruiterForm() {
               />
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">{t("label.name")}</Label>
               <TextField
                 name="name"
                 type="text"
@@ -76,7 +74,7 @@ function RecruiterForm() {
               />
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="email">Email Address</Label>
+              <Label htmlFor="email">{t("label.email")}</Label>
               <TextField
                 name="email"
                 type="email"
@@ -87,7 +85,7 @@ function RecruiterForm() {
               />
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t("label.password")}</Label>
               <TextField
                 name="password"
                 type="password"
@@ -98,7 +96,9 @@ function RecruiterForm() {
               />
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="password_confirmation">Confirm Password</Label>
+              <Label htmlFor="password_confirmation">
+                {t("label.confirmPassword")}
+              </Label>
               <TextField
                 name="password_confirmation"
                 type="password"
@@ -109,7 +109,7 @@ function RecruiterForm() {
               />
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="location">Location</Label>
+              <Label htmlFor="location">{t("label.location")}</Label>
               <Select
                 name="location"
                 value={form.location}
@@ -124,12 +124,12 @@ function RecruiterForm() {
                     </Option>
                   ))
                 ) : (
-                  <Option value="">No locations available</Option>
+                  <Option value="">{t("system.noLocation")}</Option>
                 )}
               </Select>
             </div>
             <div className="mt-4 flex flex-col gap-y-2">
-              <Label htmlFor="companies">Company</Label>
+              <Label htmlFor="companies">{t("label.company")}</Label>
               <Select
                 name="companies"
                 value={form.companies}
@@ -144,12 +144,12 @@ function RecruiterForm() {
                     </Option>
                   ))
                 ) : (
-                  <Option value="">No companies available</Option>
+                  <Option value="">{t("system.companyError")}</Option>
                 )}
               </Select>
             </div>
             <Button className="mt-4 rounded-md bg-primary px-4 py-2 text-white">
-              Create Recruiter
+              {t("button.recruiter")}
             </Button>
           </div>
         </form>

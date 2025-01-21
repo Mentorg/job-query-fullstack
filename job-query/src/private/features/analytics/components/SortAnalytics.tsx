@@ -1,9 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 type SortAnalyticsProps = {
   period: string;
   onHandleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 function SortAnalytics({ period, onHandleChange }: SortAnalyticsProps) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <select
@@ -12,13 +16,13 @@ function SortAnalytics({ period, onHandleChange }: SortAnalyticsProps) {
         className={`rounded-md border-2 px-5 py-2`}
       >
         <option value="weekly" key="weekly">
-          This week
+          {t("filter.currentWeek")}
         </option>
         <option value="monthly" key="monthly">
-          This Month
+          {t("filter.currentMonth")}
         </option>
         <option value="annual" key="annual">
-          This Year
+          {t("filter.currentYear")}
         </option>
       </select>
     </div>

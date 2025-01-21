@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { MdOutlineTrendingUp, MdTrendingDown } from "react-icons/md";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 
@@ -36,6 +37,7 @@ const data = [
 ];
 
 function Metric({ title, currentValue, previousValue, time }: MetricProps) {
+  const { t } = useTranslation();
   return (
     <div className="w-full rounded-md bg-slate-100 p-6 2xl:p-10">
       <div>
@@ -53,7 +55,7 @@ function Metric({ title, currentValue, previousValue, time }: MetricProps) {
                   <MdOutlineTrendingUp />
                   {previousValue}
                 </span>{" "}
-                vs. last {time}
+                {t(`overview.last${time}`)}
               </>
             ) : (
               <>
@@ -61,7 +63,7 @@ function Metric({ title, currentValue, previousValue, time }: MetricProps) {
                   <MdTrendingDown />
                   {previousValue}
                 </span>{" "}
-                vs. last {time}
+                {t(`overview.last${time}`)}
               </>
             )}
           </p>

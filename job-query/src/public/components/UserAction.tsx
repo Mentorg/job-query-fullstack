@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { LiaUser } from "react-icons/lia";
 import { LiaUserCogSolid } from "react-icons/lia";
@@ -20,6 +21,7 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
   const { user } = useAuth();
   const { handleOpenAction } = useActionsService();
   const logout = useLogout();
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -78,8 +80,8 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
                 </span>
                 <p className="ml-3 text-xs font-semibold text-slate-500">
                   {userRole === "admin" || userRole === "recruiter"
-                    ? "Dashboard"
-                    : "My Profile"}
+                    ? t("navigation.dashboard")
+                    : t("navigation.userProfile")}
                 </p>
               </NavLink>
             </li>
@@ -99,7 +101,7 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
                       <LiaUserCogSolid className="h-[1.25rem] w-[1.25rem] text-slate-500" />
                     </span>
                     <p className="ml-3 text-xs font-semibold text-slate-500">
-                      Account Settings
+                      {t("navigation.accountSettings")}
                     </p>
                   </NavLink>
                 </li>
@@ -113,7 +115,7 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
                       <SlHome className="h-[1.25rem] w-[1.25rem] text-slate-500" />
                     </span>
                     <p className="ml-3 text-xs font-semibold text-slate-500">
-                      Company Profile
+                      {t("navigation.companyProfile")}
                     </p>
                   </NavLink>
                 </li>
@@ -124,10 +126,10 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
                     </span>
                     <div className="flex w-full items-center justify-between">
                       <p className="ml-3 text-xs font-semibold text-slate-500">
-                        Pricing Plans
+                        {t("navigation.pricingPlans")}
                       </p>
                       <span className="rounded-md bg-primary p-[.25rem] text-[.5rem] text-white">
-                        soon
+                        {t("system.soon")}
                       </span>
                     </div>
                   </div>
@@ -140,7 +142,7 @@ function UserAction({ menu, activeMenu, onHandleOpenMenu }: UserActionProps) {
                   <PiSignOutFill className="h-[1.25rem] w-[1.25rem] text-slate-500" />
                 </span>
                 <p className="ml-3 text-xs font-semibold text-slate-500">
-                  Sign Out
+                  {t("navigation.signOut")}
                 </p>
               </button>
             </li>

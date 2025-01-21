@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { LuPenLine } from "react-icons/lu";
 import { BiTrash } from "react-icons/bi";
 import Modal from "../../../../context/Modal";
@@ -13,6 +14,7 @@ type ApplicantEducationProps = {
 
 function ApplicantEducation({ resource }: ApplicantEducationProps) {
   const { handleDelete } = useDeleteEducation(resource);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -33,24 +35,26 @@ function ApplicantEducation({ resource }: ApplicantEducationProps) {
           </p>
         </div>
         <div className="order-1 row-start-3 flex flex-col items-center self-baseline sm:order-2 sm:row-start-2 lg:col-start-3 lg:row-start-1 lg:place-self-center xl:col-start-3 xl:col-end-3">
-          <p className="text-xs font-medium text-slate-400">Date</p>
+          <p className="text-xs font-medium text-slate-400">{t("user.date")}</p>
           <p className="font-medium">
             {resource.dateStart} - {resource.dateEnd}
           </p>
         </div>
         <div className="order-2 row-start-3 flex flex-col items-center self-baseline sm:order-1 sm:row-start-2 lg:place-self-center xl:order-2 xl:col-start-4 xl:col-end-4 xl:row-start-1">
-          <p className="text-xs font-medium text-slate-400">GPA</p>
+          <p className="text-xs font-medium text-slate-400">{t("user.gpa")}</p>
           <p className="font-medium">{resource.gpa}</p>
         </div>
         <div className="col-start-1 col-end-3 row-start-4 self-baseline text-center sm:col-start-3 sm:row-start-2 lg:col-start-2 lg:place-self-center xl:col-start-5 xl:col-end-5 xl:row-start-1">
-          <p className="text-xs font-medium text-slate-400">Honors</p>
+          <p className="text-xs font-medium text-slate-400">
+            {t("user.honors")}
+          </p>
           <p className="font-medium">{resource.honors}</p>
         </div>
         <div className="col-start-1 col-end-3 row-start-5 flex justify-center gap-2.5 place-self-center sm:col-end-4 sm:row-start-3 sm:justify-end lg:col-start-3 lg:row-start-2 xl:col-start-6 xl:col-end-6 xl:row-start-1 xl:justify-self-end">
           <Modal>
             <Modal.Open opens="edit">
               <Menus.Button type="edit">
-                Edit
+                {t("button.edit")}
                 <span className="ml-2">
                   <LuPenLine />
                 </span>
@@ -58,7 +62,7 @@ function ApplicantEducation({ resource }: ApplicantEducationProps) {
             </Modal.Open>
             <Modal.Open opens="delete">
               <Menus.Button type="delete">
-                Delete
+                {t("button.delete")}
                 <span className="ml-2">
                   <BiTrash />
                 </span>

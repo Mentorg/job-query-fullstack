@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosLink } from "react-icons/io";
 import { FaClock } from "react-icons/fa";
 import Chip from "../../../../../shared/components/ui/Chip";
+import { formatDate } from "../../../../../shared/utils/dateFormat";
 import { Job } from "../../../../../shared/types/job";
 import { Company } from "../../../../../shared/types/company";
-import { formatDate } from "../../../../../shared/utils/dateFormat";
 
 export type RecruiterAdsProps = {
   recruiterAds: Job[];
@@ -12,6 +13,8 @@ export type RecruiterAdsProps = {
 };
 
 function RecruiterAds({ recruiterAds, company }: RecruiterAdsProps) {
+  const { t } = useTranslation();
+
   const avatarUrl =
     company.avatar !== null
       ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/logos/${company.avatar}`
@@ -19,7 +22,7 @@ function RecruiterAds({ recruiterAds, company }: RecruiterAdsProps) {
 
   return (
     <>
-      <h2 className="py-4 text-xl font-medium">Jobs Posted</h2>
+      <h2 className="py-4 text-xl font-medium">{t("recruiter.jobsPosted")}</h2>
       {recruiterAds?.map((advertisement: Job) => (
         <div
           key={advertisement.id}
@@ -39,7 +42,9 @@ function RecruiterAds({ recruiterAds, company }: RecruiterAdsProps) {
             </div>
           </div>
           <div className="order-2 col-start-1 col-end-1 row-start-2 row-end-2 flex flex-col justify-center md:col-start-3 md:col-end-3 md:row-start-1 lg:col-start-1 lg:col-end-1 lg:row-start-2 lg:row-end-2 xl:order-2 xl:col-start-4 xl:col-end-5 xl:row-start-1 xl:row-end-1">
-            <h3 className="text-xs font-medium text-slate-500">Date</h3>
+            <h3 className="text-xs font-medium text-slate-500">
+              {t("job.posted")}
+            </h3>
             <p className="text-sm font-medium">
               {formatDate(advertisement.createdAt)}
             </p>
@@ -53,7 +58,7 @@ function RecruiterAds({ recruiterAds, company }: RecruiterAdsProps) {
               ) {
                 return (
                   <Chip
-                    key={record.id} // Safe to access 'record.id' now
+                    key={record.id}
                     className="flex w-fit items-center rounded-3xl bg-blue-500 px-3 py-1"
                     icon={<FaLocationDot className="text-white" />}
                   >
@@ -75,7 +80,7 @@ function RecruiterAds({ recruiterAds, company }: RecruiterAdsProps) {
               className="flex w-fit items-center rounded-3xl bg-red-500 px-3 py-1"
               icon={<FaClock className="text-white" />}
             >
-              {advertisement.isFulltime ? "Full Time" : "Part Time"}
+              {advertisement.isFulltime ? t("job.fullTime") : t("job.partTime")}
             </Chip>
           </div>
           <div className="order-3 col-start-2 col-end-2 row-start-2 row-end-2 flex w-full items-center justify-center sm:col-start-3 sm:col-end-4 sm:row-start-1 md:col-start-5 md:col-end-6 xl:order-4 xl:col-start-7 xl:col-end-9 xl:row-start-1 xl:row-end-1">

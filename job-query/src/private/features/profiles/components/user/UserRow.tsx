@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { HiEye, HiPencil, HiTrash } from "react-icons/hi2";
 import Menus from "../../../../context/Menus";
 import Modal from "../../../../context/Modal";
@@ -5,9 +6,10 @@ import Table from "../../../../context/Table";
 import UserForm from "./UserForm";
 import UserDetails from "./UserDetails";
 import ConfirmDelete from "../../../../components/ConfirmDelete";
+import StatusChip from "../../../../components/StatusChip";
+import { useDeleteUser } from "../../../settings/hooks/useDeleteUser";
 import { formatDate } from "../../../../../shared/utils/dateFormat";
 import { User } from "../../../../../shared/types/user";
-import { useDeleteUser } from "../../../settings/hooks/useDeleteUser";
 
 type UserRowProps = {
   user: User;
@@ -15,6 +17,7 @@ type UserRowProps = {
 
 function UserRow({ user }: UserRowProps) {
   const { handleDelete } = useDeleteUser(user.id);
+  const { t } = useTranslation();
 
   return (
     <Table.Row key={user?.id}>
@@ -30,7 +33,7 @@ function UserRow({ user }: UserRowProps) {
       </div>
       <div>
         <p className="w-[150px] whitespace-nowrap text-sm font-semibold text-slate-600">
-          {user?.role}
+          <StatusChip>{user.role}</StatusChip>
         </p>
       </div>
       <div>
@@ -50,19 +53,19 @@ function UserRow({ user }: UserRowProps) {
             <Modal.Open opens="view">
               <Menus.Button type="option">
                 <HiEye />
-                <span>View User</span>
+                <span>{t("contextAction.viewUser")}</span>
               </Menus.Button>
             </Modal.Open>
             <Modal.Open opens="edit">
               <Menus.Button type="option">
                 <HiPencil />
-                <span>Edit</span>
+                <span>{t("contextAction.edit")}</span>
               </Menus.Button>
             </Modal.Open>
             <Modal.Open opens="delete">
               <Menus.Button type="option">
                 <HiTrash />
-                <span>Delete</span>
+                <span>{t("contextAction.delete")}</span>
               </Menus.Button>
             </Modal.Open>
           </Menus.List>

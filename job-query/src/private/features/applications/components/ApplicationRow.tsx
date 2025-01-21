@@ -12,6 +12,7 @@ import ApplicationNoteForm from "./ApplicationNoteForm";
 import { formatDate } from "../../../../shared/utils/dateFormat";
 import { useUpdateApplicationStatus } from "../hooks/useUpdateApplicationStatus";
 import { DetailedApplication } from "../../../../shared/types/application";
+import { useTranslation } from "react-i18next";
 
 type ApplicationRowProps = {
   application: DetailedApplication;
@@ -19,6 +20,8 @@ type ApplicationRowProps = {
 
 function ApplicationRow({ application }: ApplicationRowProps) {
   const { updateStatus } = useUpdateApplicationStatus(application);
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   return (
@@ -58,7 +61,7 @@ function ApplicationRow({ application }: ApplicationRowProps) {
             <Modal.Open opens="read">
               <Menus.Button type="option">
                 <HiEye />
-                <span>See Details</span>
+                <span>{t("contextAction.viewDetails")}</span>
               </Menus.Button>
             </Modal.Open>
             <Menus.Button
@@ -66,37 +69,37 @@ function ApplicationRow({ application }: ApplicationRowProps) {
               onClick={() => navigate("/dashboard/messages/newMessage")}
             >
               <RiMessage2Line />
-              <span>Contact</span>
+              <span>{t("contextAction.contact")}</span>
             </Menus.Button>
             <Menus.Button
               type="option"
               onClick={() => updateStatus("interview")}
             >
               <LuClipboardList />
-              <span>Mark as Interview</span>
+              <span>{t("contextAction.statusInterview")}</span>
             </Menus.Button>
             <Menus.Button type="option" onClick={() => updateStatus("on-hold")}>
               <LuClipboardX />
-              <span>Mark as On Hold</span>
+              <span>{t("contextAction.statusOnHold")}</span>
             </Menus.Button>
             <Menus.Button
               type="option"
               onClick={() => updateStatus("shortlisted")}
             >
               <LuClipboardList />
-              <span>Mark as Shortlisted</span>
+              <span>{t("contextAction.statusShortlisted")}</span>
             </Menus.Button>
             <Menus.Button
               type="option"
               onClick={() => updateStatus("rejected")}
             >
               <LuClipboardX />
-              <span>Mark as Rejected</span>
+              <span>{t("contextAction.statusRejected")}</span>
             </Menus.Button>
             <Modal.Open opens="addNote">
               <Menus.Button type="option">
                 <MdEditNote />
-                <span>Update Note</span>
+                <span>{t("contextAction.updateNote")}</span>
               </Menus.Button>
             </Modal.Open>
           </Menus.List>

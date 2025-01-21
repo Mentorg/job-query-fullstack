@@ -1,17 +1,18 @@
+import { useTranslation } from "react-i18next";
 import { IoPencilSharp } from "react-icons/io5";
+import { HiTrash } from "react-icons/hi2";
 import Modal from "../../../context/Modal";
 import Menus from "../../../context/Menus";
 import UpdatePaymentMethod from "./UpdatePaymentMethod";
+import ConfirmDelete from "../../../components/ConfirmDelete";
 import mastercard from "../../../../../public/logos/mastercard.svg";
 import visa from "../../../../../public/logos/visa.svg";
 import {
   PaymentMethod,
   UpdatePaymentMethodForm,
 } from "../../../../shared/types/payment_method";
-import { HiTrash } from "react-icons/hi2";
 import { useSetDefaultPaymentMethod } from "../hooks/useSetDefaultPaymentMethod";
 import { useDeletePaymentMethod } from "../hooks/useDeletePaymentMethod";
-import ConfirmDelete from "../../../components/ConfirmDelete";
 
 type CreditCardExpandedProps = {
   resource: PaymentMethod;
@@ -20,6 +21,7 @@ type CreditCardExpandedProps = {
 function CreditCardExpanded({ resource }: CreditCardExpandedProps) {
   const { updateStatus } = useSetDefaultPaymentMethod(resource);
   const { handleDelete } = useDeletePaymentMethod(resource);
+  const { t } = useTranslation();
 
   return (
     <div
@@ -38,15 +40,16 @@ function CreditCardExpanded({ resource }: CreditCardExpandedProps) {
         <div className="ml-4 flex flex-col gap-y-4">
           <h4 className="text-sm font-medium">{resource.cardType}</h4>
           <p className="text-xs">
-            Exp. Date:{" "}
+            {t("setting.billInformation.expirationDate")}:{" "}
             <span className="font-semibold">{resource.expirationDate}</span>
           </p>
           <p>{resource.cardNumber}</p>
           <p className="text-xs font-semibold">
-            CVV: <span className="font-normal">{resource.cvv}</span>
+            {t("setting.billInformation.cvv")}:{" "}
+            <span className="font-normal">{resource.cvv}</span>
           </p>
           <p className="text-xs text-blue-400">
-            {resource.isActive ? "Set as default" : ""}
+            {resource.isActive ? t("setting.billInformation.setDefault") : ""}
           </p>
         </div>
         <div className="text-xs"></div>

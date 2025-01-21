@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import ApplicationCell from "./ApplicationCell";
 import Menus from "../../../context/Menus";
 import { DetailedApplication } from "../../../../shared/types/application";
@@ -8,6 +9,8 @@ type ApplicationsGridProps = {
 };
 
 function ApplicationsGrid({ applications, sort }: ApplicationsGridProps) {
+  const { t } = useTranslation();
+
   const sortedApplications = [...applications].sort((a, b) => {
     switch (sort) {
       case "date-desc":
@@ -34,9 +37,13 @@ function ApplicationsGrid({ applications, sort }: ApplicationsGridProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       <Menus>
-        {sortedApplications.map((application) => (
-          <ApplicationCell application={application} key={application.id} />
-        ))}
+        {sortedApplications.length > 0 ? (
+          sortedApplications.map((application) => (
+            <ApplicationCell application={application} key={application.id} />
+          ))
+        ) : (
+          <h2>{t("application.noApplications")}</h2>
+        )}
       </Menus>
     </div>
   );

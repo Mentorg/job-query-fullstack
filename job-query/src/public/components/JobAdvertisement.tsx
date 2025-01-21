@@ -1,6 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaClock, FaHourglassEnd, FaLocationDot } from "react-icons/fa6";
-import { FaLaptop } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import {
+  FaClock,
+  FaHourglassEnd,
+  FaLocationDot,
+  FaLaptop,
+} from "react-icons/fa6";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import Chip from "../../shared/components/ui/Chip";
 import Button from "../../shared/components/ui/Button";
@@ -24,6 +29,7 @@ function JobAdvertisement({ job }: JobProps) {
   const { applicantJobs, isPending, error } = useGetApplicantJobs(
     user?.id ?? null,
   );
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -83,13 +89,15 @@ function JobAdvertisement({ job }: JobProps) {
               className="flex w-fit items-center rounded-3xl bg-red-500 px-3 py-1"
               icon={<FaClock className="text-white" />}
             >
-              {job.isFulltime ? "Full Time" : "Part Time"}
+              {job.isFulltime ? t("job.fullTime") : t("job.partTime")}
             </Chip>
             <Chip
               className="flex w-fit items-center rounded-3xl bg-green-500 px-3 py-1"
               icon={<FaLaptop className="text-white" />}
             >
-              {job.workPreference}
+              {(job.workPreference === "On-site" && t("job.onSite")) ||
+                (job.workPreference === "Remote" && t("job.remote")) ||
+                (job.workPreference && t("job.hybrid"))}
             </Chip>
           </div>
         </div>
@@ -118,7 +126,7 @@ function JobAdvertisement({ job }: JobProps) {
             onClick={() => navigate(`/signup`)}
             className="rounded-md bg-primary px-5 py-2 text-sm text-white transition-all hover:bg-primary/70 sm:px-8 sm:py-2"
           >
-            Apply
+            {t("button.apply")}
           </Button>
         ) : user.role === "recruiter" || user.role === "admin" ? (
           <p className="flex items-center text-base font-semibold leading-3">
@@ -132,12 +140,12 @@ function JobAdvertisement({ job }: JobProps) {
             ) : error ? (
               <Fallback
                 errorType="fetch"
-                message={error.message || "Failed to load data"}
+                message={error.message || t("system.serverError")}
               />
             ) : applicantJobs.find((record: Job) => record.id === job.id) ? (
               <>
                 <p className="cursor-default rounded-md border-2 border-primary px-5 py-2 text-sm text-primary sm:px-8 sm:py-2">
-                  Applied
+                  {t("job.applied")}
                 </p>
               </>
             ) : (
@@ -146,7 +154,7 @@ function JobAdvertisement({ job }: JobProps) {
                   onClick={handleApply}
                   className="rounded-md bg-primary px-5 py-2 text-sm text-white transition-all hover:bg-primary/70 sm:px-8 sm:py-2"
                 >
-                  Apply
+                  {t("button.apply")}
                 </Button>
               </>
             )}

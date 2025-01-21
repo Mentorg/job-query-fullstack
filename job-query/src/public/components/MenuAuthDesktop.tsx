@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "../../shared/context/AuthContext";
 
 export default function MenuAuthDesktop() {
   const { user } = useAuth();
   const userRole = user?.role;
+  const { t } = useTranslation();
 
   return (
     <>
@@ -16,7 +18,7 @@ export default function MenuAuthDesktop() {
         }}
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Home
+        {t("navigation.home")}
       </NavLink>
       {(userRole === "recruiter" || userRole === "admin") && (
         <>
@@ -29,14 +31,14 @@ export default function MenuAuthDesktop() {
             }}
             className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
           >
-            Dashboard
+            {t("navigation.dashboard")}
           </NavLink>
           {userRole === "recruiter" && (
             <NavLink
               to="/dashboard/newJob"
               className="rounded-md bg-primary px-7 py-1 text-base font-medium text-white transition-all hover:bg-primary/70"
             >
-              Post a Job
+              {t("navigation.postJob")}
             </NavLink>
           )}
         </>
@@ -50,7 +52,7 @@ export default function MenuAuthDesktop() {
         }}
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Privacy Policy
+        {t("navigation.privacyPolicy")}
       </NavLink>
       <NavLink
         to="/contact"
@@ -61,7 +63,7 @@ export default function MenuAuthDesktop() {
         }}
         className="text-base font-medium transition-all hover:border-b-2 hover:border-solid hover:border-primary hover:text-primary"
       >
-        Contact
+        {t("navigation.contact")}
       </NavLink>
     </>
   );

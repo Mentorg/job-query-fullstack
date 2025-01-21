@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { HiMiniPlus } from "react-icons/hi2";
 import Modal from "../../../context/Modal";
 import Menus from "../../../context/Menus";
@@ -11,6 +12,7 @@ import { PaymentMethod } from "../../../../shared/types/payment_method";
 
 function BillPaymentMethod() {
   const { paymentMethods, isPending, error } = useGetCompanyPaymentMethods();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -19,14 +21,16 @@ function BillPaymentMethod() {
       ) : error ? (
         <Fallback
           errorType="fetch"
-          message={error.message || "Failed to load data"}
+          message={error.message || t("system.serverError")}
         />
       ) : (
         <>
           <div className="flex flex-[1] flex-col">
-            <h3 className="font-medium">Payment Method</h3>
+            <h3 className="font-medium">
+              {t("setting.billInformation.paymentMethod")}
+            </h3>
             <p className="mt-2 text-sm lg:mt-6">
-              Select default payment method.
+              {t("setting.billInformation.paymentMethodDescription")}
             </p>
           </div>
           <div
@@ -49,7 +53,7 @@ function BillPaymentMethod() {
             ) : (
               <div>
                 <h2 className="flex justify-center">
-                  No payment method set. Click the Add button to set one up.
+                  {t("setting.billInformation.noPaymentMethod")}
                 </h2>
               </div>
             )}
@@ -58,7 +62,7 @@ function BillPaymentMethod() {
             <Modal>
               <Modal.Open opens="add">
                 <Menus.Button type="add">
-                  Add Card
+                  {t("button.addCard")}
                   <span className="ml-2">
                     <HiMiniPlus />
                   </span>

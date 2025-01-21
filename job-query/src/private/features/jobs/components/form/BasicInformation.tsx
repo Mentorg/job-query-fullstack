@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Label from "../../../../../shared/components/form/Label";
 import Select from "../../../../../shared/components/form/Select";
 import Option from "../../../../../shared/components/form/Option";
@@ -27,23 +28,22 @@ function BasicInformation({
   handleChange,
 }: BasicInformationProps) {
   const { locations, isPending, error } = useCompanyLocation();
+  const { t } = useTranslation();
 
   if (isPending) {
     return <Loading />;
   }
 
-  if (error) {
-    return <div>Error fetching location data</div>;
-  }
+  if (error) return <div>{t("system.serverError")}</div>;
 
   return (
     <>
       <h1 className="border-b-2 border-slate-300 py-4 text-2xl font-semibold xl:text-2xl">
-        Basic Information
+        {t("job.basicInformation")}
       </h1>
       <div className="my-8 grid grid-cols-1 gap-4 xl:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="title">Job Title</Label>
+          <Label htmlFor="title">{t("label.jobTitle")}</Label>
           <TextField
             name="title"
             type="text"
@@ -54,7 +54,7 @@ function BasicInformation({
           />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="locations">Location</Label>
+          <Label htmlFor="locations">{t("label.location")}</Label>
           <Select
             name="locations"
             value={form.locations[0] || ""}
@@ -69,14 +69,14 @@ function BasicInformation({
                 </Option>
               ))
             ) : (
-              <Option value="">No locations available</Option>
+              <Option value="">{t("system.locationError")}</Option>
             )}
           </Select>
         </div>
       </div>
       <div className="my-8 grid grid-cols-1 gap-4 xl:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="workPreference">Work Preference</Label>
+          <Label htmlFor="workPreference">{t("label.workPreference")}</Label>
           <Select
             name="workPreference"
             value={form.workPreference}
@@ -84,15 +84,15 @@ function BasicInformation({
             errors={errors}
             hasError={!!errors.workPreference}
           >
-            {["On-site", "Remote", "Hybrid"].map((work) => (
+            {["onsite", "remote", "hybrid"].map((work) => (
               <Option value={work} key={work}>
-                {work}
+                {t(`input.workPreference.${work}`)}
               </Option>
             ))}
           </Select>
         </div>
         <div className="flex flex-col gap-y-2">
-          <p>Employment Type</p>
+          <p>{t("label.employmentType")}</p>
           <div className="flex h-full items-center gap-4">
             <div className="flex gap-2">
               <input
@@ -103,7 +103,9 @@ function BasicInformation({
                 onChange={handleChange}
                 id="full-time"
               />
-              <label htmlFor="full-time">Full Time</label>
+              <label htmlFor="full-time">
+                {t("input.employmentType.fullTime")}
+              </label>
             </div>
             <div className="flex gap-2">
               <input
@@ -114,14 +116,16 @@ function BasicInformation({
                 onChange={handleChange}
                 id="part-time"
               />
-              <label htmlFor="part-time">Part Time</label>
+              <label htmlFor="part-time">
+                {t("input.employmentType.partTime")}
+              </label>
             </div>
           </div>
         </div>
       </div>
       <div className="my-8 grid grid-cols-1 gap-4 xl:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="seniority">Job Seniority</Label>
+          <Label htmlFor="seniority">{t("label.seniority")}</Label>
           <Select
             name="seniority"
             value={form.seniority}
@@ -129,19 +133,15 @@ function BasicInformation({
             errors={errors}
             hasError={!!errors.seniority}
           >
-            {["Intern", "Entry", "Junior", "Mid level", "Senior"].map(
-              (seniority) => (
-                <Option value={seniority} key={seniority}>
-                  {seniority}
-                </Option>
-              ),
-            )}
+            {["intern", "entry", "junior", "mid", "senior"].map((seniority) => (
+              <Option value={seniority} key={seniority}>
+                {t(`input.seniority.${seniority}`)}
+              </Option>
+            ))}
           </Select>
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="experience">
-            Minimum Qualification Level Required
-          </Label>
+          <Label htmlFor="experience">{t("label.experience")}</Label>
           <Select
             name="experience"
             value={form.experience}
@@ -151,9 +151,14 @@ function BasicInformation({
           >
             {[0, 1, 2, 3, 4, 5].map((experience) => (
               <Option value={experience} key={experience}>
-                {experience}{" "}
-                {experience !== 0 && experience < 2 ? "Year" : "Years"} of
-                Experience
+                {t(
+                  experience === 1
+                    ? "input.experience.experience_one"
+                    : "input.experience.experience_other",
+                  {
+                    count: experience,
+                  },
+                )}
               </Option>
             ))}
           </Select>
@@ -161,7 +166,7 @@ function BasicInformation({
       </div>
       <div className="my-8 grid grid-cols-1 gap-4 xl:grid-cols-2">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="education">Education Level</Label>
+          <Label htmlFor="education">{t("label.education")}</Label>
           <Select
             name="education"
             value={form.education}
@@ -169,17 +174,15 @@ function BasicInformation({
             errors={errors}
             hasError={!!errors.education}
           >
-            {["High school diploma", "Bachelor's", "Master's", "Ph.D"].map(
-              (education) => (
-                <Option value={education} key={education}>
-                  {education}
-                </Option>
-              ),
-            )}
+            {["highSchool", "bachelor", "master", "phd"].map((education) => (
+              <Option value={education} key={education}>
+                {t(`input.education.${education}`)}
+              </Option>
+            ))}
           </Select>
         </div>
         <div className="flex flex-col gap-y-2">
-          <p>Can you provide Visa Sponsorship for this role?</p>
+          <p>{t("label.visa")}</p>
           <div className="flex h-full items-center gap-4">
             <div className="flex gap-2">
               <input
@@ -190,7 +193,7 @@ function BasicInformation({
                 onChange={handleChange}
                 id="yes"
               />
-              <label htmlFor="yes">Yes</label>
+              <label htmlFor="yes">{t("input.visa.yes")}</label>
             </div>
             <div className="flex gap-2">
               <input
@@ -201,14 +204,14 @@ function BasicInformation({
                 onChange={handleChange}
                 id="no"
               />
-              <label htmlFor="no">No</label>
+              <label htmlFor="no">{t("input.visa.no")}</label>
             </div>
           </div>
         </div>
       </div>
       <div className="my-8 grid grid-cols-1 grid-rows-[1fr_auto_1fr_1fr] gap-4 xl:grid-cols-[1fr_auto_1fr_1fr] xl:grid-rows-1">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="salaryFrom">Salary From</Label>
+          <Label htmlFor="salaryFrom">{t("label.salaryFrom")}</Label>
           <TextField
             name="salaryFrom"
             type="number"
@@ -218,9 +221,9 @@ function BasicInformation({
             hasError={!!errors.salaryFrom}
           />
         </div>
-        <span className="mb-3 flex items-end font-medium">to</span>
+        <span className="mb-3 flex items-end font-medium">-</span>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="salaryTo">Salary To</Label>
+          <Label htmlFor="salaryTo">{t("label.salaryTo")}</Label>
           <TextField
             name="salaryTo"
             type="number"
@@ -231,7 +234,7 @@ function BasicInformation({
           />
         </div>
         <div className="flex flex-col gap-y-2">
-          <p>Salary Frequency</p>
+          <p>{t("label.salaryFrequency")}</p>
           <div className="flex h-full items-center gap-4">
             <div className="flex gap-2">
               <input
@@ -242,7 +245,7 @@ function BasicInformation({
                 onChange={handleChange}
                 id="monthly"
               />
-              <label htmlFor="monthly">Monthly</label>
+              <label htmlFor="monthly">{t("label.salaryMonthly")}</label>
             </div>
             <div className="flex gap-2">
               <input
@@ -253,7 +256,7 @@ function BasicInformation({
                 onChange={handleChange}
                 id="annual"
               />
-              <label htmlFor="annual">Annually</label>
+              <label htmlFor="annual">{t("label.salaryAnnual")}</label>
             </div>
           </div>
         </div>

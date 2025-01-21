@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { IoIosLink } from "react-icons/io";
 import Loading from "../../../../../shared/components/ui/Loading";
 import Fallback from "../../../../../shared/components/ui/Fallback";
@@ -23,6 +24,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
     isPending: isPendingCompanyRecruiters,
     error: companyRecruitersError,
   } = useGetCompanyRecruiters(resource.id);
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -50,31 +52,31 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
       </div>
       <div className="py-5">
         <div className="text-xl font-medium">
-          <h2>Contact & Location Information</h2>
+          <h2>{t("company.companyInfo")}</h2>
         </div>
         <div className="my-8 grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="flex flex-col">
-            <p className="font-medium">Website</p>
+            <p className="font-medium">{t("company.website")}</p>
             <p className="text-slate-700">{resource.website}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Email</p>
+            <p className="font-medium">{t("company.email")}</p>
             <p className="text-slate-700">{resource.email}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Website</p>
+            <p className="font-medium">{t("company.slug")}</p>
             <p className="text-slate-700">{resource.slug}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Phone</p>
+            <p className="font-medium">{t("company.phone")}</p>
             <p className="text-slate-700">{resource.phone}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Address</p>
+            <p className="font-medium">{t("company.address")}</p>
             <p className="text-slate-700">{resource.address}</p>
           </div>
           <div className="flex flex-col">
-            <p className="font-medium">Locations</p>
+            <p className="font-medium">{t("company.locations")}</p>
             <div className="flex flex-col">
               {resource.locations.map((record) => (
                 <p key={record.id} className="text-slate-700">
@@ -87,7 +89,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
       </div>
       <div className="py-5">
         <div className="text-xl font-medium">
-          <h3>Social Media</h3>
+          <h3>{t("company.socialMedia")}</h3>
         </div>
         <div className="my-8 flex flex-col gap-2">
           <a
@@ -112,7 +114,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
       </div>
       <div className="flex flex-col justify-center py-5">
         <div className="text-center text-xl font-medium">
-          <h3>Recruiters</h3>
+          <h3>{t("company.recruiters")}</h3>
         </div>
         <div className="my-8 flex flex-col gap-2">
           <ul className="flex w-full justify-center gap-10">
@@ -122,7 +124,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
               <Fallback
                 errorType="fetch"
                 message={
-                  companyRecruitersError.message || "Failed to load data"
+                  companyRecruitersError.message || t("system.serverError")
                 }
               />
             ) : companyRecruiters.length > 0 ? (
@@ -143,14 +145,14 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
                 </li>
               ))
             ) : (
-              <p>No recruiters available</p>
+              <p>{t("company.noRecruiters")}</p>
             )}
           </ul>
         </div>
       </div>
       <div className="py-5">
         <div className="text-center text-xl font-medium">
-          <h3>Company's job advertisements</h3>
+          <h3>{t("company.companyJobs")}</h3>
         </div>
         <div className="my-8 flex flex-col gap-2">
           <div className="flex w-full flex-col justify-center">
@@ -159,7 +161,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
             ) : companyJobsError ? (
               <Fallback
                 errorType="fetch"
-                message={companyJobsError.message || "Failed to load data"}
+                message={companyJobsError.message || t("system.serverError")}
               />
             ) : companyJobs.length > 0 ? (
               companyJobs.map((record: Job) => (
@@ -183,7 +185,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
                   <div className="flex flex-row items-center justify-center gap-4">
                     <div className="flex flex-col">
                       <h3 className="text-xs font-medium text-slate-500">
-                        Posted
+                        {t("company.posted")}
                       </h3>
                       <p className="text-sm font-medium">
                         {formatDate(record.createdAt)}
@@ -200,7 +202,7 @@ function CompanyDetails({ resource }: CompanyDetailsProps) {
               ))
             ) : (
               <div className="flex w-full justify-center">
-                <p>No job advertisements available</p>
+                <p>{t("company.noCompanyJobs")}</p>
               </div>
             )}
           </div>

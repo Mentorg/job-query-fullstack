@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { IoPencilSharp } from "react-icons/io5";
 import { HiTrash } from "react-icons/hi2";
 import mastercard from "../../../../../public/logos/mastercard.svg";
@@ -20,6 +21,7 @@ type CreditCardCompactProps = {
 function CreditCardCompact({ resource }: CreditCardCompactProps) {
   const { updateStatus } = useSetDefaultPaymentMethod(resource);
   const { handleDelete } = useDeletePaymentMethod(resource);
+  const { t } = useTranslation();
 
   return (
     <div
@@ -38,7 +40,8 @@ function CreditCardCompact({ resource }: CreditCardCompactProps) {
         <div className="ml-4 flex flex-col gap-y-1">
           <h4 className="text-sm font-medium">{resource.cardType}</h4>
           <p className="text-xs font-semibold">
-            CVV: <span className="font-normal">{resource.cvv}</span>
+            {t("setting.billInformation.cvv")}:{" "}
+            <span className="font-normal">{resource.cvv}</span>
           </p>
           <p className="text-xs text-blue-400">
             {resource.isActive ? "Default" : ""}

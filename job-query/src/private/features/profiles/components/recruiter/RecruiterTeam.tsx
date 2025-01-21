@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Recruiter, User } from "../../../../../shared/types/user";
 
 type RecruiterTeamProps = {
@@ -6,9 +7,10 @@ type RecruiterTeamProps = {
 };
 
 function RecruiterTeam({ team, user }: RecruiterTeamProps) {
+  const { t } = useTranslation();
   return (
     <>
-      <h2 className="py-4 text-xl font-medium">Team</h2>
+      <h2 className="py-4 text-xl font-medium">{t("recruiter.team")}</h2>
       <ul className="flex w-full justify-center gap-10">
         {team.map(
           (member: Recruiter) =>

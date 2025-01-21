@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import NotificationSetting from "../features/settings/components/NotificationSetting";
 import Loading from "../../shared/components/ui/Loading";
 import Fallback from "../../shared/components/ui/Fallback";
@@ -6,6 +7,7 @@ import { useGetNotificationSettings } from "../features/settings/hooks/useGetNot
 function NotificationSettings() {
   const { userNotificationSettings, isPending, error } =
     useGetNotificationSettings();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -14,22 +16,22 @@ function NotificationSettings() {
       ) : error ? (
         <Fallback
           errorType="fetch"
-          message={error.message || "Failed to load data"}
+          message={error.message || t("system.serverError")}
         />
       ) : (
         <div className="mt-10 w-full xl:w-[75%]">
           <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
             <div className="flex flex-[1] flex-col">
-              <h3 className="font-medium">Job alerts</h3>
+              <h3 className="font-medium">
+                {t("setting.notifications.jobAlerts")}
+              </h3>
             </div>
             <div className="flex flex-[2] flex-col items-start gap-2">
               <p className="text-sm">
-                Receive notifications when a new candidate applies to a job
-                posting.
+                {t("setting.notifications.newApplication")}
               </p>
               <p className="text-sm">
-                Enable notifications for updates on communication with
-                applicants
+                {t("setting.notifications.applicantCommunication")}
               </p>
             </div>
             <div className="flex flex-[1] flex-col items-end gap-4">
@@ -45,12 +47,16 @@ function NotificationSettings() {
           </div>
           <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
             <div className="flex flex-[1] flex-col">
-              <h3 className="font-medium">Application status updates</h3>
+              <h3 className="font-medium">
+                {t("setting.notifications.applicationStatus")}
+              </h3>
             </div>
             <div className="flex flex-[2] flex-col items-start gap-2">
-              <p className="text-sm">Hiring stage notifications</p>
               <p className="text-sm">
-                Candidate resume submission/application status change
+                {t("setting.notifications.hiringStage")}
+              </p>
+              <p className="text-sm">
+                {t("setting.notifications.applicationStatusUpdate")}
               </p>
             </div>
             <div className="flex flex-[1] flex-col items-end gap-4">
@@ -66,14 +72,16 @@ function NotificationSettings() {
           </div>
           <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
             <div className="flex flex-[1] flex-col">
-              <h3 className="font-medium">Event reminders</h3>
+              <h3 className="font-medium">
+                {t("setting.notifications.eventReminders")}
+              </h3>
             </div>
             <div className="flex flex-[2] flex-col items-start gap-2">
               <p className="text-sm">
-                Upcoming job fairs, networking events, or industry conferences.
+                {t("setting.notifications.upcomingEvents")}
               </p>
               <p className="text-sm">
-                Important dates related to recruitment processes.
+                {t("setting.notifications.recruitmentDeadlines")}
               </p>
             </div>
             <div className="flex flex-[1] flex-col items-end gap-4">
@@ -89,14 +97,17 @@ function NotificationSettings() {
           </div>
           <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
             <div className="flex flex-[1] flex-col">
-              <h3 className="font-medium">Account activity</h3>
+              <h3 className="font-medium">
+                {t("setting.notifications.accountActivity")}
+              </h3>
             </div>
             <div className="mt-6 flex flex-[2] flex-col items-start gap-2">
               <p className="text-sm">
-                Account security such as login alerts or changes to account
-                information.
+                {t("setting.notifications.accountSecurity")}
               </p>
-              <p className="text-sm">Upcoming subscription renewals.</p>
+              <p className="text-sm">
+                {t("setting.notifications.subscriptionRenewals")}
+              </p>
             </div>
             <div className="flex flex-[1] flex-col items-end gap-4">
               <NotificationSetting

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { MdWork } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaEnvelope, FaLinkedin, FaPen, FaPhoneAlt } from "react-icons/fa";
@@ -27,6 +28,7 @@ function Recruiter() {
     isPending: isPendingRecruiterTeam,
     error: recruiterTeamError,
   } = useGetRecruiterTeam();
+  const { t } = useTranslation();
 
   let avatar;
 
@@ -49,7 +51,7 @@ function Recruiter() {
       ) : recruiterError ? (
         <Fallback
           errorType="fetch"
-          message={recruiterError.message || "Failed to load data"}
+          message={recruiterError.message || t("system.serverError")}
         />
       ) : (
         <>
@@ -67,7 +69,7 @@ function Recruiter() {
                     <Menus.Button>
                       <span className="flex items-center gap-x-2 text-xs font-medium text-green-600 transition-all hover:text-green-400">
                         <LuPenLine />
-                        Edit Profile
+                        {t("button.edit")}
                       </span>
                     </Menus.Button>
                   </Modal.Open>
@@ -85,18 +87,20 @@ function Recruiter() {
             <div className="flex rounded-md bg-slate-100 p-10">
               <div className="flex w-full flex-col gap-y-4">
                 <div className="flex w-full flex-col">
-                  <h2 className="text-lg font-medium">Experience</h2>
+                  <h2 className="text-lg font-medium">
+                    {t("recruiter.expertise")}
+                  </h2>
                   <p className="mt-4 leading-8">
-                    {recruiter?.expertise ||
-                      "No experience information provided"}
+                    {recruiter?.expertise || t("recruiter.noExpertise")}
                   </p>
                 </div>
                 <hr />
                 <div className="flex flex-col">
-                  <h2 className="text-lg font-medium">About me</h2>
+                  <h2 className="text-lg font-medium">
+                    {t("recruiter.description")}
+                  </h2>
                   <p className="mt-4 leading-8">
-                    {recruiter?.description ||
-                      "No description information provided"}
+                    {recruiter?.description || t("recruiter.noDescription")}
                   </p>
                 </div>
               </div>
@@ -113,7 +117,7 @@ function Recruiter() {
             </div>
             <div className="flex flex-wrap justify-evenly gap-10 rounded-md bg-slate-100 p-10 xl:flex-col">
               <div className="flex flex-col gap-y-2">
-                <h2 className="font-medium">Contact Information</h2>
+                <h2 className="font-medium">{t("recruiter.contactInfo")}</h2>
                 <div className="flex w-full items-center text-sm">
                   <FaEnvelope />
                   <p className="ml-2">{user?.email}</p>
@@ -123,7 +127,7 @@ function Recruiter() {
                   <p
                     className={`${user?.phone ? "text-black" : "text-slate-400"} ml-2`}
                   >
-                    {user?.phone || "No phone number provided"}
+                    {user?.phone || t("recruiter.noPhone")}
                   </p>
                 </div>
                 <div className="flex w-full items-center text-sm">
@@ -139,12 +143,12 @@ function Recruiter() {
                   >
                     {user?.linkedinProfile
                       ? `@${user?.linkedinProfile}`
-                      : "No LinkedIn link provided"}
+                      : t("recruiter.noLinkedin")}
                   </p>
                 </div>
               </div>
               <div className="flex flex-col gap-y-2">
-                <h2 className="font-medium">Company information</h2>
+                <h2 className="font-medium">{t("recruiter.companyInfo")}</h2>
                 <div className="flex w-full items-center text-sm">
                   <MdWork />
                   <p className="ml-2">{recruiter.company.name}</p>
@@ -166,7 +170,7 @@ function Recruiter() {
             ) : recruiterTeamError ? (
               <Fallback
                 errorType="fetch"
-                message={recruiterTeamError?.message || "Failed to load data"}
+                message={recruiterTeamError?.message || t("system.serverError")}
               />
             ) : (
               <RecruiterTeam team={recruiterTeam} user={user} />

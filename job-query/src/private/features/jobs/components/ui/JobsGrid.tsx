@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import JobCell from "./JobCell";
 import Menus from "../../../../context/Menus";
 import { Job } from "../../../../../shared/types/job";
@@ -8,6 +9,8 @@ type JobsGridProps = {
 };
 
 function JobsGrid({ jobs, sort }: JobsGridProps) {
+  const { t } = useTranslation();
+
   const sortedJobs = [...jobs].sort((a, b) => {
     switch (sort) {
       case "date-desc":
@@ -33,7 +36,7 @@ function JobsGrid({ jobs, sort }: JobsGridProps) {
         {sortedJobs.length > 0 ? (
           sortedJobs.map((job) => <JobCell job={job as Job} key={job.id} />)
         ) : (
-          <h2>No jobs available</h2>
+          <h2>{t("job.noJobs")}</h2>
         )}
       </Menus>
     </div>

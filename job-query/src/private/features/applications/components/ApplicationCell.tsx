@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { HiEye } from "react-icons/hi2";
 import { RiMessage2Line } from "react-icons/ri";
 import { LuClipboardList, LuClipboardX } from "react-icons/lu";
@@ -19,6 +20,7 @@ type ApplicationCellProps = {
 function ApplicationCell({ application }: ApplicationCellProps) {
   const navigate = useNavigate();
   const { updateStatus } = useUpdateApplicationStatus(application);
+  const { t } = useTranslation();
 
   const avatarUrl = application.applicant.user?.avatar
     ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${application.applicant.user?.avatar}`
@@ -46,7 +48,7 @@ function ApplicationCell({ application }: ApplicationCellProps) {
         </div>
         <div className="my-4 flex justify-between">
           <h3 className="mr-4 flex flex-col text-sm font-medium text-slate-500">
-            Applied for:
+            {t("application.appliedFor")}
             <span className="line-clamp-1 text-base font-medium text-primary">
               {application.job.title}
             </span>
@@ -54,7 +56,7 @@ function ApplicationCell({ application }: ApplicationCellProps) {
         </div>
         <div className="flex items-center justify-between">
           <p className="flex flex-row items-baseline text-sm">
-            Date:
+            {t("application.date")}
             <span className="ml-2 font-medium text-slate-500">
               {formatDate(application.createdAt)}
             </span>
@@ -70,7 +72,7 @@ function ApplicationCell({ application }: ApplicationCellProps) {
               <Modal.Open opens="view">
                 <Menus.Button type="option">
                   <HiEye />
-                  <span>See Details</span>
+                  <span>{t("contextAction.viewDetails")}</span>
                 </Menus.Button>
               </Modal.Open>
               <Menus.Button
@@ -78,40 +80,40 @@ function ApplicationCell({ application }: ApplicationCellProps) {
                 onClick={() => navigate("/dashboard/messages/newMessage")}
               >
                 <RiMessage2Line />
-                <span>Contact</span>
+                <span>{t("contextAction.contact")}</span>
               </Menus.Button>
               <Menus.Button
                 type="option"
                 onClick={() => updateStatus("interview")}
               >
                 <LuClipboardList />
-                <span>Mark as Interview</span>
+                <span>{t("contextAction.statusInterview")}</span>
               </Menus.Button>
               <Menus.Button
                 type="option"
                 onClick={() => updateStatus("on-hold")}
               >
                 <LuClipboardX />
-                <span>Mark as On Hold</span>
+                <span>{t("contextAction.statusOnHold")}</span>
               </Menus.Button>
               <Menus.Button
                 type="option"
                 onClick={() => updateStatus("shortlisted")}
               >
                 <LuClipboardList />
-                <span>Mark as Shortlisted</span>
+                <span>{t("contextAction.statusShortlisted")}</span>
               </Menus.Button>
               <Menus.Button
                 type="option"
                 onClick={() => updateStatus("rejected")}
               >
                 <LuClipboardX />
-                <span>Mark as Rejected</span>
+                <span>{t("contextAction.statusRejected")}</span>
               </Menus.Button>
               <Modal.Open opens="addNote">
                 <Menus.Button type="option">
                   <MdEditNote />
-                  <span>Update Note</span>
+                  <span>{t("contextAction.updateNote")}</span>
                 </Menus.Button>
               </Modal.Open>
             </Menus.List>

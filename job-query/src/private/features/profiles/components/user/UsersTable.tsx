@@ -1,36 +1,39 @@
+import { useTranslation } from "react-i18next";
 import { PiArrowsDownUp } from "react-icons/pi";
 import Menus from "../../../../context/Menus";
 import Table from "../../../../context/Table";
-import { User } from "../../../../../shared/types/user";
 import UserRow from "./UserRow";
+import { User } from "../../../../../shared/types/user";
 
 type UsersTableProps = {
   users: User[];
 };
 
 function UsersTable({ users }: UsersTableProps) {
+  const { t } = useTranslation();
+
   return (
     <Menus>
       <Table tableType="users">
         <Table.Header>
           <p className="flex items-center justify-between">
-            Id
+            #
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Name
+            {t("table.name")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Role
+            {t("table.role")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Email
+            {t("table.email")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
           <p className="flex items-center justify-between">
-            Created
+            {t("table.created")}
             <PiArrowsDownUp className="h-auto w-[1.25rem] rounded-full p-0.5 text-slate-600 transition-all hover:bg-slate-100" />
           </p>
         </Table.Header>
