@@ -33,9 +33,7 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('currency_id')->nullable();
             $table->unsignedBigInteger('location_id')->nullable();
-            $table->foreign('currency_id')->references('id')->on('currencies');
             $table->foreign('location_id')->references('id')->on('locations');
         });
 
@@ -63,6 +61,8 @@ return new class extends Migration
             $table->foreign('user_id')->constrained()->references('id')->on('users')->cascadeOnDelete();
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->constrained()->references('id')->on('companies')->cascadeOnDelete();
+            $table->unsignedBigInteger('currency_id')->nullable();
+            $table->foreign('currency_id')->references('id')->on('currencies');
         });
 
         Schema::create('applicants', function (Blueprint $table) {

@@ -30,7 +30,6 @@ class UserResource extends JsonResource
             'mfa' => $this->mfa,
             'avatar' => $this->avatar,
             'location' => new LocationResource($this->location),
-            'currencyId' => $this->currency_id,
             'createdAt' => $this->created_at
         ];
 

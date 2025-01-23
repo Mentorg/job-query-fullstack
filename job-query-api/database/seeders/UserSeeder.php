@@ -136,7 +136,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -155,7 +154,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -174,7 +172,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -193,7 +190,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -212,7 +208,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
 
             ],
@@ -232,7 +227,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-02-14",
                 "updated_at" => "2023-02-14",
-                "currency_id" => 8,
                 "location_id" => 3
             ],
             [
@@ -251,7 +245,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-03-21",
                 "updated_at" => "2023-03-21",
-                "currency_id" => 1,
                 "location_id" => 5
             ],
             [
@@ -270,7 +263,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-04-18",
                 "updated_at" => "2023-04-18",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -289,7 +281,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-05-30",
                 "updated_at" => "2023-05-30",
-                "currency_id" => 1,
                 "location_id" => 4
             ],
             [
@@ -308,7 +299,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-06-15",
                 "updated_at" => "2023-06-15",
-                "currency_id" => 1,
                 "location_id" => 6
             ],
             [
@@ -327,7 +317,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-07-10",
                 "updated_at" => "2023-07-10",
-                "currency_id" => 1,
                 "location_id" => 7
             ],
             [
@@ -346,7 +335,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-08-20",
                 "updated_at" => "2023-08-20",
-                "currency_id" => 17,
                 "location_id" => 8
             ],
             [
@@ -365,7 +353,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-09-05",
                 "updated_at" => "2023-09-05",
-                "currency_id" => 14,
                 "location_id" => 9
             ],
             [
@@ -384,7 +371,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-09-25",
                 "updated_at" => "2023-09-25",
-                "currency_id" => 6,
                 "location_id" => 11
             ],
             [
@@ -403,7 +389,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2023-10-01",
                 "updated_at" => "2023-10-01",
-                "currency_id" => 1,
                 "location_id" => 12
             ],
             [
@@ -422,7 +407,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-01-15",
                 "updated_at" => "2024-01-15",
-                "currency_id" => 18,
                 "location_id" => 12
             ],
             [
@@ -441,7 +425,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-02-10",
                 "updated_at" => "2024-02-10",
-                "currency_id" => 15,
                 "location_id" => 13
             ],
             [
@@ -460,7 +443,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-03-01",
                 "updated_at" => "2024-03-01",
-                "currency_id" => 1,
                 "location_id" => 14
             ],
             [
@@ -479,7 +461,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-03-22",
                 "updated_at" => "2024-03-22",
-                "currency_id" => 23,
                 "location_id" => 15
             ],
             [
@@ -498,7 +479,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -517,7 +497,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-05-05",
                 "updated_at" => "2024-05-05",
-                "currency_id" => 10,
                 "location_id" => 16
             ],
             [
@@ -536,7 +515,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-06-15",
                 "updated_at" => "2024-06-15",
-                "currency_id" => 5,
                 "location_id" => 17
             ],
             [
@@ -555,7 +533,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-07-20",
                 "updated_at" => "2024-07-20",
-                "currency_id" => 1,
                 "location_id" => 18
             ],
             [
@@ -574,7 +551,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-08-10",
                 "updated_at" => "2024-08-10",
-                "currency_id" => 19,
                 "location_id" => 19
             ],
             [
@@ -593,7 +569,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-09-05",
                 "updated_at" => "2024-09-05",
-                "currency_id" => 16,
                 "location_id" => 20
             ],
             [
@@ -612,7 +587,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-10-01",
                 "updated_at" => "2024-10-01",
-                "currency_id" => 12,
                 "location_id" => 21
             ],
             [
@@ -631,7 +605,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-10-15",
                 "updated_at" => "2024-10-15",
-                "currency_id" => 7,
                 "location_id" => 22
             ],
             [
@@ -650,7 +623,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-01",
                 "updated_at" => "2024-11-01",
-                "currency_id" => 13,
                 "location_id" => 23
             ],
             [
@@ -669,7 +641,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-10",
                 "updated_at" => "2024-11-10",
-                "currency_id" => 8,
                 "location_id" => 2
             ],
             [
@@ -688,7 +659,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-20",
                 "updated_at" => "2024-11-20",
-                "currency_id" => 9,
                 "location_id" => 24
             ],
             [
@@ -707,7 +677,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-05",
                 "updated_at" => "2024-12-05",
-                "currency_id" => 1,
                 "location_id" => 25
             ],
             [
@@ -726,7 +695,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-15",
                 "updated_at" => "2024-12-15",
-                "currency_id" => 2,
                 "location_id" => 26
             ],
             [
@@ -745,7 +713,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-25",
                 "updated_at" => "2024-12-25",
-                "currency_id" => 1,
                 "location_id" => 27
             ],
             [
@@ -764,7 +731,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-01-10",
                 "updated_at" => "2024-01-10",
-                "currency_id" => 1,
                 "location_id" => 28
             ],
             [
@@ -783,7 +749,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-01-20",
                 "updated_at" => "2024-01-20",
-                "currency_id" => 11,
                 "location_id" => 29
             ],
             [
@@ -802,7 +767,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-02-05",
                 "updated_at" => "2024-02-05",
-                "currency_id" => 20,
                 "location_id" => 30
             ],
             [
@@ -821,7 +785,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-02-20",
                 "updated_at" => "2024-02-20",
-                "currency_id" => 7,
                 "location_id" => 22
             ],
             [
@@ -840,7 +803,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-03-10",
                 "updated_at" => "2024-03-10",
-                "currency_id" => 12,
                 "location_id" => 21
             ],
             [
@@ -859,7 +821,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-03-25",
                 "updated_at" => "2024-03-25",
-                "currency_id" => 21,
                 "location_id" => 31
             ],
             [
@@ -878,7 +839,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-01",
                 "updated_at" => "2024-04-01",
-                "currency_id" => 14,
                 "location_id" => 9
             ],
             [
@@ -897,7 +857,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 17,
                 "location_id" => 8
             ],
             [
@@ -916,7 +875,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-05-01",
                 "updated_at" => "2024-05-01",
-                "currency_id" => 1,
                 "location_id" => 5
             ],
             [
@@ -935,7 +893,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-05-15",
                 "updated_at" => "2024-05-15",
-                "currency_id" => 1,
                 "location_id" => 11
             ],
             [
@@ -954,7 +911,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-06-01",
                 "updated_at" => "2024-06-01",
-                "currency_id" => 11,
                 "location_id" => 29
             ],
             [
@@ -973,7 +929,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-06-15",
                 "updated_at" => "2024-06-15",
-                "currency_id" => 7,
                 "location_id" => 22
             ],
             [
@@ -992,7 +947,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-07-01",
                 "updated_at" => "2024-07-01",
-                "currency_id" => 8,
                 "location_id" => 2
             ],
             [
@@ -1011,7 +965,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-07-15",
                 "updated_at" => "2024-07-15",
-                "currency_id" => 22,
                 "location_id" => 32
             ],
             [
@@ -1030,7 +983,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-08-01",
                 "updated_at" => "2024-08-01",
-                "currency_id" => 9,
                 "location_id" => 24
             ],
             [
@@ -1049,7 +1001,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-08-15",
                 "updated_at" => "2024-08-15",
-                "currency_id" => 2,
                 "location_id" => 26
             ],
             [
@@ -1068,7 +1019,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 1,
                 "location_id" => 4
             ],
             [
@@ -1087,7 +1037,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 17,
                 "location_id" => 8
             ],
             [
@@ -1106,7 +1055,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-10-01",
                 "updated_at" => "2024-10-01",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1125,7 +1073,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-10-10",
                 "updated_at" => "2024-10-10",
-                "currency_id" => 1,
                 "location_id" => 7
             ],
             [
@@ -1144,7 +1091,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-10-20",
                 "updated_at" => "2024-10-20",
-                "currency_id" => 6,
                 "location_id" => 10
             ],
             [
@@ -1163,7 +1109,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-01",
                 "updated_at" => "2024-11-01",
-                "currency_id" => 10,
                 "location_id" => 16
             ],
             [
@@ -1182,7 +1127,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-10",
                 "updated_at" => "2024-11-10",
-                "currency_id" => 15,
                 "location_id" => 13
             ],
             [
@@ -1201,7 +1145,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-11-20",
                 "updated_at" => "2024-11-20",
-                "currency_id" => 12,
                 "location_id" => 21
             ],
             [
@@ -1220,7 +1163,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-01",
                 "updated_at" => "2024-12-01",
-                "currency_id" => 1,
                 "location_id" => 18
             ],
             [
@@ -1239,7 +1181,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-10",
                 "updated_at" => "2024-12-10",
-                "currency_id" => 13,
                 "location_id" => 23
             ],
             [
@@ -1258,7 +1199,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-12-20",
                 "updated_at" => "2024-12-20",
-                "currency_id" => 7,
                 "location_id" => 22
             ],
             [
@@ -1277,7 +1217,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1296,7 +1235,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1315,7 +1253,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2024-04-10",
                 "updated_at" => "2024-04-10",
-                "currency_id" => 1,
                 "location_id" => 5
             ],
             [
@@ -1334,7 +1271,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1353,7 +1289,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1372,7 +1307,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1391,7 +1325,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1410,7 +1343,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1429,7 +1361,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1448,7 +1379,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1467,7 +1397,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1486,7 +1415,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1505,7 +1433,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1524,7 +1451,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1543,7 +1469,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1562,7 +1487,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1581,7 +1505,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1600,7 +1523,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1619,7 +1541,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1638,7 +1559,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1657,7 +1577,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1676,7 +1595,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1695,7 +1613,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1714,7 +1631,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1733,7 +1649,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1752,7 +1667,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1771,7 +1685,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1790,7 +1703,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1809,7 +1721,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1828,7 +1739,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1847,7 +1757,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ],
             [
@@ -1866,7 +1775,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1885,7 +1793,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 1
             ],
             [
@@ -1904,7 +1811,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 0
             ],
             [
@@ -1923,7 +1829,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 3
             ],
             [
@@ -1942,7 +1847,6 @@ class UserSeeder extends Seeder
                 "remember_token" => Str::random(10),
                 "created_at" => "2022-01-10",
                 "updated_at" => "2022-01-10",
-                "currency_id" => 1,
                 "location_id" => 2
             ]
         ];

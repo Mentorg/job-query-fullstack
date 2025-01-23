@@ -26,6 +26,7 @@ class RecruiterSeeder extends Seeder
                     'description' => $item['description'],
                     'user_id' => $item['user_id'],
                     'company_id' => $item['company_id'],
+                    'currency_id' => $item['currency_id']
                 ]
             );
         }
