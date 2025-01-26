@@ -78,7 +78,6 @@ class UserController extends Controller
         $validated = $request->validate([
             'language' => 'sometimes|required|string',
             'timezone' => 'sometimes|required|string',
-            'currencyId' => 'sometimes|required|exists:currencies,id'
         ]);
 
         $updatedUser = $this->userService->updateLocaleSetting($validated, $request);
@@ -86,12 +85,5 @@ class UserController extends Controller
         return $updatedUser
             ? ResponseHelper::successResponse($updatedUser, 'Locale settings updated successfully.')
             : ResponseHelper::errorResponse('Failed to update locale settings!', 400);
-    }
-
-    public function getCurrency(Request $request)
-    {
-        $currency = $this->userService->getCurrency($request);
-
-        return response()->json($currency);
     }
 }

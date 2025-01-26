@@ -16,12 +16,18 @@ class Recruiter extends User
         'expertise',
         'description',
         'user_id',
-        'company_id'
+        'company_id',
+        'currency_id'
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function currency(): BelongsTo
+    {
+        return $this->belongsTo(Currency::class);
     }
 
     public function company(): BelongsTo

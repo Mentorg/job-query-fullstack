@@ -8,101 +8,112 @@ use App\Interfaces\RecruiterServiceInterface;
 
 class RecruiterService implements RecruiterServiceInterface
 {
-  protected function getAuthenticatedRecruiter($request)
-  {
-    return $request->user()->recruiter;
-  }
-
-  public function getById($request)
-  {
-    $recruiter = $this->getAuthenticatedRecruiter($request)->load(
-      'company',
-      'jobs.locations'
-    );
-
-    if (!$recruiter) {
-      return null;
+    protected function getAuthenticatedRecruiter($request)
+    {
+        return $request->user()->recruiter;
     }
 
-    return new RecruiterResource($recruiter);
-  }
+    public function getById($request)
+    {
+        $recruiter = $this->getAuthenticatedRecruiter($request)->load(
+            'company',
+            'jobs.locations'
+        );
 
-  public function update(array $validated, $request)
-  {
-    $recruiter = $this->getAuthenticatedRecruiter($request);
+        if (!$recruiter) {
+            return null;
+        }
 
-    if (!$recruiter) {
-      return null;
+        return new RecruiterResource($recruiter);
     }
 
-    $recruiter->update([
-      'expertise' => $validated['expertise'],
-      'description' => $validated['description'],
-    ]);
+    public function update(array $validated, $request)
+    {
+        $recruiter = $this->getAuthenticatedRecruiter($request);
 
-    return new RecruiterResource($recruiter);
-  }
+        if (!$recruiter) {
+            return null;
+        }
 
-  public function getCompanyRecruiters($request)
-  {
-    $company = $this->getAuthenticatedRecruiter($request)->company;
+        $recruiter->update([
+            'expertise' => $validated['expertise'],
+            'description' => $validated['description'],
+        ]);
 
-    if (!$company) {
-      return null;
+        return new RecruiterResource($recruiter);
     }
 
-    $recruiters = $company->recruiter()->with('user')->get();
+    public function getCompanyRecruiters($request)
+    {
+        $company = $this->getAuthenticatedRecruiter($request)->company;
 
-    return RecruiterResource::collection($recruiters);
-  }
+        if (!$company) {
+            return null;
+        }
 
-  public function getRecruiterCompany($request)
-  {
-    $recruiterCompany = $this->getAuthenticatedRecruiter($request)->load('company.locations');
+        $recruiters = $company->recruiter()->with('user')->get();
 
-    if (!$recruiterCompany) {
-      return null;
+        return RecruiterResource::collection($recruiters);
     }
 
-    return new CompanyResource($recruiterCompany->company);
-  }
+    public function getRecruiterCompany($request)
+    {
+        $recruiterCompany = $this->getAuthenticatedRecruiter($request)->load('company.locations');
 
-  public function getNotificationSettings($request)
-  {
-    $recruiterNotificationSettings = $this->getAuthenticatedRecruiter($request)->notificationSetting;
+        if (!$recruiterCompany) {
+            return null;
+        }
 
-    if (!$recruiterNotificationSettings) {
-      return null;
+        return new CompanyResource($recruiterCompany->company);
     }
 
-    return $recruiterNotificationSettings;
-  }
+    public function updateCurrency(array $fields, $request)
+    {
+        $recruiter = $request->user()->recruiter;
 
-  public function updateNotificationSetting(array $validated, $request)
-  {
-    $recruiterNotificationSettings = $this->getAuthenticatedRecruiter($request)->notificationSetting;
+        $recruiter->update([
+            'currency_id' => $fields['currencyId']
+        ]);
 
-    if (!$recruiterNotificationSettings) {
-      return null;
+        return new RecruiterResource($recruiter);
     }
 
-    $allowedKeys = [
-      'new_candidate',
-      'communication_updates',
-      'hiring_stage',
-      'resume_status',
-      'events_update',
-      'recruitment_dates',
-      'security_alerts',
-      'renewal_dates',
-    ];
+    public function getNotificationSettings($request)
+    {
+        $recruiterNotificationSettings = $this->getAuthenticatedRecruiter($request)->notificationSetting;
 
-    $updates = array_intersect_key($validated, array_flip($allowedKeys));
+        if (!$recruiterNotificationSettings) {
+            return null;
+        }
 
-    if (!empty($updates)) {
-      $recruiterNotificationSettings->update($updates);
+        return $recruiterNotificationSettings;
     }
 
-    return $recruiterNotificationSettings;
-  }
+    public function updateNotificationSetting(array $validated, $request)
+    {
+        $recruiterNotificationSettings = $this->getAuthenticatedRecruiter($request)->notificationSetting;
+
+        if (!$recruiterNotificationSettings) {
+            return null;
+        }
+
+        $allowedKeys = [
+            'new_candidate',
+            'communication_updates',
+            'hiring_stage',
+            'resume_status',
+            'events_update',
+            'recruitment_dates',
+            'security_alerts',
+            'renewal_dates',
+        ];
+
+        $updates = array_intersect_key($validated, array_flip($allowedKeys));
+
+        if (!empty($updates)) {
+            $recruiterNotificationSettings->update($updates);
+        }
+
+        return $recruiterNotificationSettings;
+    }
 }

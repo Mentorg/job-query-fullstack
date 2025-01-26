@@ -153,14 +153,19 @@ export const updateLocaleSettings = async (
   }
 };
 
-// get user currency
-export const getUserCurrency = async () => {
+// update currency settings
+export const updateCurrency = async (
+  localeSettingsData: Partial<Recruiter>,
+) => {
   try {
-    const response = await axiosInstance.get(`/api/v1/user/currency`);
+    const response = await axiosInstance.put(
+      `/api/v1/recruiter/currency`,
+      localeSettingsData,
+    );
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      throw new Error(error.message || "Fetching user currency failed!");
+      throw new Error(error.message || "Updating currency data failed!");
     }
   }
 };

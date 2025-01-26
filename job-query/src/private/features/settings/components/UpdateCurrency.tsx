@@ -4,8 +4,8 @@ import Select from "../../../../shared/components/form/Select";
 import Option from "../../../../shared/components/form/Option";
 import Button from "../../../../shared/components/ui/Button";
 import Loading from "../../../../shared/components/ui/Loading";
-import { useUpdateLocaleSettings } from "../hooks/useUpdateLocaleSettings";
 import { useCurrencies } from "../hooks/useCurrencies";
+import { useUpdateCurrency } from "../hooks/useUpdateCurrency";
 import { User } from "../../../../shared/types/user";
 import { Currency } from "../../../../shared/types/currency";
 
@@ -16,7 +16,7 @@ type UpdateCurrencyProps = {
 
 function UpdateCurrency({ resource, onCloseModal }: UpdateCurrencyProps) {
   const { form, errors, handleChange, handleSubmit, isSubmitted } =
-    useUpdateLocaleSettings(resource);
+    useUpdateCurrency(resource);
   const { currencies, isPending, error } = useCurrencies();
   const { t } = useTranslation();
 

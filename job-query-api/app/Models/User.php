@@ -31,7 +31,6 @@ class User extends Authenticatable
         'language',
         'timezone',
         'location_id',
-        'currency_id'
     ];
 
     /**
@@ -62,11 +61,6 @@ class User extends Authenticatable
         return $this->belongsTo(Location::class);
     }
 
-    public function currency(): BelongsTo
-    {
-        return $this->belongsTo(Currency::class);
-    }
-
     public function recruiter(): HasOne
     {
         return $this->hasOne(Recruiter::class)->with('company');
@@ -81,13 +75,4 @@ class User extends Authenticatable
     {
         return $this->recruiter()->exists();
     }
-
-    // public function getUserTypeAttribute(): string
-    // {
-    //     if ($this->isRecruiter()) {
-    //         return 'recruiter';
-    //     }
-
-    //     return 'applicant';
-    // }
 }

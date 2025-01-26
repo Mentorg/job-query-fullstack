@@ -11,12 +11,10 @@ export function useUpdateLocaleSettings(localeSetting: Partial<User> | null) {
   const [form, setForm] = useState({
     language: localeSetting?.language ?? i18n.language,
     timezone: localeSetting?.timezone ?? "",
-    currencyId: localeSetting?.currencyId ?? undefined,
   });
   const [errors, setErrors] = useState<LocaleErrors>({
     language: "",
     timezone: "",
-    currencyId: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -64,7 +62,6 @@ export function useUpdateLocaleSettings(localeSetting: Partial<User> | null) {
     const newErrors: LocaleErrors = {
       language: !form.language && "Please select an option",
       timezone: !form.timezone && "Please select an option",
-      currencyId: !form.currencyId && "Please select an option",
     };
 
     setErrors(newErrors as LocaleErrors);

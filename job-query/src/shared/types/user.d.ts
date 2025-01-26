@@ -24,11 +24,13 @@ type Recruiter = {
   id?: number;
   user?: User;
   userId?: number;
+  currencyId?: number;
 };
 
 type RecruiterErrors = {
   expertise: boolean | string | undefined;
   description: boolean | string | undefined;
+  currencyId: boolean | string | undefined;
 };
 
 export type CreateRecruiter = {
@@ -85,7 +87,6 @@ type UserErrors = {
 export type LocaleErrors = {
   language: string | boolean | undefined;
   timezone: string | boolean | undefined;
-  currencyId: string | boolean | undefined;
 };
 
 export type SignupProps = {

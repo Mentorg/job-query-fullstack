@@ -20,8 +20,9 @@ class RecruiterResource extends JsonResource
             'id' => $this->id,
             'expertise' => $this->expertise,
             'description' => $this->description,
-            'user' => new UserResource($this->whenLoaded('user')),
+            'user' => new UserResource($this->user),
             'currency' => new CurrencyResource($this->currency),
+            'currencyId' => $this->currency_id,
             'userId' => $this->user_id
         ];
 

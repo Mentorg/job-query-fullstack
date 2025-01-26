@@ -8,11 +8,11 @@ import UpdateCurrency from "../features/settings/components/UpdateCurrency";
 import Loading from "../../shared/components/ui/Loading";
 import Fallback from "../../shared/components/ui/Fallback";
 import { useAuth } from "../../shared/context/AuthContext";
-import { useGetUserCurrency } from "../features/settings/hooks/useGetUserCurrency";
+import { useGetRecruiter } from "../features/profiles/hooks/useGetRecruiter";
 
 function Locale() {
   const { user } = useAuth();
-  const { userCurrency, isPending, error } = useGetUserCurrency();
+  const { recruiter, isPending, error } = useGetRecruiter();
   const { t } = useTranslation();
 
   const languageMap: Record<string, string> = {
@@ -25,7 +25,7 @@ function Locale() {
     user?.language && languageMap[user.language]
       ? languageMap[user.language]
       : user?.language;
-
+  console.log(recruiter);
   return (
     <div className="mt-10 w-full xl:w-[75%]">
       <div className="flex w-full flex-col items-start gap-10 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between xl:gap-20">
@@ -97,7 +97,7 @@ function Locale() {
             />
           ) : (
             <p>
-              {userCurrency.name} - ({userCurrency.symbol})
+              {recruiter.currency.name} - {recruiter.currency.symbol}
             </p>
           )}
         </div>
@@ -112,7 +112,7 @@ function Locale() {
               </Menus.Button>
             </Modal.Open>
             <Modal.Window name="edit">
-              <UpdateCurrency resource={user} onCloseModal={close} />
+              <UpdateCurrency resource={recruiter} onCloseModal={close} />
             </Modal.Window>
           </Modal>
         </div>

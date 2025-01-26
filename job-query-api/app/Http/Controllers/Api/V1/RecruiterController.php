@@ -51,6 +51,19 @@ class RecruiterController extends Controller
         return response()->json($company);
     }
 
+    public function updateCurrency(Request $request)
+    {
+        $validated = $request->validate([
+            'currencyId' => 'sometimes|required|exists:currencies,id'
+        ]);
+
+        $updatedRecruiter = $this->recruiterService->updateCurrency($validated, $request);
+
+        return $updatedRecruiter
+            ? ResponseHelper::successResponse($updatedRecruiter, 'Currency settings updated successfully.')
+            : ResponseHelper::errorResponse('Failed to update currency settings!', 400);
+    }
+
     public function getNotificationSettings(Request $request)
     {
         $settings = $this->recruiterService->getNotificationSettings($request);
