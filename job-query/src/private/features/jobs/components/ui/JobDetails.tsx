@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Job } from "../../../../../shared/types/job";
 import StatusChip from "../../../../components/StatusChip";
+import { formatSalary } from "../../../../../shared/utils/formatSalary";
 
 type JobDetailsProps = {
   resource: Job;
@@ -70,7 +71,13 @@ function JobDetails({ resource }: JobDetailsProps) {
         <div className="w-full rounded-md bg-slate-100 px-4 py-8">
           <h4 className="text-xl font-medium">{t("job.salary")}</h4>
           <p className="mt-2 text-xs font-medium text-slate-500 sm:text-base">
-            {resource.salaryFrom} - {resource.salaryTo}/
+            {formatSalary(
+              resource.salaryFrom,
+              resource.salaryTo,
+              resource.recruiter.currency.code,
+              resource.recruiter.currency.symbol,
+            )}{" "}
+            /{" "}
             <span className="text-base">
               {resource.isSalaryMonthly
                 ? t("job.salaryMonthly")

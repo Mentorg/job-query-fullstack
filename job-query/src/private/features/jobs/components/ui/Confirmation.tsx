@@ -4,6 +4,7 @@ import { useCompanyLocation } from "../../hooks/useCompanyLocation";
 import { useGetRecruiter } from "../../../profiles/hooks/useGetRecruiter";
 import { Location } from "../../../../../shared/types/location";
 import { CreateJob } from "../../../../../shared/types/job";
+import { formatSalary } from "../../../../../shared/utils/formatSalary";
 
 type ConfirmationProps = {
   form: CreateJob;
@@ -92,7 +93,13 @@ function Confirmation({ form }: ConfirmationProps) {
             <div className="w-full rounded-md bg-slate-100 px-4 py-8">
               <h4 className="text-xl font-medium">{t("job.salary")}</h4>
               <p className="mt-2 text-xs font-medium text-slate-500 sm:text-base">
-                {form.salaryFrom} - {form.salaryTo}/
+                {formatSalary(
+                  form.salaryFrom,
+                  form.salaryTo,
+                  recruiter.currency.code,
+                  recruiter.currency.symbol,
+                )}{" "}
+                /{" "}
                 {form.isSalaryMonthly
                   ? t("job.salaryMonthly")
                   : t("job.salaryAnnual")}

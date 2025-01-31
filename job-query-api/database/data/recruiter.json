@@ -1,498 +1,498 @@
 [
-  {
-    "id": 1,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Jane Doe, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exciting career opportunities. With a background in human resources and a strong understanding of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit both parties. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 1,
-    "company_id": 0,
-    "currency_id": 8
-  },
-  {
-    "id": 2,
-    "expertise": "I excel at uncovering and recruiting high-caliber talent for organizations by leveraging targeted sourcing techniques and fostering strong professional relationships.",
-    "description": "Hi there! I'm Emily Brown, an enthusiastic Recruiter/Employer who thrives on linking skilled professionals with dynamic career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to match exceptional talent with the right organizations. I am dedicated to building strong, positive relationships and crafting successful partnerships that drive mutual success. Let's connect and explore how we can collaborate to achieve your hiring and career aspirations.",
-    "user_id": 2,
-    "company_id": 0,
-    "currency_id": 1
-  },
-  {
-    "id": 3,
-    "expertise": "My expertise lies in discovering and engaging exceptional candidates for companies through strategic recruitment methods and effective relationship management.",
-    "description": "Hello! I'm Michael Wilson, a committed Recruiter/Employer with a genuine passion for connecting talented individuals to rewarding career paths. With a solid background in human resources and a keen insight into the recruitment landscape, I am focused on finding the ideal fit between candidates and companies. My mission is to nurture positive relationships and build successful partnerships that benefit everyone involved. I'd love to connect and discuss how we can work together to reach your hiring and career objectives.",
-    "user_id": 3,
-    "company_id": 1,
-    "currency_id": 1
-  },
-  {
-    "id": 4,
-    "expertise": "I focus on sourcing and securing premier talent for businesses by utilizing strategic approaches and building meaningful connections within the industry.",
-    "description": "Greetings! I'm Sara Brown, a driven Recruiter/Employer dedicated to aligning talented professionals with exciting career opportunities. With a robust background in human resources and a thorough grasp of the recruitment process, I am committed to finding the perfect match between candidates and organizations. My focus is on creating strong, positive relationships and establishing successful collaborations that support both parties. Let's get in touch and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 4,
-    "company_id": 1,
-    "currency_id": 8
-  },
-  {
-    "id": 5,
-    "expertise": "I specialize in pinpointing and attracting top-tier talent for organizations through strategic sourcing and effective relationship-building. My focus is on identifying exceptional candidates and aligning them with the right opportunities to drive success for both individuals and companies.",
-    "description": "Hello! I'm Lucas Martin, a dedicated Recruiter/Employer with a passion for connecting skilled professionals with promising career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 5,
-    "company_id": 2,
-    "currency_id": 8
-  },
-  {
-    "id": 6,
-    "expertise": "I excel at discovering and recruiting outstanding talent for companies through strategic sourcing methods and strong relationship-building. My expertise lies in finding the right candidates and connecting them with opportunities that drive growth and success for both sides.",
-    "description": "Hi there! I'm Isabella Turner, a passionate Recruiter/Employer dedicated to matching talented individuals with exciting career prospects. With a solid background in human resources and a comprehensive understanding of the recruitment landscape, I work diligently to find the perfect alignment between candidates and organizations. I am focused on cultivating positive relationships and forging successful partnerships that create mutual benefits. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 6,
-    "company_id": 2,
-    "currency_id": 1
-  },
-  {
-    "id": 7,
-    "expertise": "I specialize in discovering and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning high-quality candidates with the right opportunities to foster growth and success for both individuals and organizations.",
-    "description": "Hello! I'm Henry Adams, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I am focused on finding the perfect fit between candidates and organizations. My commitment is to build positive relationships and establish successful partnerships that benefit everyone involved. Let's connect and explore how we can collaborate to meet your hiring and career aspirations.",
-    "user_id": 7,
-    "company_id": 3,
-    "currency_id": 1
-  },
-  {
-    "id": 8,
-    "expertise": "My expertise lies in identifying and attracting top-notch talent for organizations through strategic sourcing and relationship-building. I focus on finding and connecting exceptional candidates with opportunities that drive success and growth for both the individual and the company.",
-    "description": "Hi! I'm Natalie Collins, a passionate Recruiter/Employer dedicated to matching talented individuals with exciting career prospects. With a strong foundation in human resources and a thorough grasp of the recruitment process, my goal is to ensure the ideal match between candidates and companies. I am committed to nurturing positive relationships and creating successful partnerships that are mutually beneficial. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 8,
-    "company_id": 3,
-    "currency_id": 1
-  },
-  {
-    "id": 9,
-    "expertise": "I specialize in pinpointing and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning high-caliber candidates with the right roles to foster growth and success for both individuals and companies.",
-    "description": "Hello! I'm Ethan Walker, a committed Recruiter/Employer with a dedication to linking talented individuals with outstanding career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I aim to find the ideal match between candidates and companies. My focus is on cultivating positive relationships and creating successful partnerships that drive mutual success. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
-    "user_id": 9,
-    "company_id": 4,
-    "currency_id": 1
-  },
-  {
-    "id": 10,
-    "expertise": "I excel in identifying and attracting premier talent for companies through strategic sourcing techniques and relationship-building. My focus is on finding exceptional candidates and connecting them with opportunities that drive success and growth for both the individual and the organization.",
-    "description": "Hi there! I'm Ava Mitchell, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a strong background in human resources and a deep knowledge of the recruitment process, my goal is to ensure a perfect fit between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
-    "user_id": 10,
-    "company_id": 4,
-    "currency_id": 1
-  },
-  {
-    "id": 11,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning exceptional candidates with the right opportunities to drive success and growth for both the individual and the organization.",
-    "description": "Hello! I'm Owen Scott, a dedicated Recruiter/Employer passionate about connecting talented individuals with remarkable career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and discuss how we can work together to achieve your hiring and career goals.",
-    "user_id": 11,
-    "company_id": 5,
-    "currency_id": 17
-  },
-  {
-    "id": 12,
-    "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and strong relationship-building. My focus is on finding and connecting high-quality candidates with opportunities that drive growth and success for both individuals and companies.",
-    "description": "Hi! I'm Mia Peterson, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a solid foundation in human resources and a deep understanding of the recruitment process, I focus on finding the ideal fit between candidates and companies. My goal is to cultivate positive relationships and create successful partnerships that benefit both parties. Let's connect and explore how we can work together to achieve your hiring and career aspirations.",
-    "user_id": 12,
-    "company_id": 5,
-    "currency_id": 14
-  },
-  {
-    "id": 13,
-    "expertise": "I specialize in identifying and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive mutual success and growth.",
-    "description": "Hello! I'm Liam Thompson, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exciting career opportunities. With a comprehensive background in human resources and a deep understanding of the recruitment process, I work diligently to find the perfect match between candidates and companies. I am committed to building positive relationships and forging successful partnerships that benefit all parties. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
-    "user_id": 13,
-    "company_id": 6,
-    "currency_id": 6
-  },
-  {
-    "id": 14,
-    "expertise": "I excel at discovering and attracting premier talent for companies through strategic sourcing and relationship-building. My goal is to connect high-quality candidates with opportunities that support growth and success for both individuals and organizations.",
-    "description": "Hi there! I'm Sophia Moore, a passionate Recruiter/Employer dedicated to matching skilled professionals with exceptional career opportunities. With a strong background in human resources and a solid grasp of the recruitment process, my focus is on finding the ideal fit between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 14,
-    "company_id": 6,
-    "currency_id": 1
-  },
-  {
-    "id": 15,
-    "expertise": "I specialize in identifying and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right roles to drive mutual success and growth.",
-    "description": "Hello! I'm Zara Blake, a dedicated Recruiter/Employer with a strong passion for connecting talented professionals with outstanding career opportunities. With a solid foundation in human resources and a thorough understanding of the recruitment process, I aim to find the perfect match between candidates and companies. My commitment lies in fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
-    "user_id": 15,
-    "company_id": 7,
-    "currency_id": 18
-  },
-  {
-    "id": 16,
-    "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-caliber candidates with opportunities that drive success and growth for both the individual and the organization.",
-    "description": "Hi! I'm Aiden Carter, a passionate Recruiter/Employer focused on connecting skilled individuals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit both parties. Let's connect and discuss how we can work together to achieve your hiring and career objectives.",
-    "user_id": 16,
-    "company_id": 7,
-    "currency_id": 15
-  },
-  {
-    "id": 17,
-    "expertise": "I specialize in identifying and engaging high-caliber talent for organizations through targeted sourcing and meaningful relationship-building. My goal is to match top candidates with opportunities that foster growth, success, and long-term value for both the individual and the company.",
-    "description": "Hello! I'm Chloe Morris, a dedicated Recruiter/Employer passionate about connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a thorough understanding of the recruitment process, I am committed to finding the perfect match between candidates and companies. My focus is on building positive relationships and creating successful partnerships that benefit all parties. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 17,
-    "company_id": 8,
-    "currency_id": 1
-  },
-  {
-    "id": 18,
-    "expertise": "I excel in discovering and attracting top-tier talent for companies through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive success and growth for both the individual and the organization.",
-    "description": "Hi there! I'm Benjamin Reed, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career objectives.",
-    "user_id": 18,
-    "company_id": 8,
-    "currency_id": 18
-  },
-  {
-    "id": 19,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive growth and success for both individuals and organizations.",
-    "description": "Hello! I'm Sophie Müller, a dedicated Recruiter/Employer with a passion for connecting talented professionals with outstanding career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. My commitment is to build positive relationships and create successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career goals.",
-    "user_id": 19,
-    "company_id": 9,
-    "currency_id": 1
-  },
-  {
-    "id": 20,
-    "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-caliber candidates with opportunities that drive success and growth for both the individual and the organization.",
-    "description": "Hi! I'm Landon Gray, a passionate Recruiter/Employer dedicated to connecting skilled individuals with exciting career prospects. With a solid foundation in human resources and a thorough grasp of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and building successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 20,
-    "company_id": 9,
-    "currency_id": 10
-  },
-  {
-    "id": 21,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive success and growth for both individuals and organizations.",
-    "description": "Hello! I'm Eleanor White, a dedicated Recruiter/Employer passionate about connecting talented individuals with exceptional career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect fit between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 21,
-    "company_id": 10,
-    "currency_id": 5
-  },
-  {
-    "id": 22,
-    "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-quality candidates with opportunities that drive growth and success for both the individual and the organization.",
-    "description": "Hi there! I'm Sebastian King, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
-    "user_id": 22,
-    "company_id": 10,
-    "currency_id": 1
-  },
-  {
-    "id": 23,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning exceptional candidates with the right roles to drive mutual success and growth.",
-    "description": "Hello! I'm Amelia Foster, a dedicated Recruiter/Employer with a passion for connecting talented professionals with rewarding career opportunities. With a solid background in human resources and a deep understanding of the recruitment process, I am committed to finding the perfect fit between candidates and organizations. My goal is to build positive relationships and create successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 23,
-    "company_id": 11,
-    "currency_id": 19
-  },
-  {
-    "id": 24,
-    "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting high-caliber candidates with opportunities that drive growth and success for both individuals and companies.",
-    "description": "Hi! I'm Jack Harper, a passionate Recruiter/Employer dedicated to matching skilled individuals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my aim is to find the ideal match between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 24,
-    "company_id": 11,
-    "currency_id": 16
-  },
-  {
-    "id": 25,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning high-quality candidates with the right opportunities to drive growth and success for both individuals and organizations.",
-    "description": "Hello! I'm Ivy Clarke, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 25,
-    "company_id": 12,
-    "currency_id": 1
-  },
-  {
-    "id": 26,
-    "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive success and growth for both the individual and the company.",
-    "description": "Hi there! I'm Noah Murphy, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
-    "user_id": 26,
-    "company_id": 12,
-    "currency_id": 1
-  },
-  {
-    "id": 27,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning high-caliber candidates with the right roles to drive success and growth for both individuals and organizations.",
-    "description": "Hello! I'm Grace Allen, a dedicated Recruiter/Employer with a passion for linking talented individuals with outstanding career opportunities. With a solid foundation in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and organizations. I am committed to fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career goals.",
-    "user_id": 27,
-    "company_id": 13,
-    "currency_id": 1
-  },
-  {
-    "id": 28,
-    "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive growth and success for both individuals and companies.",
-    "description": "Hi! I'm Oliver Martin, a passionate Recruiter/Employer focused on matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my aim is to find the perfect fit between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career objectives.",
-    "user_id": 28,
-    "company_id": 13,
-    "currency_id": 8
-  },
-  {
-    "id": 29,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Ella Carter, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a background in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit both parties. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 29,
-    "company_id": 14,
-    "currency_id": 1
-  },
-  {
-    "id": 30,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Mason Wood, a passionate Recruiter/Employer focused on matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
-    "user_id": 30,
-    "company_id": 14,
-    "currency_id": 1
-  },
-  {
-    "id": 31,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Lila Hayes, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to fostering positive relationships and building successful partnerships that benefit all parties. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 31,
-    "company_id": 15,
-    "currency_id": 2
-  },
-  {
-    "id": 32,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi there! I'm Eli Hughes, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my aim is to find the ideal match between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 32,
-    "company_id": 15,
-    "currency_id": 1
-  },
-  {
-    "id": 33,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Nina Morris, a dedicated Recruiter/Employer with a passion for connecting talented individuals with outstanding career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect match between candidates and organizations. I focus on building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 33,
-    "company_id": 16,
-    "currency_id": 1
-  },
-  {
-    "id": 34,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Oscar Sullivan, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep knowledge of the recruitment process, my goal is to find the ideal fit between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
-    "user_id": 34,
-    "company_id": 16,
-    "currency_id": 11
-  },
-  {
-    "id": 35,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Zoe Brooks, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong background in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 35,
-    "company_id": 17,
-    "currency_id": 20
-  },
-  {
-    "id": 36,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Leo Bennett, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 36,
-    "company_id": 17,
-    "currency_id": 1
-  },
-  {
-    "id": 37,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Sophie Howard, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong foundation in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 37,
-    "company_id": 18,
-    "currency_id": 1
-  },
-  {
-    "id": 38,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi there! I'm Jacob Fisher, a passionate Recruiter/Employer dedicated to matching skilled individuals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 38,
-    "company_id": 18,
-    "currency_id": 21
-  },
-  {
-    "id": 39,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Hannah Russell, a dedicated Recruiter/Employer with a passion for connecting talented professionals with outstanding career opportunities. With a strong background in human resources and a thorough understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 39,
-    "company_id": 19,
-    "currency_id": 14
-  },
-  {
-    "id": 40,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Liam Parker, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 40,
-    "company_id": 19,
-    "currency_id": 14
-  },
-  {
-    "id": 41,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Mila Sanchez, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 41,
-    "company_id": 20,
-    "currency_id": 1
-  },
-  {
-    "id": 42,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi there! I'm Evan Brooks, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 42,
-    "company_id": 20,
-    "currency_id": 1
-  },
-  {
-    "id": 43,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Nora Young, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong background in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 43,
-    "company_id": 21,
-    "currency_id": 11
-  },
-  {
-    "id": 44,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Avery Campbell, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 44,
-    "company_id": 21,
-    "currency_id": 1
-  },
-  {
-    "id": 45,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Henry Ward, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I am focused on finding the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 45,
-    "company_id": 22,
-    "currency_id": 8
-  },
-  {
-    "id": 46,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Lydia Hayes, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 46,
-    "company_id": 22,
-    "currency_id": 22
-  },
-  {
-    "id": 47,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Isaac Ross, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 47,
-    "company_id": 23,
-    "currency_id": 1
-  },
-  {
-    "id": 48,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi there! I'm Sienna Cook, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 48,
-    "company_id": 23,
-    "currency_id": 2
-  },
-  {
-    "id": 49,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Luca Rossi, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong foundation in human resources and a thorough understanding of the recruitment process, I focus on finding the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 49,
-    "company_id": 24,
-    "currency_id": 1
-  },
-  {
-    "id": 50,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Anna Johansson, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 50,
-    "company_id": 24,
-    "currency_id": 17
-  },
-  {
-    "id": 51,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Chloe Adams, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 51,
-    "company_id": 25,
-    "currency_id": 1
-  },
-  {
-    "id": 52,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Ethan Adams, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 52,
-    "company_id": 25,
-    "currency_id": 1
-  },
-  {
-    "id": 53,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Olivia Murphy, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I focus on finding the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 53,
-    "company_id": 26,
-    "currency_id": 6
-  },
-  {
-    "id": 54,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Noah Walker, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 54,
-    "company_id": 26,
-    "currency_id": 10
-  },
-  {
-    "id": 55,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Emma Foster, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong foundation in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 55,
-    "company_id": 27,
-    "currency_id": 15
-  },
-  {
-    "id": 56,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Logan Perry, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 56,
-    "company_id": 27,
-    "currency_id": 12
-  },
-  {
-    "id": 57,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Zara Morgan, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a solid background in human resources and a thorough understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 57,
-    "company_id": 28,
-    "currency_id": 1
-  },
-  {
-    "id": 58,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi there! I'm Oliver Collins, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 58,
-    "company_id": 28,
-    "currency_id": 1
-  },
-  {
-    "id": 59,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Aiden Taylor, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 59,
-    "company_id": 29,
-    "currency_id": 1
-  },
-  {
-    "id": 60,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Élisabeth Dubois, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 60,
-    "company_id": 29,
-    "currency_id": 1
-  },
-  {
-    "id": 61,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hello! I'm Jürgen Schmidt, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
-    "user_id": 61,
-    "company_id": 30,
-    "currency_id": 1
-  },
-  {
-    "id": 62,
-    "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
-    "description": "Hi! I'm Isabella García, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
-    "user_id": 62,
-    "company_id": 30,
-    "currency_id": 1
-  }
+    {
+        "id": 1,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Jane Doe, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exciting career opportunities. With a background in human resources and a strong understanding of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit both parties. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 1,
+        "company_id": 0,
+        "currency_id": 7
+    },
+    {
+        "id": 2,
+        "expertise": "I excel at uncovering and recruiting high-caliber talent for organizations by leveraging targeted sourcing techniques and fostering strong professional relationships.",
+        "description": "Hi there! I'm Emily Brown, an enthusiastic Recruiter/Employer who thrives on linking skilled professionals with dynamic career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to match exceptional talent with the right organizations. I am dedicated to building strong, positive relationships and crafting successful partnerships that drive mutual success. Let's connect and explore how we can collaborate to achieve your hiring and career aspirations.",
+        "user_id": 2,
+        "company_id": 0,
+        "currency_id": 1
+    },
+    {
+        "id": 3,
+        "expertise": "My expertise lies in discovering and engaging exceptional candidates for companies through strategic recruitment methods and effective relationship management.",
+        "description": "Hello! I'm Michael Wilson, a committed Recruiter/Employer with a genuine passion for connecting talented individuals to rewarding career paths. With a solid background in human resources and a keen insight into the recruitment landscape, I am focused on finding the ideal fit between candidates and companies. My mission is to nurture positive relationships and build successful partnerships that benefit everyone involved. I'd love to connect and discuss how we can work together to reach your hiring and career objectives.",
+        "user_id": 3,
+        "company_id": 1,
+        "currency_id": 1
+    },
+    {
+        "id": 4,
+        "expertise": "I focus on sourcing and securing premier talent for businesses by utilizing strategic approaches and building meaningful connections within the industry.",
+        "description": "Greetings! I'm Sara Brown, a driven Recruiter/Employer dedicated to aligning talented professionals with exciting career opportunities. With a robust background in human resources and a thorough grasp of the recruitment process, I am committed to finding the perfect match between candidates and organizations. My focus is on creating strong, positive relationships and establishing successful collaborations that support both parties. Let's get in touch and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 4,
+        "company_id": 1,
+        "currency_id": 7
+    },
+    {
+        "id": 5,
+        "expertise": "I specialize in pinpointing and attracting top-tier talent for organizations through strategic sourcing and effective relationship-building. My focus is on identifying exceptional candidates and aligning them with the right opportunities to drive success for both individuals and companies.",
+        "description": "Hello! I'm Lucas Martin, a dedicated Recruiter/Employer with a passion for connecting skilled professionals with promising career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 5,
+        "company_id": 2,
+        "currency_id": 7
+    },
+    {
+        "id": 6,
+        "expertise": "I excel at discovering and recruiting outstanding talent for companies through strategic sourcing methods and strong relationship-building. My expertise lies in finding the right candidates and connecting them with opportunities that drive growth and success for both sides.",
+        "description": "Hi there! I'm Isabella Turner, a passionate Recruiter/Employer dedicated to matching talented individuals with exciting career prospects. With a solid background in human resources and a comprehensive understanding of the recruitment landscape, I work diligently to find the perfect alignment between candidates and organizations. I am focused on cultivating positive relationships and forging successful partnerships that create mutual benefits. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 6,
+        "company_id": 2,
+        "currency_id": 1
+    },
+    {
+        "id": 7,
+        "expertise": "I specialize in discovering and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning high-quality candidates with the right opportunities to foster growth and success for both individuals and organizations.",
+        "description": "Hello! I'm Henry Adams, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I am focused on finding the perfect fit between candidates and organizations. My commitment is to build positive relationships and establish successful partnerships that benefit everyone involved. Let's connect and explore how we can collaborate to meet your hiring and career aspirations.",
+        "user_id": 7,
+        "company_id": 3,
+        "currency_id": 1
+    },
+    {
+        "id": 8,
+        "expertise": "My expertise lies in identifying and attracting top-notch talent for organizations through strategic sourcing and relationship-building. I focus on finding and connecting exceptional candidates with opportunities that drive success and growth for both the individual and the company.",
+        "description": "Hi! I'm Natalie Collins, a passionate Recruiter/Employer dedicated to matching talented individuals with exciting career prospects. With a strong foundation in human resources and a thorough grasp of the recruitment process, my goal is to ensure the ideal match between candidates and companies. I am committed to nurturing positive relationships and creating successful partnerships that are mutually beneficial. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 8,
+        "company_id": 3,
+        "currency_id": 1
+    },
+    {
+        "id": 9,
+        "expertise": "I specialize in pinpointing and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning high-caliber candidates with the right roles to foster growth and success for both individuals and companies.",
+        "description": "Hello! I'm Ethan Walker, a committed Recruiter/Employer with a dedication to linking talented individuals with outstanding career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I aim to find the ideal match between candidates and companies. My focus is on cultivating positive relationships and creating successful partnerships that drive mutual success. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
+        "user_id": 9,
+        "company_id": 4,
+        "currency_id": 1
+    },
+    {
+        "id": 10,
+        "expertise": "I excel in identifying and attracting premier talent for companies through strategic sourcing techniques and relationship-building. My focus is on finding exceptional candidates and connecting them with opportunities that drive success and growth for both the individual and the organization.",
+        "description": "Hi there! I'm Ava Mitchell, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a strong background in human resources and a deep knowledge of the recruitment process, my goal is to ensure a perfect fit between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
+        "user_id": 10,
+        "company_id": 4,
+        "currency_id": 1
+    },
+    {
+        "id": 11,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning exceptional candidates with the right opportunities to drive success and growth for both the individual and the organization.",
+        "description": "Hello! I'm Owen Scott, a dedicated Recruiter/Employer passionate about connecting talented individuals with remarkable career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and discuss how we can work together to achieve your hiring and career goals.",
+        "user_id": 11,
+        "company_id": 5,
+        "currency_id": 13
+    },
+    {
+        "id": 12,
+        "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and strong relationship-building. My focus is on finding and connecting high-quality candidates with opportunities that drive growth and success for both individuals and companies.",
+        "description": "Hi! I'm Mia Peterson, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a solid foundation in human resources and a deep understanding of the recruitment process, I focus on finding the ideal fit between candidates and companies. My goal is to cultivate positive relationships and create successful partnerships that benefit both parties. Let's connect and explore how we can work together to achieve your hiring and career aspirations.",
+        "user_id": 12,
+        "company_id": 5,
+        "currency_id": 10
+    },
+    {
+        "id": 13,
+        "expertise": "I specialize in identifying and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive mutual success and growth.",
+        "description": "Hello! I'm Liam Thompson, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exciting career opportunities. With a comprehensive background in human resources and a deep understanding of the recruitment process, I work diligently to find the perfect match between candidates and companies. I am committed to building positive relationships and forging successful partnerships that benefit all parties. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
+        "user_id": 13,
+        "company_id": 6,
+        "currency_id": 6
+    },
+    {
+        "id": 14,
+        "expertise": "I excel at discovering and attracting premier talent for companies through strategic sourcing and relationship-building. My goal is to connect high-quality candidates with opportunities that support growth and success for both individuals and organizations.",
+        "description": "Hi there! I'm Sophia Moore, a passionate Recruiter/Employer dedicated to matching skilled professionals with exceptional career opportunities. With a strong background in human resources and a solid grasp of the recruitment process, my focus is on finding the ideal fit between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 14,
+        "company_id": 6,
+        "currency_id": 1
+    },
+    {
+        "id": 15,
+        "expertise": "I specialize in identifying and attracting top talent for organizations through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right roles to drive mutual success and growth.",
+        "description": "Hello! I'm Zara Blake, a dedicated Recruiter/Employer with a strong passion for connecting talented professionals with outstanding career opportunities. With a solid foundation in human resources and a thorough understanding of the recruitment process, I aim to find the perfect match between candidates and companies. My commitment lies in fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and explore how we can collaborate to achieve your hiring and career goals.",
+        "user_id": 15,
+        "company_id": 7,
+        "currency_id": 14
+    },
+    {
+        "id": 16,
+        "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-caliber candidates with opportunities that drive success and growth for both the individual and the organization.",
+        "description": "Hi! I'm Aiden Carter, a passionate Recruiter/Employer focused on connecting skilled individuals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit both parties. Let's connect and discuss how we can work together to achieve your hiring and career objectives.",
+        "user_id": 16,
+        "company_id": 7,
+        "currency_id": 11
+    },
+    {
+        "id": 17,
+        "expertise": "I specialize in identifying and engaging high-caliber talent for organizations through targeted sourcing and meaningful relationship-building. My goal is to match top candidates with opportunities that foster growth, success, and long-term value for both the individual and the company.",
+        "description": "Hello! I'm Chloe Morris, a dedicated Recruiter/Employer passionate about connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a thorough understanding of the recruitment process, I am committed to finding the perfect match between candidates and companies. My focus is on building positive relationships and creating successful partnerships that benefit all parties. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 17,
+        "company_id": 8,
+        "currency_id": 1
+    },
+    {
+        "id": 18,
+        "expertise": "I excel in discovering and attracting top-tier talent for companies through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive success and growth for both the individual and the organization.",
+        "description": "Hi there! I'm Benjamin Reed, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career objectives.",
+        "user_id": 18,
+        "company_id": 8,
+        "currency_id": 19
+    },
+    {
+        "id": 19,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive growth and success for both individuals and organizations.",
+        "description": "Hello! I'm Sophie Müller, a dedicated Recruiter/Employer with a passion for connecting talented professionals with outstanding career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. My commitment is to build positive relationships and create successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career goals.",
+        "user_id": 19,
+        "company_id": 9,
+        "currency_id": 1
+    },
+    {
+        "id": 20,
+        "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-caliber candidates with opportunities that drive success and growth for both the individual and the organization.",
+        "description": "Hi! I'm Landon Gray, a passionate Recruiter/Employer dedicated to connecting skilled individuals with exciting career prospects. With a solid foundation in human resources and a thorough grasp of the recruitment process, I strive to find the perfect match between candidates and companies. I am committed to fostering positive relationships and building successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 20,
+        "company_id": 9,
+        "currency_id": 8
+    },
+    {
+        "id": 21,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning exceptional candidates with the right opportunities to drive success and growth for both individuals and organizations.",
+        "description": "Hello! I'm Eleanor White, a dedicated Recruiter/Employer passionate about connecting talented individuals with exceptional career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect fit between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 21,
+        "company_id": 10,
+        "currency_id": 5
+    },
+    {
+        "id": 22,
+        "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and relationship-building. My focus is on finding and connecting high-quality candidates with opportunities that drive growth and success for both the individual and the organization.",
+        "description": "Hi there! I'm Sebastian King, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
+        "user_id": 22,
+        "company_id": 10,
+        "currency_id": 1
+    },
+    {
+        "id": 23,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning exceptional candidates with the right roles to drive mutual success and growth.",
+        "description": "Hello! I'm Amelia Foster, a dedicated Recruiter/Employer with a passion for connecting talented professionals with rewarding career opportunities. With a solid background in human resources and a deep understanding of the recruitment process, I am committed to finding the perfect fit between candidates and organizations. My goal is to build positive relationships and create successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 23,
+        "company_id": 11,
+        "currency_id": 15
+    },
+    {
+        "id": 24,
+        "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting high-caliber candidates with opportunities that drive growth and success for both individuals and companies.",
+        "description": "Hi! I'm Jack Harper, a passionate Recruiter/Employer dedicated to matching skilled individuals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my aim is to find the ideal match between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 24,
+        "company_id": 11,
+        "currency_id": 12
+    },
+    {
+        "id": 25,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise is in aligning high-quality candidates with the right opportunities to drive growth and success for both individuals and organizations.",
+        "description": "Hello! I'm Ivy Clarke, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 25,
+        "company_id": 12,
+        "currency_id": 1
+    },
+    {
+        "id": 26,
+        "expertise": "I excel in discovering and attracting top talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive success and growth for both the individual and the company.",
+        "description": "Hi there! I'm Noah Murphy, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
+        "user_id": 26,
+        "company_id": 12,
+        "currency_id": 1
+    },
+    {
+        "id": 27,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and effective relationship-building. My expertise lies in aligning high-caliber candidates with the right roles to drive success and growth for both individuals and organizations.",
+        "description": "Hello! I'm Grace Allen, a dedicated Recruiter/Employer with a passion for linking talented individuals with outstanding career opportunities. With a solid foundation in human resources and a deep understanding of the recruitment process, my goal is to find the ideal match between candidates and organizations. I am committed to fostering positive relationships and building successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career goals.",
+        "user_id": 27,
+        "company_id": 13,
+        "currency_id": 1
+    },
+    {
+        "id": 28,
+        "expertise": "I excel in discovering and attracting top-tier talent for organizations through strategic sourcing and strong relationship-building. My focus is on connecting exceptional candidates with opportunities that drive growth and success for both individuals and companies.",
+        "description": "Hi! I'm Oliver Martin, a passionate Recruiter/Employer focused on matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my aim is to find the perfect fit between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career objectives.",
+        "user_id": 28,
+        "company_id": 13,
+        "currency_id": 7
+    },
+    {
+        "id": 29,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Ella Carter, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a background in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit both parties. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 29,
+        "company_id": 14,
+        "currency_id": 1
+    },
+    {
+        "id": 30,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Mason Wood, a passionate Recruiter/Employer focused on matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
+        "user_id": 30,
+        "company_id": 14,
+        "currency_id": 1
+    },
+    {
+        "id": 31,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Lila Hayes, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to fostering positive relationships and building successful partnerships that benefit all parties. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 31,
+        "company_id": 15,
+        "currency_id": 2
+    },
+    {
+        "id": 32,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi there! I'm Eli Hughes, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my aim is to find the ideal match between candidates and companies. I am dedicated to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 32,
+        "company_id": 15,
+        "currency_id": 1
+    },
+    {
+        "id": 33,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Nina Morris, a dedicated Recruiter/Employer with a passion for connecting talented individuals with outstanding career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect match between candidates and organizations. I focus on building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 33,
+        "company_id": 16,
+        "currency_id": 1
+    },
+    {
+        "id": 34,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Oscar Sullivan, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep knowledge of the recruitment process, my goal is to find the ideal fit between candidates and organizations. I am committed to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can work together to achieve your hiring and career objectives.",
+        "user_id": 34,
+        "company_id": 16,
+        "currency_id": 9
+    },
+    {
+        "id": 35,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Zoe Brooks, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong background in human resources and a thorough understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 35,
+        "company_id": 17,
+        "currency_id": 16
+    },
+    {
+        "id": 36,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Leo Bennett, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 36,
+        "company_id": 17,
+        "currency_id": 1
+    },
+    {
+        "id": 37,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Sophie Howard, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong foundation in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 37,
+        "company_id": 18,
+        "currency_id": 1
+    },
+    {
+        "id": 38,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi there! I'm Jacob Fisher, a passionate Recruiter/Employer dedicated to matching skilled individuals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 38,
+        "company_id": 18,
+        "currency_id": 17
+    },
+    {
+        "id": 39,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Hannah Russell, a dedicated Recruiter/Employer with a passion for connecting talented professionals with outstanding career opportunities. With a strong background in human resources and a thorough understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 39,
+        "company_id": 19,
+        "currency_id": 10
+    },
+    {
+        "id": 40,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Liam Parker, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 40,
+        "company_id": 19,
+        "currency_id": 10
+    },
+    {
+        "id": 41,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Mila Sanchez, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 41,
+        "company_id": 20,
+        "currency_id": 1
+    },
+    {
+        "id": 42,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi there! I'm Evan Brooks, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 42,
+        "company_id": 20,
+        "currency_id": 1
+    },
+    {
+        "id": 43,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Nora Young, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong background in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the ideal match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 43,
+        "company_id": 21,
+        "currency_id": 9
+    },
+    {
+        "id": 44,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Avery Campbell, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 44,
+        "company_id": 21,
+        "currency_id": 1
+    },
+    {
+        "id": 45,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Henry Ward, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I am focused on finding the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 45,
+        "company_id": 22,
+        "currency_id": 7
+    },
+    {
+        "id": 46,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Lydia Hayes, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 46,
+        "company_id": 22,
+        "currency_id": 18
+    },
+    {
+        "id": 47,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Isaac Ross, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 47,
+        "company_id": 23,
+        "currency_id": 1
+    },
+    {
+        "id": 48,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi there! I'm Sienna Cook, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a solid grasp of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 48,
+        "company_id": 23,
+        "currency_id": 2
+    },
+    {
+        "id": 49,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Luca Rossi, a dedicated Recruiter/Employer with a passion for connecting talented individuals with exceptional career opportunities. With a strong foundation in human resources and a thorough understanding of the recruitment process, I focus on finding the ideal match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 49,
+        "company_id": 24,
+        "currency_id": 1
+    },
+    {
+        "id": 50,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Anna Johansson, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a comprehensive understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 50,
+        "company_id": 24,
+        "currency_id": 13
+    },
+    {
+        "id": 51,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Chloe Adams, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a solid background in human resources and a comprehensive understanding of the recruitment process, I strive to find the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 51,
+        "company_id": 25,
+        "currency_id": 1
+    },
+    {
+        "id": 52,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Ethan Adams, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 52,
+        "company_id": 25,
+        "currency_id": 1
+    },
+    {
+        "id": 53,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Olivia Murphy, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong background in human resources and a deep understanding of the recruitment process, I focus on finding the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 53,
+        "company_id": 26,
+        "currency_id": 6
+    },
+    {
+        "id": 54,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Noah Walker, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 54,
+        "company_id": 26,
+        "currency_id": 10
+    },
+    {
+        "id": 55,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Emma Foster, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a strong foundation in human resources and a comprehensive understanding of the recruitment process, I am committed to finding the perfect match between candidates and organizations. My focus is on building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 55,
+        "company_id": 27,
+        "currency_id": 11
+    },
+    {
+        "id": 56,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Logan Perry, a passionate Recruiter/Employer dedicated to linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 56,
+        "company_id": 27,
+        "currency_id": 1
+    },
+    {
+        "id": 57,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Zara Morgan, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a solid background in human resources and a thorough understanding of the recruitment process, I am focused on finding the ideal match between candidates and organizations. My commitment is to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 57,
+        "company_id": 28,
+        "currency_id": 1
+    },
+    {
+        "id": 58,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi there! I'm Oliver Collins, a passionate Recruiter/Employer dedicated to matching skilled professionals with exciting career opportunities. With extensive experience in human resources and a deep understanding of the recruitment process, my goal is to find the perfect fit between candidates and companies. I am committed to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 58,
+        "company_id": 28,
+        "currency_id": 1
+    },
+    {
+        "id": 59,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Aiden Taylor, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 59,
+        "company_id": 29,
+        "currency_id": 1
+    },
+    {
+        "id": 60,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Élisabeth Dubois, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 60,
+        "company_id": 29,
+        "currency_id": 1
+    },
+    {
+        "id": 61,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hello! I'm Jürgen Schmidt, a dedicated Recruiter/Employer with a passion for connecting talented professionals with exceptional career opportunities. With a robust background in human resources and a deep understanding of the recruitment process, I strive to find the perfect match between candidates and organizations. I am committed to building positive relationships and creating successful partnerships that benefit everyone involved. Let's connect and explore how we can work together to achieve your hiring and career goals.",
+        "user_id": 61,
+        "company_id": 30,
+        "currency_id": 1
+    },
+    {
+        "id": 62,
+        "expertise": "I specialize in identifying and attracting top talent for companies through strategic sourcing and relationship-building.",
+        "description": "Hi! I'm Isabella García, a passionate Recruiter/Employer focused on linking skilled professionals with exciting career opportunities. With extensive experience in human resources and a thorough understanding of the recruitment process, my goal is to find the ideal fit between candidates and companies. I am dedicated to fostering positive relationships and creating successful partnerships that benefit all parties involved. Let's connect and see how we can collaborate to achieve your hiring and career objectives.",
+        "user_id": 62,
+        "company_id": 30,
+        "currency_id": 1
+    }
 ]

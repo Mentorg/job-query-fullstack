@@ -13,6 +13,7 @@ import { useGetApplicantJobs } from "../../private/features/jobs/hooks/useGetApp
 import { formatDate } from "../../shared/utils/dateFormat";
 import { Location } from "../../shared/types/location";
 import { Competency, Job } from "../../shared/types/job";
+import { formatSalary } from "../../shared/utils/formatSalary";
 
 function SingleJob() {
   const { user } = useAuth();
@@ -45,7 +46,13 @@ function SingleJob() {
                   {job.title}
                 </h1>
                 <h4 className="text-lg text-slate-500 lg:text-xl">
-                  {job.salaryFrom} - {job.salaryTo} /{" "}
+                  {formatSalary(
+                    job.salaryFrom,
+                    job.salaryTo,
+                    job.recruiter.currency.code,
+                    job.recruiter.currency.symbol,
+                  )}{" "}
+                  /{" "}
                   <span className="text-base">
                     {job.isSalaryMonthly
                       ? t("job.salaryMonthly")

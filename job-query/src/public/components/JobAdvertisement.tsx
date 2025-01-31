@@ -17,6 +17,7 @@ import { useGetApplicantJobs } from "../../private/features/jobs/hooks/useGetApp
 import { formatDeadline } from "../../shared/utils/dateFormat";
 import { Job } from "../../shared/types/job";
 import { Location } from "../../shared/types/location";
+import { formatSalary } from "../../shared/utils/formatSalary";
 
 type JobProps = {
   job: Job;
@@ -107,7 +108,12 @@ function JobAdvertisement({ job }: JobProps) {
         id="position-salary"
       >
         <h4>
-          {job.salaryFrom} - {job.salaryTo}
+          {formatSalary(
+            job.salaryFrom,
+            job.salaryTo,
+            job.recruiter.currency.code,
+            job.recruiter.currency.symbol,
+          )}
         </h4>
       </div>
       <div

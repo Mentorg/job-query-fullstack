@@ -5,6 +5,7 @@ import Fallback from "../../shared/components/ui/Fallback";
 import { useGetJob } from "../features/jobs/hooks/useGetJob";
 import { Location } from "../../shared/types/location";
 import { Competency } from "../../shared/types/job";
+import { formatSalary } from "../../shared/utils/formatSalary";
 
 function JobOverview() {
   const { job, isPending, error } = useGetJob();
@@ -71,7 +72,13 @@ function JobOverview() {
             <div className="w-full rounded-md bg-slate-100 px-4 py-8">
               <h4 className="text-xl font-medium">{t("job.salary")}</h4>
               <p className="mt-2 font-medium text-slate-500">
-                {job.salaryFrom} - {job.salaryTo}/
+                {formatSalary(
+                  job.salaryFrom,
+                  job.salaryTo,
+                  job.recruiter.currency.code,
+                  job.recruiter.currency.symbol,
+                )}{" "}
+                /{" "}
                 <span className="text-base">
                   {job.isSalaryMonthly
                     ? t("job.salaryMonthly")

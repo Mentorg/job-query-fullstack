@@ -1,3 +1,4 @@
+import { Currency } from "./currency";
 import { Location } from "./location";
 
 export type User = {
@@ -23,6 +24,7 @@ type Recruiter = {
   description: string;
   id?: number;
   user?: User;
+  currency: Currency;
   userId?: number;
   currencyId?: number;
 };
