@@ -7,18 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class UserRegistered extends Notification
+class ApplicationSubmittedNotification extends Notification
 {
     use Queueable;
 
-    protected $user;
+    protected $job;
+    protected $company;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($user)
+    public function __construct($job, $company)
     {
-        $this->user = $user;
+        $this->job = $job;
+        $this->company = $company;
     }
 
     /**
@@ -37,13 +39,13 @@ class UserRegistered extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Welcome to JobQuery - Your Job Search Starts Here!')
-            ->greeting('Hello ' . $this->user->name . ',')
-            ->line("Thank you for signing up at Job Query! We're excited to have you on board as part of our community. Whether you're looking for your next job opportunity or aiming to hire top talent, we've got you covered.")
-            ->line('To get started, feel free to complete your profile, explore the latest job listings, and set up job alerts so you never miss an opportunity.')
-            ->line('If you have any questions or need assistance, our team is always here to help!')
-            ->line('Best regards,')
-            ->line('The Job Query Team');
+            ->subject('Job Application Submitted')
+            ->greeting('Hello ' . $notifiable->name . ',')
+            ->line('Thank you for applying to the job position "' . $this->job->title . '" at ' . $this->company->name . '.')
+            ->line('Your application has been successfully received, and we will review it shortly.')
+            ->line('If you have any questions, feel free to reach out.')
+            ->action('View Job Posting', 'http://localhost:5173/jobs/' . $this->job->id)
+            ->line('Thank you for your interest in this position!');
     }
 
     /**

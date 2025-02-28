@@ -375,3 +375,15 @@ export const getApplicant = async () => {
     }
   }
 };
+
+// get user notifications
+export const getUserNotifications = async () => {
+  try {
+    const response = await axiosInstance.get(`/api/v1/user/notifications`);
+    return response.data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw new Error(error.message || "Fetching user notifications failed!");
+    }
+  }
+};

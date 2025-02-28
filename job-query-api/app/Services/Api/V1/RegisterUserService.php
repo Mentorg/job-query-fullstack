@@ -8,7 +8,8 @@ use App\Models\Company;
 use App\Models\Location;
 use App\Models\Recruiter;
 use App\Models\User;
-use App\Notifications\UserRegistered;
+use App\Notifications\RecruiterRegisteredNotification;
+use App\Notifications\UserRegisteredNotification;
 
 class RegisterUserService
 {
@@ -38,15 +39,15 @@ class RegisterUserService
         $role = $isRecruiter ? 'recruiter' : 'applicant';
         $user->assignRole($role);
 
-        if ($isRecruiter) {
-            $this->createRecruiter($user, $fields['companies']);
-        } else {
-            $this->createApplicant($user);
-        }
-
         $token = $user->createToken($request->name);
 
-        $user->notify(new UserRegistered($user));
+        if ($isRecruiter) {
+            $this->createRecruiter($user, $fields['companies']);
+            $user->notify(new RecruiterRegisteredNotification());
+        } else {
+            $this->createApplicant($user);
+            $user->notify(new UserRegisteredNotification());
+        }
 
         return [
             'user' => new UserResource($user),

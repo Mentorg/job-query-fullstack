@@ -27,16 +27,25 @@ function MenuAuthMobile() {
   const logout = useLogout();
   const { t } = useTranslation();
 
-  const avatarUrl = user?.avatar
-    ? `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user.avatar}`
-    : `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
-  const adminAvatarUrl = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+  let avatar;
+
+  if (user?.avatar) {
+    if (user?.role === "admin") {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/admin.png`;
+    } else if (user?.avatar.includes("avatars")) {
+      avatar = `http://127.0.0.1:8000/storage/${user?.avatar}`;
+    } else {
+      avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/${user?.avatar}`;
+    }
+  } else {
+    avatar = `${import.meta.env.VITE_REACT_APP_API_URL}/public/avatars/default-avatar.png`;
+  }
 
   return (
     <>
       <div className="flex">
         <img
-          src={user?.role === "admin" ? adminAvatarUrl : avatarUrl}
+          src={avatar}
           alt="User's avatar"
           className="h-12 w-12 rounded-full"
         />
@@ -60,17 +69,10 @@ function MenuAuthMobile() {
               </span>
             </div>
           </div>
-          <div className="group flex w-full items-center rounded-md px-2 py-1 text-sm text-slate-500 lg:py-0">
+          <MenuLink to="/dashboard/notifications">
             <HiMiniBell className="h-5 w-5" />
-            <div className="flex w-full justify-between">
-              <p className="ml-2 text-sm font-medium">
-                {t("navigation.notifications")}
-              </p>
-              <span className="h-fit rounded-md bg-primary p-[.25rem] text-[.5rem] leading-normal text-white">
-                {t("system.soon")}
-              </span>
-            </div>
-          </div>
+            <span className="ml-2">{t("navigation.notifications")}</span>
+          </MenuLink>
           <hr />
           <MenuLink to="/">
             <FaHome className="h-5 w-5" />
@@ -185,17 +187,10 @@ function MenuAuthMobile() {
               </span>
             </div>
           </div>
-          <div className="group flex w-full items-center rounded-md px-2 py-1 text-sm text-slate-500 lg:py-0">
+          <MenuLink to="/user/notifications">
             <HiMiniBell className="h-5 w-5" />
-            <div className="flex w-full justify-between">
-              <p className="ml-2 text-sm font-medium">
-                {t("navigation.notifications")}
-              </p>
-              <span className="h-fit rounded-md bg-primary p-[.25rem] text-[.5rem] leading-normal text-white">
-                {t("system.soon")}
-              </span>
-            </div>
-          </div>
+            <span className="ml-2">{t("navigation.notifications")}</span>
+          </MenuLink>
           <hr />
           <MenuLink to="/">
             <FaHome className="h-5 w-5" />

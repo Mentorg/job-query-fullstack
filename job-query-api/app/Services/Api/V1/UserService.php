@@ -2,9 +2,11 @@
 
 namespace App\Services\Api\V1;
 
+use App\Http\Resources\V1\NotificationCollection;
 use App\Http\Resources\V1\UserCollection;
 use App\Http\Resources\V1\UserResource;
 use App\Interfaces\UserServiceInterface;
+use App\Models\Notification;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -119,5 +121,10 @@ class UserService implements UserServiceInterface
         }
 
         return new UserResource($user);
+    }
+
+    public function getNotifications($request)
+    {
+        return new NotificationCollection(Notification::where('notifiable_id', User::find($request->user()->id)->id)->get());
     }
 }

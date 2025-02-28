@@ -30,6 +30,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/profile/{user}', [UserController::class, 'update']);
         Route::delete('/users/{user}', [UserController::class, 'destroy']);
         Route::put('/user/locale', [UserController::class, 'updateLocaleSetting']);
+        Route::get('/user/notifications', [UserController::class, 'getNotifications']);
     });
 
     // RecruiterController

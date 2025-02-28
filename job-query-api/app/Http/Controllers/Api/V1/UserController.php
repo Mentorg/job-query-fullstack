@@ -86,4 +86,9 @@ class UserController extends Controller
             ? ResponseHelper::successResponse($updatedUser, 'Locale settings updated successfully.')
             : ResponseHelper::errorResponse('Failed to update locale settings!', 400);
     }
+
+    public function getNotifications(Request $request)
+    {
+        return response()->json($this->userService->getNotifications($request));
+    }
 }

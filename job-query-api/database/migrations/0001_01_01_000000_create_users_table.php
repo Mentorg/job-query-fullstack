@@ -147,17 +147,6 @@ return new class extends Migration
             $table->foreign('recruiter_id')->references('id')->on('recruiters')->cascadeOnDelete();
         });
 
-        Schema::create('notifications', function (Blueprint $table) {
-            $table->id();
-            $table->text('content');
-            $table->boolean('is_read');
-            $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('notification_type')->cascadeOnDelete();
-        });
-
         Schema::create('notification_type', function (Blueprint $table) {
             $table->id();
             $table->string('description')->unique();

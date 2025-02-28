@@ -1,0 +1,14 @@
+{
+  "workbench.colorCustomizations": {
+    "errorLens.hintForeground": "#ffc600A1",
+    "errorLens.hintBackground": "#ffc60003",
+    "errorLens.errorBackground": "#ffc60003",
+    "editorBracketHighlight.foreground1": "#FFA500",
+    "editorBracketHighlight.foreground2": "#FF69B4",
+    "editorBracketHighlight.foreground3": "#00FF7F",
+    "editorBracketHighlight.foreground4": "#00FFFF",
+    "editorBracketHighlight.foreground5": "#FFD700",
+    "editorBracketHighlight.foreground6": "#FF00FF",
+    "scrollbar.shadow": "#0000002D"
+  }
+}

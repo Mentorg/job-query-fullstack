@@ -17,4 +17,6 @@ interface UserServiceInterface
     public function updatePassword($validated, $user);
 
     public function updateLocaleSetting(array $fields, $request);
+
+    public function getNotifications($request);
 }
