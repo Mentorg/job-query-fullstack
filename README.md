@@ -78,7 +78,35 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    composer install
    ```
 
-6. **Run Migrations**:
+6. **MailTrap Configuration**
+
+   If you're using MailTrap for testing email notifications, follow these steps to configure it:
+
+   6.1. **Create a MailTrap account:**
+
+   - Visit [MailTrap](https://mailtrap.io) and sign up for an account.
+
+     6.2. **Obtain Your MailTrap Credentials:**
+
+   - After logging in, create a new inbox in MailTrap.
+   - Copy the SMTP credentials (username, password, host, and port) for your inbox.
+
+     6.3. **Update Your .env File:**
+
+   - Open your `.env` file in the project root directory.
+   - Update the following environment variables with your MailTrap credentials:
+
+   ```env
+   MAIL_MAILER=smtp
+   MAIL_HOST=smtp.mailtrap.io
+   MAIL_PORT=2525
+   MAIL_USERNAME=your_mailtrap_username
+   MAIL_PASSWORD=your_mailtrap_password
+   MAIL_ENCRYPTION=tls
+
+   ```
+
+7. **Run Migrations**:
 
    Run the following command to create the necessary tables in your database based on your migration files:
 
@@ -86,7 +114,7 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    php artisan migrate
    ```
 
-7. **Run Seeders**:
+8. **Run Seeders**:
 
    Run the following command to seed the database using the seeders defined in `DatabaseSeeder.php`:
 
@@ -100,7 +128,7 @@ After cloning the repository, you'll need to set up a `.env` file for both the b
    php artisan migrate --seed
    ```
 
-8. **Start the Laravel server**:
+9. **Start the Laravel server**:
 
    Run the following command to start the Laravel API server:
 
